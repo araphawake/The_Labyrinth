@@ -1,0 +1,144 @@
+
+
+LES - Laboratório de Engenharia de Software DI/PUC-Rio
+      Arcabouço de teste de módulos C  (c) 2006
+
+---------------------------------------------
+      Construto sob teste: TRAB4-1.EXE
+
+      Arquivo de teste:    Script/TesteGrafoGenerico.script
+
+
+!!!    0  Linha:     1  // Script:    TesteGrafoGenericoDEBUG.script 
+!!!    0  Linha:     2  // Autor:     Lucas Hardman, Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell 
+!!!    0  Linha:     3  // Data:      18/nov/2014 
+!!!    0  Linha:     4  // Propósito: Testar todas as funções do módulo grafo e testar funções Verificar e Deturpar do Grafo Genérico Bidirecionado 
+!!!    0  Linha:     5  // 
+    7  == Inicializar valores
+   65  == Reset grafos
+   68  == Inicializa controle de cobertura
+   74  == GrafoInexistente: Testar inserir vértice origem
+   77  == GrafoInexistente: Testar inserir vértice
+   80  == GrafoInexistente: Testar ir para vértice origem
+   83  == GrafoInexistente: Testar ir para vértice
+   86  == GrafoInexistente: Testar ir para vértice com valor dado
+   89  == GrafoInexistente: Testar obter o número de vértices    resposta: 0 0
+   92  == GrafoInexistente: Testar alterar conteúdo do vértice corrente
+   95  == GrafoInexistente: Testar obter valor corrente
+   98  == GrafoInexistente: Testar excluir vértice origem
+  101  == GrafoInexistente: Testar excluir vértice corrente
+  104  == GrafoInexistente: Testar esvaziar grafo inexistente
+  107  == GrafoInexistente: Testar destruir grafo inexistente
+  110  == Grafo Inexistente: Testar inserir ciclo
+  113  == Grafo Inexistente: Testar associar vertice
+  116  == Grafo 1: Criar Grafo
+  119  == Ir para origem de grafo vazio
+  122  == Grafo 2: Criar Grafo
+  125  == Grafo 3: Criar Grafo
+  128  == Grafo 1: Testar criar grafo já existente
+  131  == DestruirGrafos
+  137  == Grafo 1: Criar Grafo
+!!!    0  Linha:   139  Simula falta de memoria. 
+!!!    0  Linha:   142  Simula falta de memoria. 
+!!!    0  Linha:   145  Simula falta de memoria. 
+  149  == Grafo 1: Testar associar vértices em grafo vazio
+>>>    1  Linha:   150  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:   151  Falha esperada foi recuperada. 
+  154  == Grafo 1: Testar esvaziar grafo vazio
+  157  == Grafo 1: Testar obter valor corrente de grafo vazio
+  160  == Grafo 1: Testar alterar conteúdo do vértice corrente de grafo vazio
+  163  == Grafo 1: Testar ir para vértice em grafo vazio
+  166  == Grafo 1: Testar ir para vértice origem em grafo vazio
+  169  == Grafo 1: Testar ir para vértice com valor em grafo vazio
+  172  == Grafo 1: Testar obter o número de vértices de grafo vazio    resposta: 0 1
+>>>    1  Linha:   173  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:   174  Falha esperada foi recuperada.     resposta: 0 0
+  177  == Grafo 1: Tentar excluir vértice origem em grafo vazio
+  180  == Grafo 1: Testar excluir vértice em grafo vazio
+  183  == Grafo 1: Testar inserir vértice em grafo sem origem
+  186  == Grafo 1: Testar ir para vértice origem em grafo com um único vértice
+  190  == Grafo 1: Inserir vértice origem
+  193  == Grafo 1: Inserir segundo vértice origem
+  196  == Grafo 1: Inserir terceiro vértice origem
+  199  == Grafo 1: Inserir 4 vértices em grafo Caracter obtido: b     resposta: 8 8
+  217  == Grafo 1: Testar inserir vértice em aresta já existente
+  220  == Grafo 1: Obter o número de vértices    resposta: 8 5
+>>>    1  Linha:   221  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:   222  Falha esperada foi recuperada.     resposta: 8 8
+  225  == Grafo 1: Esvaziar grafo    resposta: 0 0
+  230  == Grafo 1: Ir para vértice e obter valor corrente Caracter obtido: c 
+  238  == Grafo 1: Testar ir para vértice inexistente
+  243  == Grafo 1: Testar ir para vértice origem inexistente
+  250  == Grafo 1: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+  259  == Grafo 1: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+  270  == Grafo 1: Ir para vértice com valor dado
+!!!    0  Linha:   276  Desalocar espaco recebeu ponteiro nulo  Caracter obtido: b  Caracter obtido: d 
+  284  == Grafo 1: Testar ir para vértice inexistente com valor dado
+  290  == Grafo 1: Percorrer Grafo Caracter obtido: d 
+  297  == Grafo 1: Excluir vértice origem
+!!!    0  Linha:   300  Desalocar espaco recebeu ponteiro nulo 
+  303  == Grafo 1: Testar excluir vértice origem com dois filhos
+  314  == Grafo 1: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+!!!    0  Linha:   320  Desalocar espaco recebeu ponteiro nulo 
+!!!    0  Linha:   322  Desalocar espaco recebeu ponteiro nulo 
+  327  == Grafo 1: Testar excluir vértice corrente e excluir vértice origem    resposta: 0 0    resposta: 3 3 Caracter obtido: a     resposta: 4 4
+  341  == Grafo 1: Testar excluir vertice em aresta sem vértices
+!!!    0  Linha:   343  Desalocar espaco recebeu ponteiro nulo 
+!!!    0  Linha:   345  Desalocar espaco recebeu ponteiro nulo 
+!!!    0  Linha:   347  Desalocar espaco recebeu ponteiro nulo     resposta: 1 1    resposta: 0 0    resposta: 3 3
+  357  == Grafo 1: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+  370  == Grafo 1: Testar inserir vértice com identidade 0
+  376  == Grafo 1: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+  397  == Grafo 1: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:   403  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:   404  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c     resposta: 4 4 Caracter obtido: d 
+  421  == Grafo 1: Testar associar vertices identidade da aresta 0
+  424  ==Grafo 1: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:   452  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:   453  Falha esperada foi recuperada.  Caracter obtido: c 
+  457  == Esvaziar grafo 1
+  460  == Verificar validade da estrutura GRAFO: Grafo Sem Lista Vertices e Sem Lista Origem (Deturpação 1 & 2)    resposta: 0 1
+       >>>> Erros encontrados na estrutura GRAFO: 1
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  481  == Deturpar e Verificar: Grafo sem Lista de Origens (Deturpação 3 & 4)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  496  == Deturpar e Verificar: Grafo Sem Lista de Vertices (Deturpação 5)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  510  == Deturpar e Verificar: Grafo insere vértice origem fora da lista de vértices do grafo (Deturpação 6)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  525  == Deturpação inexistente
+       >>>> Deturpação inválida.
+  528  == Deturpar e Verificar: Grafo com vértice cabeça vazio (Deturpação 7)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  546  == Deturpar e Verificar: Grafo com Vértice não-Origem sem arestas (Deturpação 8)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  561  == Deturpar e Verificar: Grafo com Vertice sem lista de arestas (Deturpação 9)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  577  == Deturpar e Verificar: Grafo com Vertice com arestas repetidas (Deturpação 10)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  592  == Deturpar e Verificar: Grafo com Vertice com duas arestas de ciclo (Deturpação 11)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  607  == Deturpar e Verificar: Grafo com aresta direcionada (Deturpação 12)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  624  == Deturpar e Verificar: Grafo com múltiplos erros estruturais compatíveis (Deturpação 13)
+       >>>> Erros encontrados na estrutura GRAFO: 2
+       >>>> Erros encontrados na estrutura GRAFO: 3
+  643  == Deturpar e Verificar: Grafo com Vertice armazenando tipos de dados diferentes (Deturpação 14)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  659  == Deturpar e Verificar: Grafo com Vertices duplicados (Deturpação 15)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  675  == Deturpar e Verificar: Grafo com Vertice de igual identidade (Deturpação 16)
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  690  == Deturpar e Verificar: Grafo com Vertice que possui vértice cabeca errado
+       >>>> Erros encontrados na estrutura GRAFO: 1
+  705  == Termina cobertura
+
+!!! Número de linhas lidas:         711
+!!! Número de casos de teste:        80
+!!! Número comandos corretos:       517
+!!! Número de falhas encontradas:     0
+
+!!! Não foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 760

@@ -1,0 +1,1 @@
+TRAB2-2.exe /sScripts/TesteGrafoGenerico.script >logSaida.txt

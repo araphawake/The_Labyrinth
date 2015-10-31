@@ -1,0 +1,1 @@
+TRAB4-2.EXE /sScript/TesteGrafoGenerico.script >logSaida.txt

@@ -1,0 +1,1 @@
+TRAB1-1.exe /sScripts/TesteListaGenerica.script >logSaida.txt

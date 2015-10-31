@@ -1,0 +1,22 @@
+﻿Relatório-João Fernando: TRABALHO 04
+
+Arquivo:RELATORIO-JoaoFernando.txt              
+
+
+Data		Horas Trabalhadas	Tipo Tarefa		Descrição da Tarefa Realizada
+
+19/nov/2014	2h			estudar			estudo do módulo CONTA
+
+
+20/nov/2014	3h			estudar			estudo do módulo CESPDIN
+
+
+21/nov/2014	4h			codificar módulo	instrumentação equivocada do módulo LISTA
+
+
+22/nov/2014	4h			estudar 		reunião online com o grupo para definir divisão de 
+								tarefas juntamente com um estudo e entendimento do 												trabalho como um todo		
+
+23/nov/2014	3h			projetar		reunião online para reportar dúvidas quanto a
+								instrumentação do módulo GRAFO 
+												

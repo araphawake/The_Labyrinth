@@ -1,0 +1,108 @@
+
+**************************************************************	   Arquivo Leia-me do Grupo TRAB04JLR	******************************************************            
+
+*******
+Autores
+*******
+João Fernando McDowell			#1110322
+Lucas Hardman				#1113567
+Rafael Azevedo Moscoso Silva Cruz	#1221020
+
+
+**************
+Arquivo LEIAME
+**************
+Este documento fornece informações complementares para o TRAB04-JLR e sua instalação.
+O objetivo do TRAB04 é a intrumentação do módulo GRAFO, tornando tal estrutura auto-verificável com controle de cobertura.
+Existem neste trabalho dois executáveis, um que está em modo DEBUG e outro em modo RELEASE. Siga as instruções deste documento para
+a correta utilização dos executáveis.
+
+********
+SUMÁRIO
+********
+
+1 - INSTALAÇÃO
+2 - SOBRE O PROGRAMA
+3 - TESTES
+4 - AJUDA
+
+
+*****************
+1 - INSTALAÇÃO  
+*****************
+
+	
+	Salvar o diretório extraído pelo arquivo INF1301-trab04-JRL.ZIP na pasta desejada.
+	
+	Conteúdo do arquivo INF1301-trab04-JRL.ZIP:
+
+	Pastas		| Descrição
+	------------------------------------------------------------------------------------------------------------------------------------------
+	Documentos	| Pasta onde se encontram arquivos explicativos do programa modelo
+			| físico estrutural auto verificável, assertivas estruturais e assertivas de teste da estrutura
+			| autoverificável e documentação das deturpações e das verificações realizadas em testes. 																
+			| Todos os arquivos desse diretório estão no formato pdf.		
+	Fonts		| Pasta onde se encontram os módulos de definição e implementação do programa.
+	Relatórios	| Pasta onde se encontram os relatórios dos integrantes do grupo.
+	TRAB4-1		| Pasta onde se encontram o executável construto do teste de caixa aberta, modo DEBUG, da estrutura GRAFO,
+			| o arquivo .bat para testes e os arquivos de totalização dos contadores.
+	TRAB4-2		| Pasta onde se encontram o executável construto do modo RELEASE, o arquivo .bat para testes e os scripts relativos ao
+			| módulo Labirinto.
+	Script		| Os scripts relativos ao módulo GRAFO para o modo DEBUG e para o modo RELEASE. Pasta interna às pastas
+			| TRAB4-1 e TRAB4-2.
+	Contadores	| Os arquivos de declaração dos contadores para o teste de cobertura. Pasta interna à pasta
+			| TRAB4-1.
+
+
+**********************
+2 - SOBRE O PROGRAMA
+**********************
+
+
+	Este trabalho tem como objetivo intrumentar o módulo GRAFO para que seja garantida a análise de que ele funciona exatamente como o esperado, realizando o controle de cobertura - verifica se todos os pontos de relevência do código são visitados pelo menos uma vez. Apenas o TesteGrafoGenericoDEBUG.bat executa o modo DEBUG para cobertura e estrutura autoverificável. O TesteGrafoGenericoRELEASE.bat executa o modo Release com o teste de caixa fechada do módulo GRAFO - verifica que erros previstos não existem.
+
+
+*******************
+3 - TESTES
+*******************
+
+Para realizar o teste deste trabalho:
+
+Acessar a pasta "TRAB4-1" e clicar duas vezes no arquivo TesteGrafoGenericoDEBUG.bat. Dessa forma, arquivos chamados 
+"logSaidaTesteDebug.txt" e "logSaidaTesteVerticeNULLDebug.txt" serão gerados com os resultados dos testes de caixa fechada assim como os arquivos "logContagem.count" e "logContagemVerticeNULL.count" com os resultados de teste de caixa aberta. 
+Abra o arquivo logSaidaTesteDebug.txt para analisar os resultados dos testes.
+Abra o arquivo logSaidaTesteVerticeNULLDebug.txt para analisar os resultados dos testes.
+Abra o arquivo logContagem.count para analisar os contadores do teste de caixa aberta do script TesteGrafoGenericoDEBUG.script.
+Abra o arquivo logContagemVerticeNULL.count para analisar os contadores de teste de caixa aberta do script TesteVerticeNULL.txt.
+
+Acessar a pasta "TRAB4-2" e clicar duas vezes no arquivo TesteGrafoGenericoRELEASE.bat. Dessa forma, um arquivo chamado "logSaida.txt"
+será gerado com os resultados do teste de caixa fechada. 
+
+Os arquivos finalizados com .count no nome podem ser abertos da seguinte forma:
+1. Selecione o arquivo com o botão direito do mouse.
+2. Em seguida, selecione a opção "Abrir Com".
+3. Das opções listadas, selecione Bloco de Notas ou NotePad ou NotePad++. 
+
+
+O arquivo TesteGrafoGenericoDEBUG.bat possui o seguinte conteúdo: 
+
+TRAB4-1.EXE /sScript/TesteGrafoGenerico.script >logSaidaTesteDebug.txt
+TRAB4-1.EXE /sScript/TesteVerticeNULL.script >logSaidaTesteVerticeNULLDebug.txt
+
+O arquivo TesteGrafoGenericoRELEASE.bat possui o seguinte conteúdo: 
+
+TRAB4-2.EXE /sScript/TesteGrafoGenerico.script >logSaida.txt
+
+
+
+**********************
+4 - AJUDA
+**********************
+
+
+Se tiver qualquer problema com este programa, entre em contato com o grupo pelos e-mails abaixo:
+
+	- jfmcdowel2@hotmail.com
+	- lucas.hardman@me.com
+	- araphawake@gmail.com
+                                                                                                                                                                                                                                                                                                                                                                                                                 

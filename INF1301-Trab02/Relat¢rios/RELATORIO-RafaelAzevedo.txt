@@ -1,0 +1,50 @@
+﻿/*************************************************************************************************************************************************************************/
+*
+*  Relatório-RafaelAzevedo: Trabalho 1
+*
+*  Arquivo: RELATORIO-RafaelAzevedo.txt              
+*
+*
+*	  Data        Horas Trabalhadas   Tipo Tarefa   	Descrição da Tarefa Realizada
+*	03/set/2014   	    4		  projetar		Planejamento da arquitetura da aplicação
+*
+*	03/set/2014	    4		  especificar os módulos Determinação dos módulos a serem usados na aplicação
+*
+*	04/set/2014 	    5		  especificar as funções Determinação das funções do módulo GRAFO.C
+*								
+*
+*	05/set/2014	    5		  revisar projetos	Revisão dos módulos e dos protótipos das funções de acesso e das funções internas
+*							
+*
+*	05/set/2014	    6		  codificar módulo	Codificação de funções de acesso do módulo GRAFO.C 
+*								 
+*			
+*
+*	07/set/2014	    5		  revisar código do módulo Revisão de funções codificadas do módulo
+*					  revisar especificações   Revisão do módulo e implementação de novas funções.	
+*
+*	12/set/2014    	    6		  codificação		Implementação de funções do módulo GRAFO.
+*
+*	20/set/2014	    6		  codificação		Implementação das funções GRF_PercorrerGrafo, GRF_DestruirGrafo e GRF_EsvaziarGrafo.
+*								Implementação de funções internas do módulo GRAFO.C
+*
+*	21/set/2014	    4		  codificação		Implementação de funções de acesso do módulo GRAFO.C
+*
+*
+*	28/set/2014	    6	  revisar código do módulo	Implementação de funções internas. Correção de erros de funções. Implementação das funções de excluir vértices.	
+*				  redigir script de teste	Redigir script de teste do GRAFO.C		*
+*	30/set/2014	    6	      codificar módulo		Alteração das funções para correção de erros. Atualização das funções GRF_ExcluirVerticeCorrente e
+*								GRF_ExcluirVerticeOrigem para versões funcionais. Manutenção da função GRF_DestruirLista. Todos os erros corrigidos.
+*
+*	01/set/2014	    7     revisar código do módulo	Manutenção de todas as funções dos módulos GRAFO.C e GRAFO.H
+*				      realizar testes		Realização de testes e edição dos cript de testes
+*				    codificar o módulo		Implementação de novas funções para ligar vértices
+*								Escrita de toda adocumentação dos módulos. Revisão. 
+*				  diagnosticar e corrigir os problemas encontrados
+*
+*	03/set/2014	    7	  revisar código do módulo	redigir script de teste	Implementação de novas funções
+*				  especificar funções		Alteração do script de teste
+*				  especificar módulo		Escrita de assertivas estruturais, assertivas de entrada e assertivas de saída do módulo GRAFO.H e LISTA.H
+*
+*				  									
+/*************************************************************************************************************************************************************************/

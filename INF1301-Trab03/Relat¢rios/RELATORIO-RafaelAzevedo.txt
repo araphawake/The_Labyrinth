@@ -1,0 +1,62 @@
+﻿/*************************************************************************************************************************************************************************/
+*
+*  Relatório-RafaelAzevedo: Trabalho 3
+*
+*  Arquivo: RELATORIO-RafaelAzevedo.txt              
+*
+*
+*	  Data        Horas Trabalhadas   	Tipo Tarefa   						Descrição da Tarefa Realizada
+*	05/out/2014   	    5		  	revisar especificações					Manutenção e ajuste da arquitetura da aplicação
+*						projetar						Planejamento de implementação de um labirinto com a estrutura grafo
+*						especificar o módulo
+*						especificar as funções
+*						codificar módulo					Início da implementação do módulo LABIRINTO
+*
+*	06/out/2014	    5			codificar módulo					Implementação do módulo LABIRINTO
+*
+*	07/out/2014 	    6	  		codificar módulo					Implementação do módulo LABIRINTO
+*						revisar código do módulo				Revisar código do módulo GRAFO
+*						codificar módulo					Codificar o módulo de teste do LABIRINTO, TESTELABIRINTO
+*
+*	08/out/2014	    5	  		codificar módulo					Codificar o módulo de teste do LABIRINTO, TESTELABIRINTO
+*						revisar código						Alterar funções LBT_CriarLabirinto, LBT_CarregarLabirinto, 
+*													LBT_SalvarLabirinto
+*						redigir script de teste					Redigir script de teste do módulo LABIRINTO
+*
+*	10/out/2014	   6			redigir script de teste					Redigir script de teste do módulo LABIRINTO
+*						realizar testes						Testar módulo LABIRINTO através do arcabouço e do script 		*													TesteLabirinto.script
+*
+*						diagnosticar e corrigir os problemas encontrados	Problemas encontrados nas funções LBT_SalvarLabirinto,			*													LBT_CarregarLabirinto, LBT_DesenharLabirinto e LBT_CriarLabirinto.
+*													Funções foram corrigidas.
+*
+*	12/out/2014	   6	  		estudar							Estudar método teórico para solucionar labirinto automaticamente.
+*													Escolha do método de Trémaux.
+*						codificar módulo					Codificar função LBT_ObterAfastamentoEntradaSaida e			*													LBT_SolucionarLabirinto.
+*												
+*	18/out/2014    	   6		  	codificar módulo					Codificar função LBT_SolucionarLabirinto.
+*
+*	19/out/2014	   6			codificar módulo					Codificar função LBT_SolucionarLabirinto e LBT_ObterSolucao.
+*						redigir script de teste					Atualizar script de teste do LABIRINTO, TesteLabirinto.script
+*						realizar testes						Módulo LABIRINTO testado.
+*													Comentário e documentação de LABIRINTO.C e LABIRINTO.H
+*
+*	24/out/2014	   6			codificar módulo					Implementar módulo PRINCIPAL da aplicação
+*												
+*	01/nov/2014	   7  			codificar módulo					Implementar módulo PRINCIPAL da aplicação.
+*						diagnosticar e corrigir os problemas encontrados	Problemas corrigidos no módulo PRINCIPAL e na 				*													LBT_SolucionarLabirinto	
+*				  		redigir script de teste					Atualizar script de teste do LABIRINTO	
+*													Comentários e documentação de LABIRINTO.H e LABIRINTO
+*
+*	02/nov/2014    	   6      		diagnosticar e corrigir os problemas encontrados	Problemas corrigidos na função LBT_ObterAfastamentoEntradaSaida
+*						revisar projeto						Revisão e atualização dos documentos de requisitos, LEIAME e de *													arquitetura da aplicação.
+*						revisar script de teste					Revisão do script de teste do LABIRINTO
+*
+*	03/nov/2014	   4   			revisar projeto						Revisão de documentação. Realização de testes da aplicação.
+*						realizar testes						Realizar testes com o modo campanha da aplicação.
+*
+*	05/nov/2014        5			revisar projeto						Revisão da documentação dos módulos, dos requisitos e do LEIAME.
+*						revisão de script de testes				Revisão do script manual.
+*						codificar módulo					Alteração da função LBT_ObterAfastamentoEntradaSaida e codificação 	*													do módulo PRINCIPAL da aplicação
+*						diagnosticar e corrigir os problemas encontrados	Corrigir problemas encontrados na LBT_ObterAfastamentoEntradaSaida
+*				  									
+/*************************************************************************************************************************************************************************/

@@ -1,0 +1,33 @@
+
+
+LES - Laboratório de Engenharia de Software DI/PUC-Rio
+      Arcabouço de teste de módulos C  (c) 2006
+
+---------------------------------------------
+      Construto sob teste: TRAB4-1.EXE
+
+      Arquivo de teste:    Script/TesteVerticeNULL.script
+
+
+!!!    0  Linha:     1  // Script:    TesteVerticeNULL.script 
+!!!    0  Linha:     2  // Autor:     Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell e Lucas Hardman 
+!!!    0  Linha:     3  // Data:      22/nov/2014 
+!!!    0  Linha:     4  // Propósito: Testar deturpação VerticeNULL de um grafo 
+!!!    0  Linha:     5  // 
+    7  == Inicializar valores
+   65  == Reset grafos
+   68  == Inicializa controle de cobertura
+   74  == Deturpar e Verificar: Grafo com Vertice Origem Ausente da Lista de Vertices
+!!!    0  Linha:    76  Simula falta de memoria. 
+       >>>> Erros encontrados na estrutura GRAFO: 1
+   90  == Termina cobertura
+
+!!! Número de linhas lidas:          96
+!!! Número de casos de teste:         5
+!!! Número comandos corretos:        72
+!!! Número de falhas encontradas:     0
+
+!!! Não foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 70

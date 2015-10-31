@@ -1,0 +1,2835 @@
+// Script:    TesteGrafoGenerico.script
+// Autor:     Lucas Hardman, Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell
+// Data:      01/ago/2014
+// Propósito: Testar todas as funções do módulo grafo
+//
+
+== Inicializar valores
+=declararparm   grafo1  int 0
+=declararparm   grafo2  int 1
+=declararparm   grafo3  int 2
+=declararparm   grafo4  int 3
+=declararparm   grafo5  int 4
+=declararparm   grafo6  int 5
+=declararparm   grafo7  int 6
+=declararparm   grafo8  int 7
+=declararparm   grafo9  int 8
+=declararparm   grafo10 int 9
+=declararparm	grafoInexistente int 10
+
+=declararparm   char0    char  'a'
+=declararparm   char1    char  'b'
+=declararparm   char2    char  'c'
+=declararparm   char3    char  'd'
+=declararparm	char4	 char  'e'
+=declararparm	char5	 char  'f'
+
+=declararparm   OK          	   				int  0	
+=declararparm   GrafoVazio     	   				int  1
+=declararparm   NaoAchou      	   				int  2
+=declararparm   FaltouMemoria  	   				int  3
+=declararparm   GrafoInexistente   				int  4
+=declararparm   GrafoJaExiste      				int  5
+=declararparm   ErroEstrutura	  				int  6
+=declararparm	ArestaInexistente  				int  7
+=declararparm	VerticeOrigemAdicionado 		        int  8
+=declararparm	ArestaJaExiste					int  9
+=declararparm	OrigemNaoExiste					int  10
+=declararparm	VerticeNaoTemFilhoUnico 		        int  11
+=declararparm	VerticeOrigemPossuiFilho		        int  12
+=declararparm	ArestaInvalida		                        int  13
+
+=declararparm   pNULL      int  0
+=declararparm   pNaoNULL   int  1
+
+== Reset grafos
+=resettestegrafo
+
+== GrafoInexistente: Testar inserir vértice origem
+=inserirverticeorigem  grafoInexistente	char0   GrafoInexistente
+
+== GrafoInexistente: Testar inserir vértice
+=inserirvertice	       grafoInexistente   char0	1 GrafoInexistente
+
+== GrafoInexistente: Testar ir para vértice origem
+=irparaverticeorigem 	grafoInexistente	0	GrafoInexistente
+
+== GrafoInexistente: Testar ir para vértice
+=irparavertice		grafoInexistente  2  	GrafoInexistente
+
+== GrafoInexistente: Testar ir para vértice com valor dado
+=irparaverticecomvalor	grafoInexistente  char4   GrafoInexistente
+
+== GrafoInexistente: Testar obter o número de vértices
+=obternumerovertices  grafoInexistente   0         GrafoInexistente
+
+== GrafoInexistente: Testar alterar conteúdo do vértice corrente
+=alterarconteudografo	grafoInexistente  char0  GrafoInexistente
+
+== GrafoInexistente: Testar obter valor corrente
+=obtervalorgrafo	grafoInexistente   char3	  GrafoInexistente
+
+== GrafoInexistente: Testar excluir vértice origem 
+=excluirverticeorigemcorrente  grafoInexistente   3       GrafoInexistente
+
+== GrafoInexistente: Testar excluir vértice corrente
+=excluirverticecorrente grafoInexistente   GrafoInexistente
+
+== GrafoInexistente: Testar esvaziar grafo inexistente
+=esvaziargrafo	grafoInexistente		GrafoInexistente
+
+== GrafoInexistente: Testar destruir grafo inexistente
+=destruirgrafo 	grafoInexistente		GrafoInexistente
+
+== Grafo Inexistente: Testar inserir ciclo
+=inserirciclo	        GrafoInexistente     GrafoInexistente
+
+== Grafo Inexistente: Testar associar vertice
+=associarvertices       GrafoInexistente   1 1  GrafoInexistente
+
+== Grafo 1: Criar Grafo
+=criargrafo 	grafo1		OK
+
+== Grafo 1: Testar criar grafo já existente
+=criargrafo	grafo1		GrafoJaExiste
+
+== Grafo 1: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo1		GrafoVazio
+
+== Grafo 1: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo1   char3	  GrafoVazio
+
+== Grafo 1: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo1  char0  GrafoVazio
+
+== Grafo 1: Testar ir para vértice em grafo vazio
+=irparavertice		grafo1  2  	GrafoVazio
+
+== Grafo 1: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo1	 char5     GrafoVazio
+
+== Grafo 1: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo1    1       OK
+=recuperar
+=obternumerovertices  grafo1    0       GrafoVazio
+
+== Grafo 1: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo1   3       GrafoVazio
+
+== Grafo 1: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo1   GrafoVazio
+
+== Grafo 1: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo1   char0	2 VerticeOrigemAdicionado
+
+== Grafo 1: Inserir vértice origem
+=inserirverticeorigem  grafo1	char0   OK
+
+== Grafo 1: Inserir segundo vértice origem
+=inserirverticeorigem  grafo1	char5   OK
+
+== Grafo 1: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo1	char2   OK
+
+== Grafo 1: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo1   char0	1 OK
+=inserirvertice	       grafo1   char2	3 OK
+=inserirvertice	       grafo1   char3	6 OK
+=inserirvertice	       grafo1   char3	8 OK
+=obternumerovertices   grafo1           8 OK
+
+== Grafo 1: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo1   char0	6 ArestaJaExiste
+
+== Grafo 1: Obter o número de vértices
+=obternumerovertices  grafo1   5         OK
+=recuperar
+=obternumerovertices  grafo1   8         OK
+
+== Grafo 1: Esvaziar grafo
+=esvaziargrafo	      grafo1		OK
+=obternumerovertices  grafo1   0        GrafoVazio
+
+== Grafo 1: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo1	char1     OK
+=inserirvertice	       grafo1   char2	3 OK
+=inserirvertice	       grafo1   char3	6 OK
+=irparavertice	       grafo1  	1         OK
+=obtervalorgrafo       grafo1   char2	  OK
+=esvaziargrafo	       grafo1	          OK
+
+== Grafo 1: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo1	char1     OK
+=irparavertice	       grafo1  	1         NaoAchou
+=esvaziargrafo	       grafo1	          OK
+
+== Grafo 1: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo1	char1     OK
+=inserirverticeorigem  grafo1	char1     OK
+=inserirverticeorigem  grafo1	char1     OK
+=irparaverticeorigem   grafo1  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo1	          OK
+
+== Grafo 1: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo1	char1     OK
+=inserirverticeorigem  grafo1	char2     OK
+=irparaverticeorigem   grafo1  	0         OK
+=obtervalorgrafo       grafo1   char1	  OK
+=irparaverticeorigem   grafo1  	1         OK
+=obtervalorgrafo       grafo1   char2	  OK
+=esvaziargrafo	       grafo1	          OK
+
+== Grafo 1: Ir para vértice com valor dado
+=inserirverticeorigem   grafo1	 char1     OK
+=inserirverticeorigem   grafo1 	 char2     OK
+=inserirvertice	        grafo1   char2	3  OK
+=inserirvertice	        grafo1   char3	6  OK
+=irparaverticecomvalor	grafo1   char1     OK
+=obtervalorgrafo        grafo1   char1	   OK
+=irparaverticecomvalor	grafo1   char3     OK
+=obtervalorgrafo        grafo1   char3	   OK
+=esvaziargrafo	        grafo1	           OK
+
+== Grafo 1: Ir para vértice com valor dado
+=inserirverticeorigem   grafo1	 char1     OK
+=inserirverticeorigem   grafo1 	 char2     OK
+=inserirvertice	        grafo1   char2	3  OK
+=inserirvertice	        grafo1   char3	6  OK
+=irparavertice			grafo1   	    2  OK
+=excluirverticecorrente grafo1	 		   OK
+=irparavertice			grafo1   	    0  OK
+=inserirvertice			grafo1	 char1  2  OK
+=obtervalorgrafo        grafo1   char1	   OK
+=irparaverticecomvalor	grafo1   char3     OK
+=obtervalorgrafo        grafo1   char3	   OK
+=esvaziargrafo	        grafo1	           OK
+
+== Grafo 1: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo1 	 char2     OK
+=irparaverticecomvalor  grafo1	 char5     NaoAchou
+=irparaverticecomvalor  grafo1	 char1     NaoAchou
+=esvaziargrafo	        grafo1	           OK
+
+== Grafo 1: Percorrer Grafo
+=inserirverticeorigem   grafo1	 char1    OK
+=inserirvertice	        grafo1   char3	1 OK
+=percorregrafo		grafo1	   1	  OK
+=obtervalorgrafo        grafo1   char3	   OK
+=esvaziargrafo	        grafo1	           OK
+
+== Grafo 1: Excluir vértice origem
+=inserirverticeorigem          grafo1	char1      OK
+=inserirverticeorigem          grafo1	char1      OK
+=excluirverticeorigemcorrente  grafo1   0          OK
+=esvaziargrafo	               grafo1	           OK
+
+== Grafo 1: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo1	char1      OK
+=inserirverticeorigem          grafo1	char0      OK
+=irparaverticeorigem 	       grafo1	        1  OK
+=inserirvertice	               grafo1   char2	3  OK
+=excluirverticeorigemcorrente  grafo1   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo1	           OK
+=obtervalorgrafo			   grafo1	char1	   GrafoVazio
+=irparavertice				   grafo1			0  GrafoVazio
+
+
+== Grafo 1: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo1	char1      OK
+=inserirvertice	               grafo1   char2	3  OK
+=inserirvertice	               grafo1   char2	4  OK
+=excluirverticeorigemcorrente  grafo1 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo1  	1          OK
+=excluirverticecorrente        grafo1              OK
+=irparavertice	               grafo1  	2          OK
+=excluirverticecorrente        grafo1              OK
+=excluirverticecorrente        grafo1              OK
+=esvaziargrafo	               grafo1	           GrafoVazio
+
+== Grafo 1: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo1 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo1 	char0	   OK
+=inserirvertice 			   grafo1 	char1 	 1 OK
+=inserirvertice 			   grafo1 	char2 	 2 OK
+=inserirvertice 			   grafo1 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo1 			 3 OK
+=inserirvertice 			   grafo1 	char3 	 3 OK
+=obtervalorgrafo 			   grafo1 	char0 	   OK
+=excluirverticecorrente 	   grafo1   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo1 			 4 OK
+=excluirverticeorigemcorrente  grafo1 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 1: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo1			 1 OK
+=excluirverticecorrente 	   grafo1 	  		   OK
+=irparavertice				   grafo1			 2 OK
+=excluirverticecorrente 	   grafo1 		       OK
+=irparavertice				   grafo1	    	 3 OK
+=excluirverticecorrente 	   grafo1 	  		   OK
+=obternumerovertices 		   grafo1 			 1 OK
+=excluirverticecorrente 	   grafo1  	 		   OK
+=obternumerovertices 		   grafo1 			 0 GrafoVazio
+=inserirvertice 			   grafo1 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo1 	char1 	 2 OK
+=inserirvertice 			   grafo1 	char2 	 3 OK
+=obternumerovertices 		   grafo1 			 3 OK
+
+== Grafo 1: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo1 			   OK
+=criargrafo 				   grafo1 			   OK
+=inserirverticeorigem 		   grafo1 	char1 	   OK
+=inserirverticeorigem 		   grafo1 	char2 	   OK
+=irparavertice 				   grafo1 		 	 1 OK
+=inserirvertice 			   grafo1 	char0 	 1 OK
+=inserirvertice 			   grafo1 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo1 			 0 OK
+=percorregrafo 				   grafo1 			 1 OK
+=percorregrafo 				   grafo1 			-1 OK
+=esvaziargrafo				   grafo1			   OK
+
+== Grafo 1: Testar inserir vértice com identidade 0
+=inserirverticeorigem 		   grafo1 	char1 	   OK
+=inserirvertice	       grafo1   char2	0  ArestaInvalida
+=esvaziargrafo	       grafo1	           OK
+
+== Grafo 1: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo1	 char1    OK
+=inserirciclo		grafo1		  OK
+=percorregrafo		grafo1	   0	  OK
+=inserirvertice	        grafo1   char3	1 OK
+=percorregrafo		grafo1	   1	  OK
+=obtervalorgrafo        grafo1   char3	   OK
+=percorregrafo		grafo1	   -1	  OK
+=obtervalorgrafo        grafo1   char1	   OK
+=inserirvertice	        grafo1   char5	2 OK
+=percorregrafo		grafo1	   2	  OK
+=obtervalorgrafo        grafo1   char5	   OK
+=percorregrafo		grafo1	   -2	  OK
+=obtervalorgrafo        grafo1   char1	   OK
+=percorregrafo		grafo1	   1	  OK
+=obtervalorgrafo        grafo1   char3	   OK
+=percorregrafo		grafo1	   -1	  OK
+=obtervalorgrafo        grafo1   char1	   OK
+=esvaziargrafo	        grafo1	           OK
+
+== Grafo 1: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo1   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo1 	 char2     OK
+=inserirvertice	        grafo1   char1	2  OK
+=obtervalorgrafo	grafo1	 char2	   OK
+=inserirciclo	        grafo1        	   OK
+=inserirciclo	        grafo1        	   OK
+=recuperar
+=inserirciclo	        grafo1        	   ArestaJaExiste
+=percorregrafo		grafo1		0  OK
+=obtervalorgrafo	grafo1	 char2	   OK
+=inserirciclo	        grafo1        	   ArestaJaExiste
+=percorregrafo		grafo1		0  OK
+=obtervalorgrafo	grafo1	 char2     OK
+=inserirverticeorigem   grafo1 	 char2     OK
+=inserirvertice	        grafo1   char3	3  OK
+=irparavertice          grafo1  	3  OK
+=inserirciclo	        grafo1        	   OK
+=percorregrafo		grafo1		0  OK
+=obternumerovertices	grafo1	        4  OK
+=obtervalorgrafo	grafo1	 char3     OK
+=esvaziargrafo	        grafo1	           OK
+=inserirciclo	        grafo1        	   GrafoVazio
+
+== Grafo 1: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo1   1 0  ArestaInvalida
+
+==Grafo 1: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo1   char1       OK
+=inserirvertice	        grafo1   char2	1    OK
+=inserirvertice	        grafo1   char3	2    OK
+=inserirvertice	        grafo1   char4	3    OK
+=irparavertice		grafo1	        3    OK
+=inserirvertice	        grafo1   char5	4    OK
+=irparaverticeorigem	grafo1	        0    OK
+=associarvertices	grafo1          4 8  OK
+=irparavertice		grafo1	        1    OK
+=associarvertices	grafo1          2 6  OK
+=associarvertices	grafo1          4 5  OK
+=irparavertice		grafo1	        2    OK
+=associarvertices	grafo1          1 -6 ArestaJaExiste
+=associarvertices	grafo1          3 7  OK
+=irparavertice		grafo1	        4    OK
+=associarvertices	grafo1          0 -8 ArestaJaExiste
+=associarvertices	grafo1          4 9  OK
+=associarvertices	grafo1          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo1	        0    OK
+=percorregrafo		grafo1	        1    OK
+=obtervalorgrafo        grafo1   char2	     OK
+=percorregrafo		grafo1	        6    OK
+=obtervalorgrafo        grafo1   char3	     OK
+=percorregrafo		grafo1	        8    OK
+=recuperar
+=percorregrafo		grafo1	        -6   OK
+=obtervalorgrafo        grafo1   char2	     OK
+=esvaziargrafo	        grafo1		     OK
+=associarvertices	grafo1          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo1          1 1  GrafoVazio
+
+== Grafo 2: Criar Grafo
+=criargrafo 	grafo2		OK
+
+== Grafo 2: Testar criar grafo já existente
+=criargrafo	grafo2		GrafoJaExiste
+
+== Grafo 2: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo2		GrafoVazio
+
+== Grafo 2: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo2   char3	  GrafoVazio
+
+== Grafo 2: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo2  char0  GrafoVazio
+
+== Grafo 2: Testar ir para vértice em grafo vazio
+=irparavertice		grafo2  2  	GrafoVazio
+
+== Grafo 2: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo2	 char5     GrafoVazio
+
+== Grafo 2: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo2    1       OK
+=recuperar
+=obternumerovertices  grafo2    0       GrafoVazio
+
+== Grafo 2: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo2   3       GrafoVazio
+
+== Grafo 2: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo2   GrafoVazio
+
+== Grafo 2: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo2   char0	2 VerticeOrigemAdicionado
+
+== Grafo 2: Inserir vértice origem
+=inserirverticeorigem  grafo2	char0   OK
+
+== Grafo 2: Inserir segundo vértice origem
+=inserirverticeorigem  grafo2	char5   OK
+
+== Grafo 2: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo2	char2   OK
+
+== Grafo 2: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo2   char0	1 OK
+=inserirvertice	       grafo2   char2	3 OK
+=inserirvertice	       grafo2   char3	6 OK
+=inserirvertice	       grafo2   char3	8 OK
+=obternumerovertices   grafo2           8 OK
+
+== Grafo 2: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo2   char0	6 ArestaJaExiste
+
+== Grafo 2: Obter o número de vértices
+=obternumerovertices  grafo2   5         OK
+=recuperar
+=obternumerovertices  grafo2   8         OK
+
+== Grafo 2: Esvaziar grafo
+=esvaziargrafo	      grafo2		OK
+=obternumerovertices  grafo2   0        GrafoVazio
+
+== Grafo 2: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo2	char1     OK
+=inserirvertice	       grafo2   char2	3 OK
+=inserirvertice	       grafo2   char3	6 OK
+=irparavertice	       grafo2  	1         OK
+=obtervalorgrafo       grafo2   char2	  OK
+=esvaziargrafo	       grafo2	          OK
+
+== Grafo 2: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo2	char1     OK
+=irparavertice	       grafo2  	1         NaoAchou
+=esvaziargrafo	       grafo2	          OK
+
+== Grafo 2: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo2	char1     OK
+=inserirverticeorigem  grafo2	char1     OK
+=inserirverticeorigem  grafo2	char1     OK
+=irparaverticeorigem   grafo2  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo2	          OK
+
+== Grafo 2: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo2	char1     OK
+=inserirverticeorigem  grafo2	char2     OK
+=irparaverticeorigem   grafo2  	0         OK
+=obtervalorgrafo       grafo2   char1	  OK
+=irparaverticeorigem   grafo2  	1         OK
+=obtervalorgrafo       grafo2   char2	  OK
+=esvaziargrafo	       grafo2	          OK
+
+== Grafo 2: Ir para vértice com valor dado
+=inserirverticeorigem   grafo2	 char1     OK
+=inserirverticeorigem   grafo2 	 char2     OK
+=inserirvertice	        grafo2   char2	3  OK
+=inserirvertice	        grafo2   char3	6  OK
+=irparaverticecomvalor	grafo2   char1     OK
+=obtervalorgrafo        grafo2   char1	   OK
+=irparaverticecomvalor	grafo2   char3     OK
+=obtervalorgrafo        grafo2   char3	   OK
+=esvaziargrafo	        grafo2	           OK
+
+== Grafo 2: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo2 	 char2     OK
+=irparaverticecomvalor  grafo2	 char5     NaoAchou
+=irparaverticecomvalor  grafo2	 char1     NaoAchou
+=esvaziargrafo	        grafo2	           OK
+
+== Grafo 2: Percorrer Grafo
+=inserirverticeorigem   grafo2	 char1    OK
+=inserirvertice	        grafo2   char3	1 OK
+=percorregrafo		grafo2	   1	  OK
+=obtervalorgrafo        grafo2   char3	   OK
+=esvaziargrafo	        grafo2	           OK
+
+== Grafo 2: Excluir vértice origem
+=inserirverticeorigem          grafo2	char1      OK
+=inserirverticeorigem          grafo2	char1      OK
+=excluirverticeorigemcorrente  grafo2   0          OK
+=esvaziargrafo	               grafo2	           OK
+
+== Grafo 2: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo2	char1      OK
+=inserirverticeorigem          grafo2	char0      OK
+=irparaverticeorigem 	       grafo2	        1  OK
+=inserirvertice	               grafo2   char2	3  OK
+=excluirverticeorigemcorrente  grafo2   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo2	           OK
+=obtervalorgrafo			   grafo2	char1	   GrafoVazio
+=irparavertice				   grafo2			0  GrafoVazio
+
+
+== Grafo 2: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo2	char1      OK
+=inserirvertice	               grafo2   char2	3  OK
+=inserirvertice	               grafo2   char2	4  OK
+=excluirverticeorigemcorrente  grafo2 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo2  	1          OK
+=excluirverticecorrente        grafo2              OK
+=irparavertice	               grafo2  	2          OK
+=excluirverticecorrente        grafo2              OK
+=excluirverticecorrente        grafo2              OK
+=esvaziargrafo	               grafo2	           GrafoVazio
+
+== Grafo 2: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo2 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo2 	char0	   OK
+=inserirvertice 			   grafo2 	char1 	 1 OK
+=inserirvertice 			   grafo2 	char2 	 2 OK
+=inserirvertice 			   grafo2 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo2 			 3 OK
+=inserirvertice 			   grafo2 	char3 	 3 OK
+=obtervalorgrafo 			   grafo2 	char0 	   OK
+=excluirverticecorrente 	   grafo2   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo2 			 4 OK
+=excluirverticeorigemcorrente  grafo2 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 2: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo2			 1 OK
+=excluirverticecorrente 	   grafo2 	  		   OK
+=irparavertice				   grafo2			 2 OK
+=excluirverticecorrente 	   grafo2 		       OK
+=irparavertice				   grafo2	    	 3 OK
+=excluirverticecorrente 	   grafo2 	  		   OK
+=obternumerovertices 		   grafo2 			 1 OK
+=excluirverticecorrente 	   grafo2  	 		   OK
+=obternumerovertices 		   grafo2 			 0 GrafoVazio
+=inserirvertice 			   grafo2 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo2 	char1 	 2 OK
+=inserirvertice 			   grafo2 	char2 	 3 OK
+=obternumerovertices 		   grafo2 			 3 OK
+
+== Grafo 2: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo2 			   OK
+=criargrafo 				   grafo2 			   OK
+=inserirverticeorigem 		   grafo2 	char1 	   OK
+=inserirverticeorigem 		   grafo2 	char2 	   OK
+=irparavertice 				   grafo2 		 	 1 OK
+=inserirvertice 			   grafo2 	char0 	 1 OK
+=inserirvertice 			   grafo2 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo2 			 0 OK
+=percorregrafo 				   grafo2 			 1 OK
+=percorregrafo 				   grafo2 			-1 OK
+=esvaziargrafo				   grafo2			   OK
+
+== Grafo 2: Testar inserir vértice com identidade 0
+=inserirverticeorigem  grafo2	char0   OK
+=inserirvertice	        grafo2   char2	0  ArestaInvalida
+=esvaziargrafo	       grafo2	          OK
+
+== Grafo 2: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo2	 char1    OK
+=inserirciclo		grafo2		  OK
+=percorregrafo		grafo2	   0	  OK
+=inserirvertice	        grafo2   char3	1 OK
+=percorregrafo		grafo2	   1	  OK
+=obtervalorgrafo        grafo2   char3	   OK
+=percorregrafo		grafo2	   -1	  OK
+=obtervalorgrafo        grafo2   char1	   OK
+=inserirvertice	        grafo2   char5	2 OK
+=percorregrafo		grafo2	   2	  OK
+=obtervalorgrafo        grafo2   char5	   OK
+=percorregrafo		grafo2	   -2	  OK
+=obtervalorgrafo        grafo2   char1	   OK
+=percorregrafo		grafo2	   1	  OK
+=obtervalorgrafo        grafo2   char3	   OK
+=percorregrafo		grafo2	   -1	  OK
+=obtervalorgrafo        grafo2   char1	   OK
+=esvaziargrafo	        grafo2	           OK
+
+== Grafo 2: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo2   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo2 	 char2     OK
+=inserirvertice	        grafo2   char1	2  OK
+=obtervalorgrafo	grafo2	 char2	   OK
+=inserirciclo	        grafo2        	   OK
+=inserirciclo	        grafo2        	   OK
+=recuperar
+=inserirciclo	        grafo2        	   ArestaJaExiste
+=percorregrafo		grafo2		0  OK
+=obtervalorgrafo	grafo2	 char2	   OK
+=inserirciclo	        grafo2        	   ArestaJaExiste
+=percorregrafo		grafo2		0  OK
+=obtervalorgrafo	grafo2	 char2     OK
+=inserirverticeorigem   grafo2 	 char2     OK
+=inserirvertice	        grafo2   char3	3  OK
+=irparavertice          grafo2  	3  OK
+=inserirciclo	        grafo2        	   OK
+=percorregrafo		grafo2		0  OK
+=obternumerovertices	grafo2	        4  OK
+=obtervalorgrafo	grafo2	 char3     OK
+=esvaziargrafo	        grafo2	           OK
+=inserirciclo	        grafo2        	   GrafoVazio
+
+== Grafo 2: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo2   1 0  ArestaInvalida
+
+==Grafo 2: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo2   char1       OK
+=inserirvertice	        grafo2   char2	1    OK
+=inserirvertice	        grafo2   char3	2    OK
+=inserirvertice	        grafo2   char4	3    OK
+=irparavertice		grafo2	        3    OK
+=inserirvertice	        grafo2   char5	4    OK
+=irparaverticeorigem	grafo2	        0    OK
+=associarvertices	grafo2          4 8  OK
+=irparavertice		grafo2	        1    OK
+=associarvertices	grafo2          2 6  OK
+=associarvertices	grafo2          4 5  OK
+=irparavertice		grafo2	        2    OK
+=associarvertices	grafo2          1 -6 ArestaJaExiste
+=associarvertices	grafo2          3 7  OK
+=irparavertice		grafo2	        4    OK
+=associarvertices	grafo2          0 -8 ArestaJaExiste
+=associarvertices	grafo2          4 9  OK
+=associarvertices	grafo2          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo2	        0    OK
+=percorregrafo		grafo2	        1    OK
+=obtervalorgrafo        grafo2   char2	     OK
+=percorregrafo		grafo2	        6    OK
+=obtervalorgrafo        grafo2   char3	     OK
+=percorregrafo		grafo2	        8    OK
+=recuperar
+=percorregrafo		grafo2	        -6   OK
+=obtervalorgrafo        grafo2   char2	     OK
+=esvaziargrafo	        grafo2		     OK
+=associarvertices	grafo2          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo2          1 1  GrafoVazio
+
+== Grafo 3: Criar Grafo
+=criargrafo 	grafo3		OK
+
+== Grafo 3: Testar criar grafo já existente
+=criargrafo	grafo3		GrafoJaExiste
+
+== Grafo 3: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo3		GrafoVazio
+
+== Grafo 3: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo3   char3	  GrafoVazio
+
+== Grafo 3: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo3  char0  GrafoVazio
+
+== Grafo 3: Testar ir para vértice em grafo vazio
+=irparavertice		grafo3  2  	GrafoVazio
+
+== Grafo 3: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo3	 char5     GrafoVazio
+
+== Grafo 3: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo3    1       OK
+=recuperar
+=obternumerovertices  grafo3    0       GrafoVazio
+
+== Grafo 3: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo3   3       GrafoVazio
+
+== Grafo 3: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo3   GrafoVazio
+
+== Grafo 3: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo3   char0	2 VerticeOrigemAdicionado
+
+== Grafo 3: Inserir vértice origem
+=inserirverticeorigem  grafo3	char0   OK
+
+== Grafo 3: Inserir segundo vértice origem
+=inserirverticeorigem  grafo3	char5   OK
+
+== Grafo 3: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo3	char2   OK
+
+== Grafo 3: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo3   char0	1 OK
+=inserirvertice	       grafo3   char2	3 OK
+=inserirvertice	       grafo3   char3	6 OK
+=inserirvertice	       grafo3   char3	8 OK
+=obternumerovertices   grafo3           8 OK
+
+== Grafo 3: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo3   char0	6 ArestaJaExiste
+
+== Grafo 3: Obter o número de vértices
+=obternumerovertices  grafo3   5         OK
+=recuperar
+=obternumerovertices  grafo3   8         OK
+
+== Grafo 3: Esvaziar grafo
+=esvaziargrafo	      grafo3		OK
+=obternumerovertices  grafo3   0        GrafoVazio
+
+== Grafo 3: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo3	char1     OK
+=inserirvertice	       grafo3   char2	3 OK
+=inserirvertice	       grafo3   char3	6 OK
+=irparavertice	       grafo3  	1         OK
+=obtervalorgrafo       grafo3   char2	  OK
+=esvaziargrafo	       grafo3	          OK
+
+== Grafo 3: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo3	char1     OK
+=irparavertice	       grafo3  	1         NaoAchou
+=esvaziargrafo	       grafo3	          OK
+
+== Grafo 3: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo3	char1     OK
+=inserirverticeorigem  grafo3	char1     OK
+=inserirverticeorigem  grafo3	char1     OK
+=irparaverticeorigem   grafo3  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo3	          OK
+
+== Grafo 3: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo3	char1     OK
+=inserirverticeorigem  grafo3	char2     OK
+=irparaverticeorigem   grafo3  	0         OK
+=obtervalorgrafo       grafo3   char1	  OK
+=irparaverticeorigem   grafo3  	1         OK
+=obtervalorgrafo       grafo3   char2	  OK
+=esvaziargrafo	       grafo3	          OK
+
+== Grafo 3: Ir para vértice com valor dado
+=inserirverticeorigem   grafo3	 char1     OK
+=inserirverticeorigem   grafo3 	 char2     OK
+=inserirvertice	        grafo3   char2	3  OK
+=inserirvertice	        grafo3   char3	6  OK
+=irparaverticecomvalor	grafo3   char1     OK
+=obtervalorgrafo        grafo3   char1	   OK
+=irparaverticecomvalor	grafo3   char3     OK
+=obtervalorgrafo        grafo3   char3	   OK
+=esvaziargrafo	        grafo3	           OK
+
+== Grafo 3: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo3 	 char2     OK
+=irparaverticecomvalor  grafo3	 char5     NaoAchou
+=irparaverticecomvalor  grafo3	 char1     NaoAchou
+=esvaziargrafo	        grafo3	           OK
+
+== Grafo 3: Percorrer Grafo
+=inserirverticeorigem   grafo3	 char1    OK
+=inserirvertice	        grafo3   char3	1 OK
+=percorregrafo		grafo3	   1	  OK
+=obtervalorgrafo        grafo3   char3	   OK
+=esvaziargrafo	        grafo3	           OK
+
+== Grafo 3: Excluir vértice origem
+=inserirverticeorigem          grafo3	char1      OK
+=inserirverticeorigem          grafo3	char1      OK
+=excluirverticeorigemcorrente  grafo3   0          OK
+=esvaziargrafo	               grafo3	           OK
+
+== Grafo 3: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo3	char1      OK
+=inserirverticeorigem          grafo3	char0      OK
+=irparaverticeorigem 	       grafo3	        1  OK
+=inserirvertice	               grafo3   char2	3  OK
+=excluirverticeorigemcorrente  grafo3   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo3	           OK
+=obtervalorgrafo			   grafo3	char1	   GrafoVazio
+=irparavertice				   grafo3			0  GrafoVazio
+
+
+== Grafo 3: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo3	char1      OK
+=inserirvertice	               grafo3   char2	3  OK
+=inserirvertice	               grafo3   char2	4  OK
+=excluirverticeorigemcorrente  grafo3 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo3  	1          OK
+=excluirverticecorrente        grafo3              OK
+=irparavertice	               grafo3  	2          OK
+=excluirverticecorrente        grafo3              OK
+=excluirverticecorrente        grafo3              OK
+=esvaziargrafo	               grafo3	           GrafoVazio
+
+== Grafo 3: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo3 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo3 	char0	   OK
+=inserirvertice 			   grafo3 	char1 	 1 OK
+=inserirvertice 			   grafo3 	char2 	 2 OK
+=inserirvertice 			   grafo3 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo3 			 3 OK
+=inserirvertice 			   grafo3 	char3 	 3 OK
+=obtervalorgrafo 			   grafo3 	char0 	   OK
+=excluirverticecorrente 	   grafo3   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo3 			 4 OK
+=excluirverticeorigemcorrente  grafo3 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 3: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo3			 1 OK
+=excluirverticecorrente 	   grafo3 	  		   OK
+=irparavertice				   grafo3			 2 OK
+=excluirverticecorrente 	   grafo3 		       OK
+=irparavertice				   grafo3	    	 3 OK
+=excluirverticecorrente 	   grafo3 	  		   OK
+=obternumerovertices 		   grafo3 			 1 OK
+=excluirverticecorrente 	   grafo3  	 		   OK
+=obternumerovertices 		   grafo3 			 0 GrafoVazio
+=inserirvertice 			   grafo3 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo3 	char1 	 2 OK
+=inserirvertice 			   grafo3 	char2 	 3 OK
+=obternumerovertices 		   grafo3 			 3 OK
+
+== Grafo 3: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo3 			   OK
+=criargrafo 				   grafo3 			   OK
+=inserirverticeorigem 		   grafo3 	char1 	   OK
+=inserirverticeorigem 		   grafo3 	char2 	   OK
+=irparavertice 				   grafo3 		 	 1 OK
+=inserirvertice 			   grafo3 	char0 	 1 OK
+=inserirvertice 			   grafo3 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo3 			 0 OK
+=percorregrafo 				   grafo3 			 1 OK
+=percorregrafo 				   grafo3 			-1 OK
+=esvaziargrafo				   grafo3			   OK
+
+== Grafo 3: Testar inserir vértice com identidade 0
+=inserirverticeorigem  grafo3	char5   OK
+=inserirvertice	       grafo3   char2	0 ArestaInvalida
+=esvaziargrafo	       grafo3	          OK
+
+
+== Grafo 3: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo3	 char1    OK
+=inserirciclo		grafo3		  OK
+=percorregrafo		grafo3	   0	  OK
+=inserirvertice	        grafo3   char3	1 OK
+=percorregrafo		grafo3	   1	  OK
+=obtervalorgrafo        grafo3   char3	   OK
+=percorregrafo		grafo3	   -1	  OK
+=obtervalorgrafo        grafo3   char1	   OK
+=inserirvertice	        grafo3   char5	2 OK
+=percorregrafo		grafo3	   2	  OK
+=obtervalorgrafo        grafo3   char5	   OK
+=percorregrafo		grafo3	   -2	  OK
+=obtervalorgrafo        grafo3   char1	   OK
+=percorregrafo		grafo3	   1	  OK
+=obtervalorgrafo        grafo3   char3	   OK
+=percorregrafo		grafo3	   -1	  OK
+=obtervalorgrafo        grafo3   char1	   OK
+=esvaziargrafo	        grafo3	           OK
+
+== Grafo 3: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo3   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo3 	 char2     OK
+=inserirvertice	        grafo3   char1	2  OK
+=obtervalorgrafo	grafo3	 char2	   OK
+=inserirciclo	        grafo3        	   OK
+=inserirciclo	        grafo3        	   OK
+=recuperar
+=inserirciclo	        grafo3        	   ArestaJaExiste
+=percorregrafo		grafo3		0  OK
+=obtervalorgrafo	grafo3	 char2	   OK
+=inserirciclo	        grafo3        	   ArestaJaExiste
+=percorregrafo		grafo3		0  OK
+=obtervalorgrafo	grafo3	 char2     OK
+=inserirverticeorigem   grafo3 	 char2     OK
+=inserirvertice	        grafo3   char3	3  OK
+=irparavertice          grafo3  	3  OK
+=inserirciclo	        grafo3        	   OK
+=percorregrafo		grafo3		0  OK
+=obternumerovertices	grafo3	        4  OK
+=obtervalorgrafo	grafo3	 char3     OK
+=esvaziargrafo	        grafo3	           OK
+=inserirciclo	        grafo3        	   GrafoVazio
+
+== Grafo 3: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo3   1 0  ArestaInvalida
+
+==Grafo 3: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo3   char1       OK
+=inserirvertice	        grafo3   char2	1    OK
+=inserirvertice	        grafo3   char3	2    OK
+=inserirvertice	        grafo3   char4	3    OK
+=irparavertice		grafo3	        3    OK
+=inserirvertice	        grafo3   char5	4    OK
+=irparaverticeorigem	grafo3	        0    OK
+=associarvertices	grafo3          4 8  OK
+=irparavertice		grafo3	        1    OK
+=associarvertices	grafo3          2 6  OK
+=associarvertices	grafo3          4 5  OK
+=irparavertice		grafo3	        2    OK
+=associarvertices	grafo3          1 -6 ArestaJaExiste
+=associarvertices	grafo3          3 7  OK
+=irparavertice		grafo3	        4    OK
+=associarvertices	grafo3          0 -8 ArestaJaExiste
+=associarvertices	grafo3          4 9  OK
+=associarvertices	grafo3          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo3	        0    OK
+=percorregrafo		grafo3	        1    OK
+=obtervalorgrafo        grafo3   char2	     OK
+=percorregrafo		grafo3	        6    OK
+=obtervalorgrafo        grafo3   char3	     OK
+=percorregrafo		grafo3	        8    OK
+=recuperar
+=percorregrafo		grafo3	        -6   OK
+=obtervalorgrafo        grafo3   char2	     OK
+=esvaziargrafo	        grafo3		     OK
+=associarvertices	grafo3          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo3          1 1  GrafoVazio
+
+== Grafo 4: Criar Grafo
+=criargrafo 	grafo4		OK
+
+== Grafo 4: Testar criar grafo já existente
+=criargrafo	grafo4		GrafoJaExiste
+
+== Grafo 4: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo4		GrafoVazio
+
+== Grafo 4: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo4   char3	  GrafoVazio
+
+== Grafo 4: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo4  char0  GrafoVazio
+
+== Grafo 4: Testar ir para vértice em grafo vazio
+=irparavertice		grafo4  2  	GrafoVazio
+
+== Grafo 4: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo4	 char5     GrafoVazio
+
+== Grafo 4: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo4    1       OK
+=recuperar
+=obternumerovertices  grafo4    0       GrafoVazio
+
+== Grafo 4: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo4   3       GrafoVazio
+
+== Grafo 4: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo4   GrafoVazio
+
+== Grafo 4: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo4   char0	2 VerticeOrigemAdicionado
+
+== Grafo 4: Inserir vértice origem
+=inserirverticeorigem  grafo4	char0   OK
+
+== Grafo 4: Inserir segundo vértice origem
+=inserirverticeorigem  grafo4	char5   OK
+
+== Grafo 4: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo4	char2   OK
+
+== Grafo 4: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo4   char0	1 OK
+=inserirvertice	       grafo4   char2	3 OK
+=inserirvertice	       grafo4   char3	6 OK
+=inserirvertice	       grafo4   char3	8 OK
+=obternumerovertices   grafo4           8 OK
+
+== Grafo 4: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo4   char0	6 ArestaJaExiste
+
+== Grafo 4: Obter o número de vértices
+=obternumerovertices  grafo4   5         OK
+=recuperar
+=obternumerovertices  grafo4   8         OK
+
+== Grafo 4: Esvaziar grafo
+=esvaziargrafo	      grafo4		OK
+=obternumerovertices  grafo4   0        GrafoVazio
+
+== Grafo 4: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo4	char1     OK
+=inserirvertice	       grafo4   char2	3 OK
+=inserirvertice	       grafo4   char3	6 OK
+=irparavertice	       grafo4  	1         OK
+=obtervalorgrafo       grafo4   char2	  OK
+=esvaziargrafo	       grafo4	          OK
+
+== Grafo 4: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo4	char1     OK
+=irparavertice	       grafo4  	1         NaoAchou
+=esvaziargrafo	       grafo4	          OK
+
+== Grafo 4: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo4	char1     OK
+=inserirverticeorigem  grafo4	char1     OK
+=inserirverticeorigem  grafo4	char1     OK
+=irparaverticeorigem   grafo4  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo4	          OK
+
+== Grafo 4: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo4	char1     OK
+=inserirverticeorigem  grafo4	char2     OK
+=irparaverticeorigem   grafo4  	0         OK
+=obtervalorgrafo       grafo4   char1	  OK
+=irparaverticeorigem   grafo4  	1         OK
+=obtervalorgrafo       grafo4   char2	  OK
+=esvaziargrafo	       grafo4	          OK
+
+== Grafo 4: Ir para vértice com valor dado
+=inserirverticeorigem   grafo4	 char1     OK
+=inserirverticeorigem   grafo4 	 char2     OK
+=inserirvertice	        grafo4   char2	3  OK
+=inserirvertice	        grafo4   char3	6  OK
+=irparaverticecomvalor	grafo4   char1     OK
+=obtervalorgrafo        grafo4   char1	   OK
+=irparaverticecomvalor	grafo4   char3     OK
+=obtervalorgrafo        grafo4   char3	   OK
+=esvaziargrafo	        grafo4	           OK
+
+== Grafo 4: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo4 	 char2     OK
+=irparaverticecomvalor  grafo4	 char5     NaoAchou
+=irparaverticecomvalor  grafo4	 char1     NaoAchou
+=esvaziargrafo	        grafo4	           OK
+
+== Grafo 4: Percorrer Grafo
+=inserirverticeorigem   grafo4	 char1    OK
+=inserirvertice	        grafo4   char3	1 OK
+=percorregrafo		grafo4	   1	  OK
+=obtervalorgrafo        grafo4   char3	   OK
+=esvaziargrafo	        grafo4	           OK
+
+== Grafo 4: Excluir vértice origem
+=inserirverticeorigem          grafo4	char1      OK
+=inserirverticeorigem          grafo4	char1      OK
+=excluirverticeorigemcorrente  grafo4   0          OK
+=esvaziargrafo	               grafo4	           OK
+
+== Grafo 4: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo4	char1      OK
+=inserirverticeorigem          grafo4	char0      OK
+=irparaverticeorigem 	       grafo4	        1  OK
+=inserirvertice	               grafo4   char2	3  OK
+=excluirverticeorigemcorrente  grafo4   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo4	           OK
+=obtervalorgrafo			   grafo4	char1	   GrafoVazio
+=irparavertice				   grafo4			0  GrafoVazio
+
+
+== Grafo 4: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo4	char1      OK
+=inserirvertice	               grafo4   char2	3  OK
+=inserirvertice	               grafo4   char2	4  OK
+=excluirverticeorigemcorrente  grafo4 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo4  	1          OK
+=excluirverticecorrente        grafo4              OK
+=irparavertice	               grafo4  	2          OK
+=excluirverticecorrente        grafo4              OK
+=excluirverticecorrente        grafo4              OK
+=esvaziargrafo	               grafo4	           GrafoVazio
+
+== Grafo 4: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo4 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo4 	char0	   OK
+=inserirvertice 			   grafo4 	char1 	 1 OK
+=inserirvertice 			   grafo4 	char2 	 2 OK
+=inserirvertice 			   grafo4 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo4 			 3 OK
+=inserirvertice 			   grafo4 	char3 	 3 OK
+=obtervalorgrafo 			   grafo4 	char0 	   OK
+=excluirverticecorrente 	   grafo4   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo4 			 4 OK
+=excluirverticeorigemcorrente  grafo4 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 4: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo4			 1 OK
+=excluirverticecorrente 	   grafo4 	  		   OK
+=irparavertice				   grafo4			 2 OK
+=excluirverticecorrente 	   grafo4 		       OK
+=irparavertice				   grafo4	    	 3 OK
+=excluirverticecorrente 	   grafo4 	  		   OK
+=obternumerovertices 		   grafo4 			 1 OK
+=excluirverticecorrente 	   grafo4  	 		   OK
+=obternumerovertices 		   grafo4 			 0 GrafoVazio
+=inserirvertice 			   grafo4 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo4 	char1 	 2 OK
+=inserirvertice 			   grafo4 	char2 	 3 OK
+=obternumerovertices 		   grafo4 			 3 OK
+
+== Grafo 4: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo4 			   OK
+=criargrafo 				   grafo4 			   OK
+=inserirverticeorigem 		   grafo4 	char1 	   OK
+=inserirverticeorigem 		   grafo4 	char2 	   OK
+=irparavertice 				   grafo4 		 	 1 OK
+=inserirvertice 			   grafo4 	char0 	 1 OK
+=inserirvertice 			   grafo4 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo4 			 0 OK
+=percorregrafo 				   grafo4 			 1 OK
+=percorregrafo 				   grafo4 			-1 OK
+=esvaziargrafo				   grafo4			   OK
+
+== Grafo 4: Testar inserir vértice com identidade 0
+=inserirverticeorigem  grafo4	char5   OK
+=inserirvertice	       grafo4   char2	0 ArestaInvalida
+=esvaziargrafo	       grafo4	          OK
+
+
+== Grafo 4: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo4	 char1    OK
+=inserirciclo		grafo4		  OK
+=percorregrafo		grafo4	   0	  OK
+=inserirvertice	        grafo4   char3	1 OK
+=percorregrafo		grafo4	   1	  OK
+=obtervalorgrafo        grafo4   char3	   OK
+=percorregrafo		grafo4	   -1	  OK
+=obtervalorgrafo        grafo4   char1	   OK
+=inserirvertice	        grafo4   char5	2 OK
+=percorregrafo		grafo4	   2	  OK
+=obtervalorgrafo        grafo4   char5	   OK
+=percorregrafo		grafo4	   -2	  OK
+=obtervalorgrafo        grafo4   char1	   OK
+=percorregrafo		grafo4	   1	  OK
+=obtervalorgrafo        grafo4   char3	   OK
+=percorregrafo		grafo4	   -1	  OK
+=obtervalorgrafo        grafo4   char1	   OK
+=esvaziargrafo	        grafo4	           OK
+
+== Grafo 4: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo4   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo4 	 char2     OK
+=inserirvertice	        grafo4   char1	2  OK
+=obtervalorgrafo	grafo4	 char2	   OK
+=inserirciclo	        grafo4        	   OK
+=inserirciclo	        grafo4        	   OK
+=recuperar
+=inserirciclo	        grafo4        	   ArestaJaExiste
+=percorregrafo		grafo4		0  OK
+=obtervalorgrafo	grafo4	 char2	   OK
+=inserirciclo	        grafo4        	   ArestaJaExiste
+=percorregrafo		grafo4		0  OK
+=obtervalorgrafo	grafo4	 char2     OK
+=inserirverticeorigem   grafo4 	 char2     OK
+=inserirvertice	        grafo4   char3	3  OK
+=irparavertice          grafo4  	3  OK
+=inserirciclo	        grafo4        	   OK
+=percorregrafo		grafo4		0  OK
+=obternumerovertices	grafo4	        4  OK
+=obtervalorgrafo	grafo4	 char3     OK
+=esvaziargrafo	        grafo4	           OK
+=inserirciclo	        grafo4        	   GrafoVazio
+
+== Grafo 4: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo4   1 0  ArestaInvalida
+
+==Grafo 4: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo4   char1       OK
+=inserirvertice	        grafo4   char2	1    OK
+=inserirvertice	        grafo4   char3	2    OK
+=inserirvertice	        grafo4   char4	3    OK
+=irparavertice		grafo4	        3    OK
+=inserirvertice	        grafo4   char5	4    OK
+=irparaverticeorigem	grafo4	        0    OK
+=associarvertices	grafo4          4 8  OK
+=irparavertice		grafo4	        1    OK
+=associarvertices	grafo4          2 6  OK
+=associarvertices	grafo4          4 5  OK
+=irparavertice		grafo4	        2    OK
+=associarvertices	grafo4          1 -6 ArestaJaExiste
+=associarvertices	grafo4          3 7  OK
+=irparavertice		grafo4	        4    OK
+=associarvertices	grafo4          0 -8 ArestaJaExiste
+=associarvertices	grafo4          4 9  OK
+=associarvertices	grafo4          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo4	        0    OK
+=percorregrafo		grafo4	        1    OK
+=obtervalorgrafo        grafo4   char2	     OK
+=percorregrafo		grafo4	        6    OK
+=obtervalorgrafo        grafo4   char3	     OK
+=percorregrafo		grafo4	        8    OK
+=recuperar
+=percorregrafo		grafo4	        -6   OK
+=obtervalorgrafo        grafo4   char2	     OK
+=esvaziargrafo	        grafo4		     OK
+=associarvertices	grafo4          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo4          1 1  GrafoVazio
+
+== Grafo 5: Criar Grafo
+=criargrafo 	grafo5		OK
+
+== Grafo 5: Testar criar grafo já existente
+=criargrafo	grafo5		GrafoJaExiste
+
+== Grafo 5: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo5		GrafoVazio
+
+== Grafo 5: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo5   char3	  GrafoVazio
+
+== Grafo 5: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo5  char0  GrafoVazio
+
+== Grafo 5: Testar ir para vértice em grafo vazio
+=irparavertice		grafo5  2  	GrafoVazio
+
+== Grafo 5: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo5	 char5     GrafoVazio
+
+== Grafo 5: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo5    1       OK
+=recuperar
+=obternumerovertices  grafo5    0       GrafoVazio
+
+== Grafo 5: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo5   3       GrafoVazio
+
+== Grafo 5: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo5   GrafoVazio
+
+== Grafo 5: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo5   char0	2 VerticeOrigemAdicionado
+
+== Grafo 5: Inserir vértice origem
+=inserirverticeorigem  grafo5	char0   OK
+
+== Grafo 5: Inserir segundo vértice origem
+=inserirverticeorigem  grafo5	char5   OK
+
+== Grafo 5: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo5	char2   OK
+
+== Grafo 5: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo5   char0	1 OK
+=inserirvertice	       grafo5   char2	3 OK
+=inserirvertice	       grafo5   char3	6 OK
+=inserirvertice	       grafo5   char3	8 OK
+=obternumerovertices   grafo5           8 OK
+
+== Grafo 5: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo5   char0	6 ArestaJaExiste
+
+== Grafo 5: Obter o número de vértices
+=obternumerovertices  grafo5   5         OK
+=recuperar
+=obternumerovertices  grafo5   8         OK
+
+== Grafo 5: Esvaziar grafo
+=esvaziargrafo	      grafo5		OK
+=obternumerovertices  grafo5   0        GrafoVazio
+
+== Grafo 5: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo5	char1     OK
+=inserirvertice	       grafo5   char2	3 OK
+=inserirvertice	       grafo5   char3	6 OK
+=irparavertice	       grafo5  	1         OK
+=obtervalorgrafo       grafo5   char2	  OK
+=esvaziargrafo	       grafo5	          OK
+
+== Grafo 5: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo5	char1     OK
+=irparavertice	       grafo5  	1         NaoAchou
+=esvaziargrafo	       grafo5	          OK
+
+== Grafo 5: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo5	char1     OK
+=inserirverticeorigem  grafo5	char1     OK
+=inserirverticeorigem  grafo5	char1     OK
+=irparaverticeorigem   grafo5  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo5	          OK
+
+== Grafo 5: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo5	char1     OK
+=inserirverticeorigem  grafo5	char2     OK
+=irparaverticeorigem   grafo5  	0         OK
+=obtervalorgrafo       grafo5   char1	  OK
+=irparaverticeorigem   grafo5  	1         OK
+=obtervalorgrafo       grafo5   char2	  OK
+=esvaziargrafo	       grafo5	          OK
+
+== Grafo 5: Ir para vértice com valor dado
+=inserirverticeorigem   grafo5	 char1     OK
+=inserirverticeorigem   grafo5 	 char2     OK
+=inserirvertice	        grafo5   char2	3  OK
+=inserirvertice	        grafo5   char3	6  OK
+=irparaverticecomvalor	grafo5   char1     OK
+=obtervalorgrafo        grafo5   char1	   OK
+=irparaverticecomvalor	grafo5   char3     OK
+=obtervalorgrafo        grafo5   char3	   OK
+=esvaziargrafo	        grafo5	           OK
+
+== Grafo 5: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo5 	 char2     OK
+=irparaverticecomvalor  grafo5	 char5     NaoAchou
+=irparaverticecomvalor  grafo5	 char1     NaoAchou
+=esvaziargrafo	        grafo5	           OK
+
+== Grafo 5: Percorrer Grafo
+=inserirverticeorigem   grafo5	 char1    OK
+=inserirvertice	        grafo5   char3	1 OK
+=percorregrafo		grafo5	   1	  OK
+=obtervalorgrafo        grafo5   char3	   OK
+=esvaziargrafo	        grafo5	           OK
+
+== Grafo 5: Excluir vértice origem
+=inserirverticeorigem          grafo5	char1      OK
+=inserirverticeorigem          grafo5	char1      OK
+=excluirverticeorigemcorrente  grafo5   0          OK
+=esvaziargrafo	               grafo5	           OK
+
+== Grafo 5: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo5	char1      OK
+=inserirverticeorigem          grafo5	char0      OK
+=irparaverticeorigem 	       grafo5	        1  OK
+=inserirvertice	               grafo5   char2	3  OK
+=excluirverticeorigemcorrente  grafo5   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo5	           OK
+=obtervalorgrafo			   grafo5	char1	   GrafoVazio
+=irparavertice				   grafo5			0  GrafoVazio
+
+
+== Grafo 5: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo5	char1      OK
+=inserirvertice	               grafo5   char2	3  OK
+=inserirvertice	               grafo5   char2	4  OK
+=excluirverticeorigemcorrente  grafo5 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo5  	1          OK
+=excluirverticecorrente        grafo5              OK
+=irparavertice	               grafo5  	2          OK
+=excluirverticecorrente        grafo5              OK
+=excluirverticecorrente        grafo5              OK
+=esvaziargrafo	               grafo5	           GrafoVazio
+
+== Grafo 5: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo5 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo5 	char0	   OK
+=inserirvertice 			   grafo5 	char1 	 1 OK
+=inserirvertice 			   grafo5 	char2 	 2 OK
+=inserirvertice 			   grafo5 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo5 			 3 OK
+=inserirvertice 			   grafo5 	char3 	 3 OK
+=obtervalorgrafo 			   grafo5 	char0 	   OK
+=excluirverticecorrente 	   grafo5   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo5 			 4 OK
+=excluirverticeorigemcorrente  grafo5 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 5: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo5			 1 OK
+=excluirverticecorrente 	   grafo5 	  		   OK
+=irparavertice				   grafo5			 2 OK
+=excluirverticecorrente 	   grafo5 		       OK
+=irparavertice				   grafo5	    	 3 OK
+=excluirverticecorrente 	   grafo5 	  		   OK
+=obternumerovertices 		   grafo5 			 1 OK
+=excluirverticecorrente 	   grafo5  	 		   OK
+=obternumerovertices 		   grafo5 			 0 GrafoVazio
+=inserirvertice 			   grafo5 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo5 	char1 	 2 OK
+=inserirvertice 			   grafo5 	char2 	 3 OK
+=obternumerovertices 		   grafo5 			 3 OK
+
+== Grafo 5: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo5 			   OK
+=criargrafo 				   grafo5 			   OK
+=inserirverticeorigem 		   grafo5 	char1 	   OK
+=inserirverticeorigem 		   grafo5 	char2 	   OK
+=irparavertice 				   grafo5 		 	 1 OK
+=inserirvertice 			   grafo5 	char0 	 1 OK
+=inserirvertice 			   grafo5 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo5 			 0 OK
+=percorregrafo 				   grafo5 			 1 OK
+=percorregrafo 				   grafo5 			-1 OK
+=esvaziargrafo				   grafo5			   OK
+
+== Grafo 5: Testar inserir vértice com identidade 0
+=inserirverticeorigem  grafo5	char5   OK
+=inserirvertice	       grafo5   char2	0  ArestaInvalida
+=esvaziargrafo	       grafo5	           OK
+
+
+== Grafo 5: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo5	 char1    OK
+=inserirciclo		grafo5		  OK
+=percorregrafo		grafo5	   0	  OK
+=inserirvertice	        grafo5   char3	1 OK
+=percorregrafo		grafo5	   1	  OK
+=obtervalorgrafo        grafo5   char3	   OK
+=percorregrafo		grafo5	   -1	  OK
+=obtervalorgrafo        grafo5   char1	   OK
+=inserirvertice	        grafo5   char5	2 OK
+=percorregrafo		grafo5	   2	  OK
+=obtervalorgrafo        grafo5   char5	   OK
+=percorregrafo		grafo5	   -2	  OK
+=obtervalorgrafo        grafo5   char1	   OK
+=percorregrafo		grafo5	   1	  OK
+=obtervalorgrafo        grafo5   char3	   OK
+=percorregrafo		grafo5	   -1	  OK
+=obtervalorgrafo        grafo5   char1	   OK
+=esvaziargrafo	        grafo5	           OK
+
+== Grafo 5: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo5   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo5 	 char2     OK
+=inserirvertice	        grafo5   char1	2  OK
+=obtervalorgrafo	grafo5	 char2	   OK
+=inserirciclo	        grafo5        	   OK
+=inserirciclo	        grafo5        	   OK
+=recuperar
+=inserirciclo	        grafo5        	   ArestaJaExiste
+=percorregrafo		grafo5		0  OK
+=obtervalorgrafo	grafo5	 char2	   OK
+=inserirciclo	        grafo5        	   ArestaJaExiste
+=percorregrafo		grafo5		0  OK
+=obtervalorgrafo	grafo5	 char2     OK
+=inserirverticeorigem   grafo5 	 char2     OK
+=inserirvertice	        grafo5   char3	3  OK
+=irparavertice          grafo5  	3  OK
+=inserirciclo	        grafo5        	   OK
+=percorregrafo		grafo5		0  OK
+=obternumerovertices	grafo5	        4  OK
+=obtervalorgrafo	grafo5	 char3     OK
+=esvaziargrafo	        grafo5	           OK
+=inserirciclo	        grafo5        	   GrafoVazio
+
+== Grafo 5: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo5   1 0  ArestaInvalida
+
+==Grafo 5: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo5   char1       OK
+=inserirvertice	        grafo5   char2	1    OK
+=inserirvertice	        grafo5   char3	2    OK
+=inserirvertice	        grafo5   char4	3    OK
+=irparavertice		grafo5	        3    OK
+=inserirvertice	        grafo5   char5	4    OK
+=irparaverticeorigem	grafo5	        0    OK
+=associarvertices	grafo5          4 8  OK
+=irparavertice		grafo5	        1    OK
+=associarvertices	grafo5          2 6  OK
+=associarvertices	grafo5          4 5  OK
+=irparavertice		grafo5	        2    OK
+=associarvertices	grafo5          1 -6 ArestaJaExiste
+=associarvertices	grafo5          3 7  OK
+=irparavertice		grafo5	        4    OK
+=associarvertices	grafo5          0 -8 ArestaJaExiste
+=associarvertices	grafo5          4 9  OK
+=associarvertices	grafo5          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo5	        0    OK
+=percorregrafo		grafo5	        1    OK
+=obtervalorgrafo        grafo5   char2	     OK
+=percorregrafo		grafo5	        6    OK
+=obtervalorgrafo        grafo5   char3	     OK
+=percorregrafo		grafo5	        8    OK
+=recuperar
+=percorregrafo		grafo5	        -6   OK
+=obtervalorgrafo        grafo5   char2	     OK
+=esvaziargrafo	        grafo5		     OK
+=associarvertices	grafo5          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo5          1 1  GrafoVazio
+
+== Grafo 6: Criar Grafo
+=criargrafo 	grafo6		OK
+
+== Grafo 6: Testar criar grafo já existente
+=criargrafo	grafo6		GrafoJaExiste
+
+== Grafo 6: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo6		GrafoVazio
+
+== Grafo 6: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo6   char3	  GrafoVazio
+
+== Grafo 6: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo6  char0  GrafoVazio
+
+== Grafo 6: Testar ir para vértice em grafo vazio
+=irparavertice		grafo6  2  	GrafoVazio
+
+== Grafo 6: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo6	 char5     GrafoVazio
+
+== Grafo 6: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo6    1       OK
+=recuperar
+=obternumerovertices  grafo6    0       GrafoVazio
+
+== Grafo 6: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo6   3       GrafoVazio
+
+== Grafo 6: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo6   GrafoVazio
+
+== Grafo 6: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo6   char0	2 VerticeOrigemAdicionado
+
+== Grafo 6: Inserir vértice origem
+=inserirverticeorigem  grafo6	char0   OK
+
+== Grafo 6: Inserir segundo vértice origem
+=inserirverticeorigem  grafo6	char5   OK
+
+== Grafo 6: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo6	char2   OK
+
+== Grafo 6: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo6   char0	1 OK
+=inserirvertice	       grafo6   char2	3 OK
+=inserirvertice	       grafo6   char3	6 OK
+=inserirvertice	       grafo6   char3	8 OK
+=obternumerovertices   grafo6           8 OK
+
+== Grafo 6: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo6   char0	6 ArestaJaExiste
+
+== Grafo 6: Obter o número de vértices
+=obternumerovertices  grafo6   5         OK
+=recuperar
+=obternumerovertices  grafo6   8         OK
+
+== Grafo 6: Esvaziar grafo
+=esvaziargrafo	      grafo6		OK
+=obternumerovertices  grafo6   0        GrafoVazio
+
+== Grafo 6: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo6	char1     OK
+=inserirvertice	       grafo6   char2	3 OK
+=inserirvertice	       grafo6   char3	6 OK
+=irparavertice	       grafo6  	1         OK
+=obtervalorgrafo       grafo6   char2	  OK
+=esvaziargrafo	       grafo6	          OK
+
+== Grafo 6: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo6	char1     OK
+=irparavertice	       grafo6  	1         NaoAchou
+=esvaziargrafo	       grafo6	          OK
+
+== Grafo 6: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo6	char1     OK
+=inserirverticeorigem  grafo6	char1     OK
+=inserirverticeorigem  grafo6	char1     OK
+=irparaverticeorigem   grafo6  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo6	          OK
+
+== Grafo 6: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo6	char1     OK
+=inserirverticeorigem  grafo6	char2     OK
+=irparaverticeorigem   grafo6  	0         OK
+=obtervalorgrafo       grafo6   char1	  OK
+=irparaverticeorigem   grafo6  	1         OK
+=obtervalorgrafo       grafo6   char2	  OK
+=esvaziargrafo	       grafo6	          OK
+
+== Grafo 6: Ir para vértice com valor dado
+=inserirverticeorigem   grafo6	 char1     OK
+=inserirverticeorigem   grafo6 	 char2     OK
+=inserirvertice	        grafo6   char2	3  OK
+=inserirvertice	        grafo6   char3	6  OK
+=irparaverticecomvalor	grafo6   char1     OK
+=obtervalorgrafo        grafo6   char1	   OK
+=irparaverticecomvalor	grafo6   char3     OK
+=obtervalorgrafo        grafo6   char3	   OK
+=esvaziargrafo	        grafo6	           OK
+
+== Grafo 6: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo6 	 char2     OK
+=irparaverticecomvalor  grafo6	 char5     NaoAchou
+=irparaverticecomvalor  grafo6	 char1     NaoAchou
+=esvaziargrafo	        grafo6	           OK
+
+== Grafo 6: Percorrer Grafo
+=inserirverticeorigem   grafo6	 char1    OK
+=inserirvertice	        grafo6   char3	1 OK
+=percorregrafo		grafo6	   1	  OK
+=obtervalorgrafo        grafo6   char3	   OK
+=esvaziargrafo	        grafo6	           OK
+
+== Grafo 6: Excluir vértice origem
+=inserirverticeorigem          grafo6	char1      OK
+=inserirverticeorigem          grafo6	char1      OK
+=excluirverticeorigemcorrente  grafo6   0          OK
+=esvaziargrafo	               grafo6	           OK
+
+== Grafo 6: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo6	char1      OK
+=inserirverticeorigem          grafo6	char0      OK
+=irparaverticeorigem 	       grafo6	        1  OK
+=inserirvertice	               grafo6   char2	3  OK
+=excluirverticeorigemcorrente  grafo6   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo6	           OK
+=obtervalorgrafo			   grafo6	char1	   GrafoVazio
+=irparavertice				   grafo6			0  GrafoVazio
+
+
+== Grafo 6: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo6	char1      OK
+=inserirvertice	               grafo6   char2	3  OK
+=inserirvertice	               grafo6   char2	4  OK
+=excluirverticeorigemcorrente  grafo6 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo6  	1          OK
+=excluirverticecorrente        grafo6              OK
+=irparavertice	               grafo6  	2          OK
+=excluirverticecorrente        grafo6              OK
+=excluirverticecorrente        grafo6              OK
+=esvaziargrafo	               grafo6	           GrafoVazio
+
+== Grafo 6: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo6 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo6 	char0	   OK
+=inserirvertice 			   grafo6 	char1 	 1 OK
+=inserirvertice 			   grafo6 	char2 	 2 OK
+=inserirvertice 			   grafo6 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo6 			 3 OK
+=inserirvertice 			   grafo6 	char3 	 3 OK
+=obtervalorgrafo 			   grafo6 	char0 	   OK
+=excluirverticecorrente 	   grafo6   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo6 			 4 OK
+=excluirverticeorigemcorrente  grafo6 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 6: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo6			 1 OK
+=excluirverticecorrente 	   grafo6 	  		   OK
+=irparavertice				   grafo6			 2 OK
+=excluirverticecorrente 	   grafo6 		       OK
+=irparavertice				   grafo6	    	 3 OK
+=excluirverticecorrente 	   grafo6 	  		   OK
+=obternumerovertices 		   grafo6 			 1 OK
+=excluirverticecorrente 	   grafo6  	 		   OK
+=obternumerovertices 		   grafo6 			 0 GrafoVazio
+=inserirvertice 			   grafo6 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo6 	char1 	 2 OK
+=inserirvertice 			   grafo6 	char2 	 3 OK
+=obternumerovertices 		   grafo6 			 3 OK
+
+== Grafo 6: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo6 			   OK
+=criargrafo 				   grafo6 			   OK
+=inserirverticeorigem 		   grafo6 	char1 	   OK
+=inserirverticeorigem 		   grafo6 	char2 	   OK
+=irparavertice 				   grafo6 		 	 1 OK
+=inserirvertice 			   grafo6 	char0 	 1 OK
+=inserirvertice 			   grafo6 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo6 			 0 OK
+=percorregrafo 				   grafo6 			 1 OK
+=percorregrafo 				   grafo6 			-1 OK
+=esvaziargrafo				   grafo6			   OK
+
+== Grafo 6: Testar inserir vértice com identidade 0
+=inserirverticeorigem  grafo6	char5   OK
+=inserirvertice	       grafo6   char2	0  ArestaInvalida
+=esvaziargrafo	       grafo6	           OK
+
+
+== Grafo 6: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo6	 char1    OK
+=inserirciclo		grafo6		  OK
+=percorregrafo		grafo6	   0	  OK
+=inserirvertice	        grafo6   char3	1 OK
+=percorregrafo		grafo6	   1	  OK
+=obtervalorgrafo        grafo6   char3	   OK
+=percorregrafo		grafo6	   -1	  OK
+=obtervalorgrafo        grafo6   char1	   OK
+=inserirvertice	        grafo6   char5	2 OK
+=percorregrafo		grafo6	   2	  OK
+=obtervalorgrafo        grafo6   char5	   OK
+=percorregrafo		grafo6	   -2	  OK
+=obtervalorgrafo        grafo6   char1	   OK
+=percorregrafo		grafo6	   1	  OK
+=obtervalorgrafo        grafo6   char3	   OK
+=percorregrafo		grafo6	   -1	  OK
+=obtervalorgrafo        grafo6   char1	   OK
+=esvaziargrafo	        grafo6	           OK
+
+== Grafo 6: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo6   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo6 	 char2     OK
+=inserirvertice	        grafo6   char1	2  OK
+=obtervalorgrafo	grafo6	 char2	   OK
+=inserirciclo	        grafo6        	   OK
+=inserirciclo	        grafo6        	   OK
+=recuperar
+=inserirciclo	        grafo6        	   ArestaJaExiste
+=percorregrafo		grafo6		0  OK
+=obtervalorgrafo	grafo6	 char2	   OK
+=inserirciclo	        grafo6        	   ArestaJaExiste
+=percorregrafo		grafo6		0  OK
+=obtervalorgrafo	grafo6	 char2     OK
+=inserirverticeorigem   grafo6 	 char2     OK
+=inserirvertice	        grafo6   char3	3  OK
+=irparavertice          grafo6  	3  OK
+=inserirciclo	        grafo6        	   OK
+=percorregrafo		grafo6		0  OK
+=obternumerovertices	grafo6	        4  OK
+=obtervalorgrafo	grafo6	 char3     OK
+=esvaziargrafo	        grafo6	           OK
+=inserirciclo	        grafo6        	   GrafoVazio
+
+== Grafo 6: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo6   1 0  ArestaInvalida
+
+==Grafo 6: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo6   char1       OK
+=inserirvertice	        grafo6   char2	1    OK
+=inserirvertice	        grafo6   char3	2    OK
+=inserirvertice	        grafo6   char4	3    OK
+=irparavertice		grafo6	        3    OK
+=inserirvertice	        grafo6   char5	4    OK
+=irparaverticeorigem	grafo6	        0    OK
+=associarvertices	grafo6          4 8  OK
+=irparavertice		grafo6	        1    OK
+=associarvertices	grafo6          2 6  OK
+=associarvertices	grafo6          4 5  OK
+=irparavertice		grafo6	        2    OK
+=associarvertices	grafo6          1 -6 ArestaJaExiste
+=associarvertices	grafo6          3 7  OK
+=irparavertice		grafo6	        4    OK
+=associarvertices	grafo6          0 -8 ArestaJaExiste
+=associarvertices	grafo6          4 9  OK
+=associarvertices	grafo6          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo6	        0    OK
+=percorregrafo		grafo6	        1    OK
+=obtervalorgrafo        grafo6   char2	     OK
+=percorregrafo		grafo6	        6    OK
+=obtervalorgrafo        grafo6   char3	     OK
+=percorregrafo		grafo6	        8    OK
+=recuperar
+=percorregrafo		grafo6	        -6   OK
+=obtervalorgrafo        grafo6   char2	     OK
+=esvaziargrafo	        grafo6		     OK
+=associarvertices	grafo6          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo6          1 1  GrafoVazio
+
+== Grafo 7: Criar Grafo
+=criargrafo 	grafo7		OK
+
+== Grafo 7: Testar criar grafo já existente
+=criargrafo	grafo7		GrafoJaExiste
+
+== Grafo 7: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo7		GrafoVazio
+
+== Grafo 7: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo7   char3	  GrafoVazio
+
+== Grafo 7: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo7  char0  GrafoVazio
+
+== Grafo 7: Testar ir para vértice em grafo vazio
+=irparavertice		grafo7  2  	GrafoVazio
+
+== Grafo 7: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo7	 char5     GrafoVazio
+
+== Grafo 7: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo7    1       OK
+=recuperar
+=obternumerovertices  grafo7    0       GrafoVazio
+
+== Grafo 7: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo7   3       GrafoVazio
+
+== Grafo 7: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo7   GrafoVazio
+
+== Grafo 7: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo7   char0	2 VerticeOrigemAdicionado
+
+== Grafo 7: Inserir vértice origem
+=inserirverticeorigem  grafo7	char0   OK
+
+== Grafo 7: Inserir segundo vértice origem
+=inserirverticeorigem  grafo7	char5   OK
+
+== Grafo 7: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo7	char2   OK
+
+== Grafo 7: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo7   char0	1 OK
+=inserirvertice	       grafo7   char2	3 OK
+=inserirvertice	       grafo7   char3	6 OK
+=inserirvertice	       grafo7   char3	8 OK
+=obternumerovertices   grafo7           8 OK
+
+== Grafo 7: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo7   char0	6 ArestaJaExiste
+
+== Grafo 7: Obter o número de vértices
+=obternumerovertices  grafo7   5         OK
+=recuperar
+=obternumerovertices  grafo7   8         OK
+
+== Grafo 7: Esvaziar grafo
+=esvaziargrafo	      grafo7		OK
+=obternumerovertices  grafo7   0        GrafoVazio
+
+== Grafo 7: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo7	char1     OK
+=inserirvertice	       grafo7   char2	3 OK
+=inserirvertice	       grafo7   char3	6 OK
+=irparavertice	       grafo7  	1         OK
+=obtervalorgrafo       grafo7   char2	  OK
+=esvaziargrafo	       grafo7	          OK
+
+== Grafo 7: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo7	char1     OK
+=irparavertice	       grafo7  	1         NaoAchou
+=esvaziargrafo	       grafo7	          OK
+
+== Grafo 7: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo7	char1     OK
+=inserirverticeorigem  grafo7	char1     OK
+=inserirverticeorigem  grafo7	char1     OK
+=irparaverticeorigem   grafo7  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo7	          OK
+
+== Grafo 7: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo7	char1     OK
+=inserirverticeorigem  grafo7	char2     OK
+=irparaverticeorigem   grafo7  	0         OK
+=obtervalorgrafo       grafo7   char1	  OK
+=irparaverticeorigem   grafo7  	1         OK
+=obtervalorgrafo       grafo7   char2	  OK
+=esvaziargrafo	       grafo7	          OK
+
+== Grafo 7: Ir para vértice com valor dado
+=inserirverticeorigem   grafo7	 char1     OK
+=inserirverticeorigem   grafo7 	 char2     OK
+=inserirvertice	        grafo7   char2	3  OK
+=inserirvertice	        grafo7   char3	6  OK
+=irparaverticecomvalor	grafo7   char1     OK
+=obtervalorgrafo        grafo7   char1	   OK
+=irparaverticecomvalor	grafo7   char3     OK
+=obtervalorgrafo        grafo7   char3	   OK
+=esvaziargrafo	        grafo7	           OK
+
+== Grafo 7: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo7 	 char2     OK
+=irparaverticecomvalor  grafo7	 char5     NaoAchou
+=irparaverticecomvalor  grafo7	 char1     NaoAchou
+=esvaziargrafo	        grafo7	           OK
+
+== Grafo 7: Percorrer Grafo
+=inserirverticeorigem   grafo7	 char1    OK
+=inserirvertice	        grafo7   char3	1 OK
+=percorregrafo		grafo7	   1	  OK
+=obtervalorgrafo        grafo7   char3	   OK
+=esvaziargrafo	        grafo7	           OK
+
+== Grafo 7: Excluir vértice origem
+=inserirverticeorigem          grafo7	char1      OK
+=inserirverticeorigem          grafo7	char1      OK
+=excluirverticeorigemcorrente  grafo7   0          OK
+=esvaziargrafo	               grafo7	           OK
+
+== Grafo 7: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo7	char1      OK
+=inserirverticeorigem          grafo7	char0      OK
+=irparaverticeorigem 	       grafo7	        1  OK
+=inserirvertice	               grafo7   char2	3  OK
+=excluirverticeorigemcorrente  grafo7   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo7	           OK
+=obtervalorgrafo			   grafo7	char1	   GrafoVazio
+=irparavertice				   grafo7			0  GrafoVazio
+
+
+== Grafo 7: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo7	char1      OK
+=inserirvertice	               grafo7   char2	3  OK
+=inserirvertice	               grafo7   char2	4  OK
+=excluirverticeorigemcorrente  grafo7 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo7  	1          OK
+=excluirverticecorrente        grafo7              OK
+=irparavertice	               grafo7  	2          OK
+=excluirverticecorrente        grafo7              OK
+=excluirverticecorrente        grafo7              OK
+=esvaziargrafo	               grafo7	           GrafoVazio
+
+== Grafo 7: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo7 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo7 	char0	   OK
+=inserirvertice 			   grafo7 	char1 	 1 OK
+=inserirvertice 			   grafo7 	char2 	 2 OK
+=inserirvertice 			   grafo7 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo7 			 3 OK
+=inserirvertice 			   grafo7 	char3 	 3 OK
+=obtervalorgrafo 			   grafo7 	char0 	   OK
+=excluirverticecorrente 	   grafo7   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo7 			 4 OK
+=excluirverticeorigemcorrente  grafo7 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 7: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo7			 1 OK
+=excluirverticecorrente 	   grafo7 	  		   OK
+=irparavertice				   grafo7			 2 OK
+=excluirverticecorrente 	   grafo7 		       OK
+=irparavertice				   grafo7	    	 3 OK
+=excluirverticecorrente 	   grafo7 	  		   OK
+=obternumerovertices 		   grafo7 			 1 OK
+=excluirverticecorrente 	   grafo7  	 		   OK
+=obternumerovertices 		   grafo7 			 0 GrafoVazio
+=inserirvertice 			   grafo7 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo7 	char1 	 2 OK
+=inserirvertice 			   grafo7 	char2 	 3 OK
+=obternumerovertices 		   grafo7 			 3 OK
+
+== Grafo 7: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo7 			   OK
+=criargrafo 				   grafo7 			   OK
+=inserirverticeorigem 		   grafo7 	char1 	   OK
+=inserirverticeorigem 		   grafo7 	char2 	   OK
+=irparavertice 				   grafo7 		 	 1 OK
+=inserirvertice 			   grafo7 	char0 	 1 OK
+=inserirvertice 			   grafo7 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo7 			 0 OK
+=percorregrafo 				   grafo7 			 1 OK
+=percorregrafo 				   grafo7 			-1 OK
+=esvaziargrafo				   grafo7			   OK
+
+== Grafo 7: Testar inserir vértice com identidade 0
+=inserirverticeorigem  grafo7	char5   OK
+=inserirvertice	       grafo7   char2	0  ArestaInvalida
+=esvaziargrafo	       grafo7	           OK
+
+
+== Grafo 7: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo7	 char1    OK
+=inserirciclo		grafo7		  OK
+=percorregrafo		grafo7	   0	  OK
+=inserirvertice	        grafo7   char3	1 OK
+=percorregrafo		grafo7	   1	  OK
+=obtervalorgrafo        grafo7   char3	   OK
+=percorregrafo		grafo7	   -1	  OK
+=obtervalorgrafo        grafo7   char1	   OK
+=inserirvertice	        grafo7   char5	2 OK
+=percorregrafo		grafo7	   2	  OK
+=obtervalorgrafo        grafo7   char5	   OK
+=percorregrafo		grafo7	   -2	  OK
+=obtervalorgrafo        grafo7   char1	   OK
+=percorregrafo		grafo7	   1	  OK
+=obtervalorgrafo        grafo7   char3	   OK
+=percorregrafo		grafo7	   -1	  OK
+=obtervalorgrafo        grafo7   char1	   OK
+=esvaziargrafo	        grafo7	           OK
+
+== Grafo 7: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo7   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo7 	 char2     OK
+=inserirvertice	        grafo7   char1	2  OK
+=obtervalorgrafo	grafo7	 char2	   OK
+=inserirciclo	        grafo7        	   OK
+=inserirciclo	        grafo7        	   OK
+=recuperar
+=inserirciclo	        grafo7        	   ArestaJaExiste
+=percorregrafo		grafo7		0  OK
+=obtervalorgrafo	grafo7	 char2	   OK
+=inserirciclo	        grafo7        	   ArestaJaExiste
+=percorregrafo		grafo7		0  OK
+=obtervalorgrafo	grafo7	 char2     OK
+=inserirverticeorigem   grafo7 	 char2     OK
+=inserirvertice	        grafo7   char3	3  OK
+=irparavertice          grafo7  	3  OK
+=inserirciclo	        grafo7        	   OK
+=percorregrafo		grafo7		0  OK
+=obternumerovertices	grafo7	        4  OK
+=obtervalorgrafo	grafo7	 char3     OK
+=esvaziargrafo	        grafo7	           OK
+=inserirciclo	        grafo7        	   GrafoVazio
+
+== Grafo 7: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo7   1 0  ArestaInvalida
+
+==Grafo 7: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo7   char1       OK
+=inserirvertice	        grafo7   char2	1    OK
+=inserirvertice	        grafo7   char3	2    OK
+=inserirvertice	        grafo7   char4	3    OK
+=irparavertice		grafo7	        3    OK
+=inserirvertice	        grafo7   char5	4    OK
+=irparaverticeorigem	grafo7	        0    OK
+=associarvertices	grafo7          4 8  OK
+=irparavertice		grafo7	        1    OK
+=associarvertices	grafo7          2 6  OK
+=associarvertices	grafo7          4 5  OK
+=irparavertice		grafo7	        2    OK
+=associarvertices	grafo7          1 -6 ArestaJaExiste
+=associarvertices	grafo7          3 7  OK
+=irparavertice		grafo7	        4    OK
+=associarvertices	grafo7          0 -8 ArestaJaExiste
+=associarvertices	grafo7          4 9  OK
+=associarvertices	grafo7          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo7	        0    OK
+=percorregrafo		grafo7	        1    OK
+=obtervalorgrafo        grafo7   char2	     OK
+=percorregrafo		grafo7	        6    OK
+=obtervalorgrafo        grafo7   char3	     OK
+=percorregrafo		grafo7	        8    OK
+=recuperar
+=percorregrafo		grafo7	        -6   OK
+=obtervalorgrafo        grafo7   char2	     OK
+=esvaziargrafo	        grafo7		     OK
+=associarvertices	grafo7          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo7          1 1  GrafoVazio
+
+== Grafo 8: Criar Grafo
+=criargrafo 	grafo8		OK
+
+== Grafo 8: Testar criar grafo já existente
+=criargrafo	grafo8		GrafoJaExiste
+
+== Grafo 8: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo8		GrafoVazio
+
+== Grafo 8: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo8   char3	  GrafoVazio
+
+== Grafo 8: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo8  char0  GrafoVazio
+
+== Grafo 8: Testar ir para vértice em grafo vazio
+=irparavertice		grafo8  2  	GrafoVazio
+
+== Grafo 8: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo8	 char5     GrafoVazio
+
+== Grafo 8: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo8    1       OK
+=recuperar
+=obternumerovertices  grafo8    0       GrafoVazio
+
+== Grafo 8: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo8   3       GrafoVazio
+
+== Grafo 8: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo8   GrafoVazio
+
+== Grafo 8: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo8   char0	2 VerticeOrigemAdicionado
+
+== Grafo 8: Inserir vértice origem
+=inserirverticeorigem  grafo8	char0   OK
+
+== Grafo 8: Inserir segundo vértice origem
+=inserirverticeorigem  grafo8	char5   OK
+
+== Grafo 8: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo8	char2   OK
+
+== Grafo 8: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo8   char0	1 OK
+=inserirvertice	       grafo8   char2	3 OK
+=inserirvertice	       grafo8   char3	6 OK
+=inserirvertice	       grafo8   char3	8 OK
+=obternumerovertices   grafo8           8 OK
+
+== Grafo 8: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo8   char0	6 ArestaJaExiste
+
+== Grafo 8: Obter o número de vértices
+=obternumerovertices  grafo8   5         OK
+=recuperar
+=obternumerovertices  grafo8   8         OK
+
+== Grafo 8: Esvaziar grafo
+=esvaziargrafo	      grafo8		OK
+=obternumerovertices  grafo8   0        GrafoVazio
+
+== Grafo 8: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo8	char1     OK
+=inserirvertice	       grafo8   char2	3 OK
+=inserirvertice	       grafo8   char3	6 OK
+=irparavertice	       grafo8  	1         OK
+=obtervalorgrafo       grafo8   char2	  OK
+=esvaziargrafo	       grafo8	          OK
+
+== Grafo 8: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo8	char1     OK
+=irparavertice	       grafo8  	1         NaoAchou
+=esvaziargrafo	       grafo8	          OK
+
+== Grafo 8: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo8	char1     OK
+=inserirverticeorigem  grafo8	char1     OK
+=inserirverticeorigem  grafo8	char1     OK
+=irparaverticeorigem   grafo8  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo8	          OK
+
+== Grafo 8: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo8	char1     OK
+=inserirverticeorigem  grafo8	char2     OK
+=irparaverticeorigem   grafo8  	0         OK
+=obtervalorgrafo       grafo8   char1	  OK
+=irparaverticeorigem   grafo8  	1         OK
+=obtervalorgrafo       grafo8   char2	  OK
+=esvaziargrafo	       grafo8	          OK
+
+== Grafo 8: Ir para vértice com valor dado
+=inserirverticeorigem   grafo8	 char1     OK
+=inserirverticeorigem   grafo8 	 char2     OK
+=inserirvertice	        grafo8   char2	3  OK
+=inserirvertice	        grafo8   char3	6  OK
+=irparaverticecomvalor	grafo8   char1     OK
+=obtervalorgrafo        grafo8   char1	   OK
+=irparaverticecomvalor	grafo8   char3     OK
+=obtervalorgrafo        grafo8   char3	   OK
+=esvaziargrafo	        grafo8	           OK
+
+== Grafo 8: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo8 	 char2     OK
+=irparaverticecomvalor  grafo8	 char5     NaoAchou
+=irparaverticecomvalor  grafo8	 char1     NaoAchou
+=esvaziargrafo	        grafo8	           OK
+
+== Grafo 8: Percorrer Grafo
+=inserirverticeorigem   grafo8	 char1    OK
+=inserirvertice	        grafo8   char3	1 OK
+=percorregrafo		grafo8	   1	  OK
+=obtervalorgrafo        grafo8   char3	   OK
+=esvaziargrafo	        grafo8	           OK
+
+== Grafo 8: Excluir vértice origem
+=inserirverticeorigem          grafo8	char1      OK
+=inserirverticeorigem          grafo8	char1      OK
+=excluirverticeorigemcorrente  grafo8   0          OK
+=esvaziargrafo	               grafo8	           OK
+
+== Grafo 8: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo8	char1      OK
+=inserirverticeorigem          grafo8	char0      OK
+=irparaverticeorigem 	       grafo8	        1  OK
+=inserirvertice	               grafo8   char2	3  OK
+=excluirverticeorigemcorrente  grafo8   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo8	           OK
+=obtervalorgrafo			   grafo8	char1	   GrafoVazio
+=irparavertice				   grafo8			0  GrafoVazio
+
+
+== Grafo 8: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo8	char1      OK
+=inserirvertice	               grafo8   char2	3  OK
+=inserirvertice	               grafo8   char2	4  OK
+=excluirverticeorigemcorrente  grafo8 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo8  	1          OK
+=excluirverticecorrente        grafo8              OK
+=irparavertice	               grafo8  	2          OK
+=excluirverticecorrente        grafo8              OK
+=excluirverticecorrente        grafo8              OK
+=esvaziargrafo	               grafo8	           GrafoVazio
+
+== Grafo 8: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo8 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo8 	char0	   OK
+=inserirvertice 			   grafo8 	char1 	 1 OK
+=inserirvertice 			   grafo8 	char2 	 2 OK
+=inserirvertice 			   grafo8 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo8 			 3 OK
+=inserirvertice 			   grafo8 	char3 	 3 OK
+=obtervalorgrafo 			   grafo8 	char0 	   OK
+=excluirverticecorrente 	   grafo8   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo8 			 4 OK
+=excluirverticeorigemcorrente  grafo8 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 8: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo8			 1 OK
+=excluirverticecorrente 	   grafo8 	  		   OK
+=irparavertice				   grafo8			 2 OK
+=excluirverticecorrente 	   grafo8 		       OK
+=irparavertice				   grafo8	    	 3 OK
+=excluirverticecorrente 	   grafo8 	  		   OK
+=obternumerovertices 		   grafo8 			 1 OK
+=excluirverticecorrente 	   grafo8  	 		   OK
+=obternumerovertices 		   grafo8 			 0 GrafoVazio
+=inserirvertice 			   grafo8 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo8 	char1 	 2 OK
+=inserirvertice 			   grafo8 	char2 	 3 OK
+=obternumerovertices 		   grafo8 			 3 OK
+
+== Grafo 8: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo8 			   OK
+=criargrafo 				   grafo8 			   OK
+=inserirverticeorigem 		   grafo8 	char1 	   OK
+=inserirverticeorigem 		   grafo8 	char2 	   OK
+=irparavertice 				   grafo8 		 	 1 OK
+=inserirvertice 			   grafo8 	char0 	 1 OK
+=inserirvertice 			   grafo8 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo8 			 0 OK
+=percorregrafo 				   grafo8 			 1 OK
+=percorregrafo 				   grafo8 			-1 OK
+=esvaziargrafo				   grafo8			   OK
+
+== Grafo 8: Testar inserir vértice com identidade 0
+=inserirverticeorigem  grafo8	char5   OK
+=inserirvertice	       grafo8   char2	0  ArestaInvalida
+=esvaziargrafo	       grafo8	           OK
+
+
+== Grafo 8: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo8	 char1    OK
+=inserirciclo		grafo8		  OK
+=percorregrafo		grafo8	   0	  OK
+=inserirvertice	        grafo8   char3	1 OK
+=percorregrafo		grafo8	   1	  OK
+=obtervalorgrafo        grafo8   char3	   OK
+=percorregrafo		grafo8	   -1	  OK
+=obtervalorgrafo        grafo8   char1	   OK
+=inserirvertice	        grafo8   char5	2 OK
+=percorregrafo		grafo8	   2	  OK
+=obtervalorgrafo        grafo8   char5	   OK
+=percorregrafo		grafo8	   -2	  OK
+=obtervalorgrafo        grafo8   char1	   OK
+=percorregrafo		grafo8	   1	  OK
+=obtervalorgrafo        grafo8   char3	   OK
+=percorregrafo		grafo8	   -1	  OK
+=obtervalorgrafo        grafo8   char1	   OK
+=esvaziargrafo	        grafo8	           OK
+
+== Grafo 8: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo8   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo8 	 char2     OK
+=inserirvertice	        grafo8   char1	2  OK
+=obtervalorgrafo	grafo8	 char2	   OK
+=inserirciclo	        grafo8        	   OK
+=inserirciclo	        grafo8        	   OK
+=recuperar
+=inserirciclo	        grafo8        	   ArestaJaExiste
+=percorregrafo		grafo8		0  OK
+=obtervalorgrafo	grafo8	 char2	   OK
+=inserirciclo	        grafo8        	   ArestaJaExiste
+=percorregrafo		grafo8		0  OK
+=obtervalorgrafo	grafo8	 char2     OK
+=inserirverticeorigem   grafo8 	 char2     OK
+=inserirvertice	        grafo8   char3	3  OK
+=irparavertice          grafo8  	3  OK
+=inserirciclo	        grafo8        	   OK
+=percorregrafo		grafo8		0  OK
+=obternumerovertices	grafo8	        4  OK
+=obtervalorgrafo	grafo8	 char3     OK
+=esvaziargrafo	        grafo8	           OK
+=inserirciclo	        grafo8        	   GrafoVazio
+
+== Grafo 8: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo8   1 0  ArestaInvalida
+
+==Grafo 8: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo8   char1       OK
+=inserirvertice	        grafo8   char2	1    OK
+=inserirvertice	        grafo8   char3	2    OK
+=inserirvertice	        grafo8   char4	3    OK
+=irparavertice		grafo8	        3    OK
+=inserirvertice	        grafo8   char5	4    OK
+=irparaverticeorigem	grafo8	        0    OK
+=associarvertices	grafo8          4 8  OK
+=irparavertice		grafo8	        1    OK
+=associarvertices	grafo8          2 6  OK
+=associarvertices	grafo8          4 5  OK
+=irparavertice		grafo8	        2    OK
+=associarvertices	grafo8          1 -6 ArestaJaExiste
+=associarvertices	grafo8          3 7  OK
+=irparavertice		grafo8	        4    OK
+=associarvertices	grafo8          0 -8 ArestaJaExiste
+=associarvertices	grafo8          4 9  OK
+=associarvertices	grafo8          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo8	        0    OK
+=percorregrafo		grafo8	        1    OK
+=obtervalorgrafo        grafo8   char2	     OK
+=percorregrafo		grafo8	        6    OK
+=obtervalorgrafo        grafo8   char3	     OK
+=percorregrafo		grafo8	        8    OK
+=recuperar
+=percorregrafo		grafo8	        -6   OK
+=obtervalorgrafo        grafo8   char2	     OK
+=esvaziargrafo	        grafo8		     OK
+=associarvertices	grafo8          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo8          1 1  GrafoVazio
+
+== Grafo 9: Criar Grafo
+=criargrafo 	grafo9		OK
+
+== Grafo 9: Testar criar grafo já existente
+=criargrafo	grafo9		GrafoJaExiste
+
+== Grafo 9: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo9		GrafoVazio
+
+== Grafo 9: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo9   char3	  GrafoVazio
+
+== Grafo 9: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo9  char0  GrafoVazio
+
+== Grafo 9: Testar ir para vértice em grafo vazio
+=irparavertice		grafo9  2  	GrafoVazio
+
+== Grafo 9: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo9	 char5     GrafoVazio
+
+== Grafo 9: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo9    1       OK
+=recuperar
+=obternumerovertices  grafo9    0       GrafoVazio
+
+== Grafo 9: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo9   3       GrafoVazio
+
+== Grafo 9: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo9   GrafoVazio
+
+== Grafo 9: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo9   char0	2 VerticeOrigemAdicionado
+
+== Grafo 9: Inserir vértice origem
+=inserirverticeorigem  grafo9	char0   OK
+
+== Grafo 9: Inserir segundo vértice origem
+=inserirverticeorigem  grafo9	char5   OK
+
+== Grafo 9: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo9	char2   OK
+
+== Grafo 9: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo9   char0	1 OK
+=inserirvertice	       grafo9   char2	3 OK
+=inserirvertice	       grafo9   char3	6 OK
+=inserirvertice	       grafo9   char3	8 OK
+=obternumerovertices   grafo9           8 OK
+
+== Grafo 9: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo9   char0	6 ArestaJaExiste
+
+== Grafo 9: Obter o número de vértices
+=obternumerovertices  grafo9   5         OK
+=recuperar
+=obternumerovertices  grafo9   8         OK
+
+== Grafo 9: Esvaziar grafo
+=esvaziargrafo	      grafo9		OK
+=obternumerovertices  grafo9   0        GrafoVazio
+
+== Grafo 9: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo9	char1     OK
+=inserirvertice	       grafo9   char2	3 OK
+=inserirvertice	       grafo9   char3	6 OK
+=irparavertice	       grafo9  	1         OK
+=obtervalorgrafo       grafo9   char2	  OK
+=esvaziargrafo	       grafo9	          OK
+
+== Grafo 9: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo9	char1     OK
+=irparavertice	       grafo9  	1         NaoAchou
+=esvaziargrafo	       grafo9	          OK
+
+== Grafo 9: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo9	char1     OK
+=inserirverticeorigem  grafo9	char1     OK
+=inserirverticeorigem  grafo9	char1     OK
+=irparaverticeorigem   grafo9  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo9	          OK
+
+== Grafo 9: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo9	char1     OK
+=inserirverticeorigem  grafo9	char2     OK
+=irparaverticeorigem   grafo9  	0         OK
+=obtervalorgrafo       grafo9   char1	  OK
+=irparaverticeorigem   grafo9  	1         OK
+=obtervalorgrafo       grafo9   char2	  OK
+=esvaziargrafo	       grafo9	          OK
+
+== Grafo 9: Ir para vértice com valor dado
+=inserirverticeorigem   grafo9	 char1     OK
+=inserirverticeorigem   grafo9 	 char2     OK
+=inserirvertice	        grafo9   char2	3  OK
+=inserirvertice	        grafo9   char3	6  OK
+=irparaverticecomvalor	grafo9   char1     OK
+=obtervalorgrafo        grafo9   char1	   OK
+=irparaverticecomvalor	grafo9   char3     OK
+=obtervalorgrafo        grafo9   char3	   OK
+=esvaziargrafo	        grafo9	           OK
+
+== Grafo 9: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo9 	 char2     OK
+=irparaverticecomvalor  grafo9	 char5     NaoAchou
+=irparaverticecomvalor  grafo9	 char1     NaoAchou
+=esvaziargrafo	        grafo9	           OK
+
+== Grafo 9: Percorrer Grafo
+=inserirverticeorigem   grafo9	 char1    OK
+=inserirvertice	        grafo9   char3	1 OK
+=percorregrafo		grafo9	   1	  OK
+=obtervalorgrafo        grafo9   char3	   OK
+=esvaziargrafo	        grafo9	           OK
+
+== Grafo 9: Excluir vértice origem
+=inserirverticeorigem          grafo9	char1      OK
+=inserirverticeorigem          grafo9	char1      OK
+=excluirverticeorigemcorrente  grafo9   0          OK
+=esvaziargrafo	               grafo9	           OK
+
+== Grafo 9: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo9	char1      OK
+=inserirverticeorigem          grafo9	char0      OK
+=irparaverticeorigem 	       grafo9	        1  OK
+=inserirvertice	               grafo9   char2	3  OK
+=excluirverticeorigemcorrente  grafo9   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo9	           OK
+=obtervalorgrafo			   grafo9	char1	   GrafoVazio
+=irparavertice				   grafo9			0  GrafoVazio
+
+
+== Grafo 9: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo9	char1      OK
+=inserirvertice	               grafo9   char2	3  OK
+=inserirvertice	               grafo9   char2	4  OK
+=excluirverticeorigemcorrente  grafo9 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo9  	1          OK
+=excluirverticecorrente        grafo9              OK
+=irparavertice	               grafo9  	2          OK
+=excluirverticecorrente        grafo9              OK
+=excluirverticecorrente        grafo9              OK
+=esvaziargrafo	               grafo9	           GrafoVazio
+
+== Grafo 9: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo9 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo9 	char0	   OK
+=inserirvertice 			   grafo9 	char1 	 1 OK
+=inserirvertice 			   grafo9 	char2 	 2 OK
+=inserirvertice 			   grafo9 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo9 			 3 OK
+=inserirvertice 			   grafo9 	char3 	 3 OK
+=obtervalorgrafo 			   grafo9 	char0 	   OK
+=excluirverticecorrente 	   grafo9   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo9 			 4 OK
+=excluirverticeorigemcorrente  grafo9 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 9: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo9			 1 OK
+=excluirverticecorrente 	   grafo9 	  		   OK
+=irparavertice				   grafo9			 2 OK
+=excluirverticecorrente 	   grafo9 		       OK
+=irparavertice				   grafo9	    	 3 OK
+=excluirverticecorrente 	   grafo9 	  		   OK
+=obternumerovertices 		   grafo9 			 1 OK
+=excluirverticecorrente 	   grafo9  	 		   OK
+=obternumerovertices 		   grafo9 			 0 GrafoVazio
+=inserirvertice 			   grafo9 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo9 	char1 	 2 OK
+=inserirvertice 			   grafo9 	char2 	 3 OK
+=obternumerovertices 		   grafo9 			 3 OK
+
+== Grafo 9: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo9 			   OK
+=criargrafo 				   grafo9 			   OK
+=inserirverticeorigem 		   grafo9 	char1 	   OK
+=inserirverticeorigem 		   grafo9 	char2 	   OK
+=irparavertice 				   grafo9 		 	 1 OK
+=inserirvertice 			   grafo9 	char0 	 1 OK
+=inserirvertice 			   grafo9 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo9 			 0 OK
+=percorregrafo 				   grafo9 			 1 OK
+=percorregrafo 				   grafo9 			-1 OK
+=esvaziargrafo				   grafo9			   OK
+
+== Grafo 9: Testar inserir vértice com identidade 0
+=inserirverticeorigem  grafo9	char5   OK
+=inserirvertice	       grafo9   char2	0  ArestaInvalida
+=esvaziargrafo	       grafo9	           OK
+
+
+== Grafo 9: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo9	 char1    OK
+=inserirciclo		grafo9		  OK
+=percorregrafo		grafo9	   0	  OK
+=inserirvertice	        grafo9   char3	1 OK
+=percorregrafo		grafo9	   1	  OK
+=obtervalorgrafo        grafo9   char3	   OK
+=percorregrafo		grafo9	   -1	  OK
+=obtervalorgrafo        grafo9   char1	   OK
+=inserirvertice	        grafo9   char5	2 OK
+=percorregrafo		grafo9	   2	  OK
+=obtervalorgrafo        grafo9   char5	   OK
+=percorregrafo		grafo9	   -2	  OK
+=obtervalorgrafo        grafo9   char1	   OK
+=percorregrafo		grafo9	   1	  OK
+=obtervalorgrafo        grafo9   char3	   OK
+=percorregrafo		grafo9	   -1	  OK
+=obtervalorgrafo        grafo9   char1	   OK
+=esvaziargrafo	        grafo9	           OK
+
+== Grafo 9: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo9   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo9 	 char2     OK
+=inserirvertice	        grafo9   char1	2  OK
+=obtervalorgrafo	grafo9	 char2	   OK
+=inserirciclo	        grafo9        	   OK
+=inserirciclo	        grafo9        	   OK
+=recuperar
+=inserirciclo	        grafo9        	   ArestaJaExiste
+=percorregrafo		grafo9		0  OK
+=obtervalorgrafo	grafo9	 char2	   OK
+=inserirciclo	        grafo9        	   ArestaJaExiste
+=percorregrafo		grafo9		0  OK
+=obtervalorgrafo	grafo9	 char2     OK
+=inserirverticeorigem   grafo9 	 char2     OK
+=inserirvertice	        grafo9   char3	3  OK
+=irparavertice          grafo9  	3  OK
+=inserirciclo	        grafo9        	   OK
+=percorregrafo		grafo9		0  OK
+=obternumerovertices	grafo9	        4  OK
+=obtervalorgrafo	grafo9	 char3     OK
+=esvaziargrafo	        grafo9	           OK
+=inserirciclo	        grafo9        	   GrafoVazio
+
+== Grafo 9: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo9   1 0  ArestaInvalida
+
+==Grafo 9: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo9   char1       OK
+=inserirvertice	        grafo9   char2	1    OK
+=inserirvertice	        grafo9   char3	2    OK
+=inserirvertice	        grafo9   char4	3    OK
+=irparavertice		grafo9	        3    OK
+=inserirvertice	        grafo9   char5	4    OK
+=irparaverticeorigem	grafo9	        0    OK
+=associarvertices	grafo9          4 8  OK
+=irparavertice		grafo9	        1    OK
+=associarvertices	grafo9          2 6  OK
+=associarvertices	grafo9          4 5  OK
+=irparavertice		grafo9	        2    OK
+=associarvertices	grafo9          1 -6 ArestaJaExiste
+=associarvertices	grafo9          3 7  OK
+=irparavertice		grafo9	        4    OK
+=associarvertices	grafo9          0 -8 ArestaJaExiste
+=associarvertices	grafo9          4 9  OK
+=associarvertices	grafo9          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo9	        0    OK
+=percorregrafo		grafo9	        1    OK
+=obtervalorgrafo        grafo9   char2	     OK
+=percorregrafo		grafo9	        6    OK
+=obtervalorgrafo        grafo9   char3	     OK
+=percorregrafo		grafo9	        8    OK
+=recuperar
+=percorregrafo		grafo9	        -6   OK
+=obtervalorgrafo        grafo9   char2	     OK
+=esvaziargrafo	        grafo9		     OK
+=associarvertices	grafo9          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo9          1 1  GrafoVazio
+
+== Grafo 10: Criar Grafo
+=criargrafo 	grafo10		OK
+
+== Grafo 10: Testar criar grafo já existente
+=criargrafo	grafo10		GrafoJaExiste
+
+== Grafo 10: Testar esvaziar grafo vazio
+=esvaziargrafo	grafo10		GrafoVazio
+
+== Grafo 10: Testar obter valor corrente de grafo vazio
+=obtervalorgrafo	grafo10   char3	  GrafoVazio
+
+== Grafo 10: Testar alterar conteúdo do vértice corrente de grafo vazio
+=alterarconteudografo	grafo10  char0  GrafoVazio
+
+== Grafo 10: Testar ir para vértice em grafo vazio
+=irparavertice		grafo10  2  	GrafoVazio
+
+== Grafo 10: Testar ir para vértice com valor em grafo vazio
+=irparaverticecomvalor  grafo10	 char5     GrafoVazio
+
+== Grafo 10: Testar obter o número de vértices de grafo vazio
+=obternumerovertices  grafo10    1       OK
+=recuperar
+=obternumerovertices  grafo10    0       GrafoVazio
+
+== Grafo 10: Tentar excluir vértice origem em grafo vazio
+=excluirverticeorigemcorrente  grafo10   3       GrafoVazio
+
+== Grafo 10: Testar excluir vértice em grafo vazio
+=excluirverticecorrente grafo10   GrafoVazio
+
+== Grafo 10: Testar inserir vértice em grafo sem origem
+=inserirvertice	       grafo10   char0	2 VerticeOrigemAdicionado
+
+== Grafo 10: Inserir vértice origem
+=inserirverticeorigem  grafo10	char0   OK
+
+== Grafo 10: Inserir segundo vértice origem
+=inserirverticeorigem  grafo10	char5   OK
+
+== Grafo 10: Inserir terceiro vértice origem
+=inserirverticeorigem  grafo10	char2   OK
+
+== Grafo 10: Inserir 4 vértices em grafo 
+=inserirvertice	       grafo10   char0	1 OK
+=inserirvertice	       grafo10   char2	3 OK
+=inserirvertice	       grafo10   char3	6 OK
+=inserirvertice	       grafo10   char3	8 OK
+=obternumerovertices   grafo10           8 OK
+
+== Grafo 10: Testar inserir vértice em aresta já existente
+=inserirvertice	       grafo10   char0	6 ArestaJaExiste
+
+== Grafo 10: Obter o número de vértices
+=obternumerovertices  grafo10   5         OK
+=recuperar
+=obternumerovertices  grafo10   8         OK
+
+== Grafo 10: Esvaziar grafo
+=esvaziargrafo	      grafo10		OK
+=obternumerovertices  grafo10   0        GrafoVazio
+
+== Grafo 10: Ir para vértice e obter valor corrente
+=inserirverticeorigem  grafo10	char1     OK
+=inserirvertice	       grafo10   char2	3 OK
+=inserirvertice	       grafo10   char3	6 OK
+=irparavertice	       grafo10  	1         OK
+=obtervalorgrafo       grafo10   char2	  OK
+=esvaziargrafo	       grafo10	          OK
+
+== Grafo 10: Testar ir para vértice inexistente
+=inserirverticeorigem  grafo10	char1     OK
+=irparavertice	       grafo10  	1         NaoAchou
+=esvaziargrafo	       grafo10	          OK
+
+== Grafo 10: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo10	char1     OK
+=inserirverticeorigem  grafo10	char1     OK
+=inserirverticeorigem  grafo10	char1     OK
+=irparaverticeorigem   grafo10  	3         OrigemNaoExiste
+=esvaziargrafo	       grafo10	          OK
+
+== Grafo 10: Testar ir para vértice origem inexistente
+=inserirverticeorigem  grafo10	char1     OK
+=inserirverticeorigem  grafo10	char2     OK
+=irparaverticeorigem   grafo10  	0         OK
+=obtervalorgrafo       grafo10   char1	  OK
+=irparaverticeorigem   grafo10  	1         OK
+=obtervalorgrafo       grafo10   char2	  OK
+=esvaziargrafo	       grafo10	          OK
+
+== Grafo 10: Ir para vértice com valor dado
+=inserirverticeorigem   grafo10	 char1     OK
+=inserirverticeorigem   grafo10 	 char2     OK
+=inserirvertice	        grafo10   char2	3  OK
+=inserirvertice	        grafo10   char3	6  OK
+=irparaverticecomvalor	grafo10   char1     OK
+=obtervalorgrafo        grafo10   char1	   OK
+=irparaverticecomvalor	grafo10   char3     OK
+=obtervalorgrafo        grafo10   char3	   OK
+=esvaziargrafo	        grafo10	           OK
+
+== Grafo 10: Testar ir para vértice inexistente com valor dado
+=inserirverticeorigem   grafo10 	 char2     OK
+=irparaverticecomvalor  grafo10	 char5     NaoAchou
+=irparaverticecomvalor  grafo10	 char1     NaoAchou
+=esvaziargrafo	        grafo10	           OK
+
+== Grafo 10: Percorrer Grafo
+=inserirverticeorigem   grafo10	 char1    OK
+=inserirvertice	        grafo10   char3	1 OK
+=percorregrafo		grafo10	   1	  OK
+=obtervalorgrafo        grafo10   char3	   OK
+=esvaziargrafo	        grafo10	           OK
+
+== Grafo 10: Excluir vértice origem
+=inserirverticeorigem          grafo10	char1      OK
+=inserirverticeorigem          grafo10	char1      OK
+=excluirverticeorigemcorrente  grafo10   0          OK
+=esvaziargrafo	               grafo10	           OK
+
+== Grafo 10: Testar excluir vértice origem com dois filhos
+=inserirverticeorigem          grafo10	char1      OK
+=inserirverticeorigem          grafo10	char0      OK
+=irparaverticeorigem 	       grafo10	        1  OK
+=inserirvertice	               grafo10   char2	3  OK
+=excluirverticeorigemcorrente  grafo10   		1  VerticeOrigemPossuiFilho
+=esvaziargrafo	               grafo10	           OK
+=obtervalorgrafo			   grafo10	char1	   GrafoVazio
+=irparavertice				   grafo10			0  GrafoVazio
+
+
+== Grafo 10: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+=inserirverticeorigem          grafo10	char1      OK
+=inserirvertice	               grafo10   char2	3  OK
+=inserirvertice	               grafo10   char2	4  OK
+=excluirverticeorigemcorrente  grafo10 			0  VerticeOrigemPossuiFilho
+=irparavertice	               grafo10  	1          OK
+=excluirverticecorrente        grafo10              OK
+=irparavertice	               grafo10  	2          OK
+=excluirverticecorrente        grafo10              OK
+=excluirverticecorrente        grafo10              OK
+=esvaziargrafo	               grafo10	           GrafoVazio
+
+== Grafo 10: Testar excluir vértice corrente e excluir vértice origem
+=obternumerovertices 		   grafo10 			 0 GrafoVazio
+=inserirverticeorigem 		   grafo10 	char0	   OK
+=inserirvertice 			   grafo10 	char1 	 1 OK
+=inserirvertice 			   grafo10 	char2 	 2 OK
+=inserirvertice 			   grafo10 	char3 	 2 ArestaJaExiste
+=obternumerovertices 		   grafo10 			 3 OK
+=inserirvertice 			   grafo10 	char3 	 3 OK
+=obtervalorgrafo 			   grafo10 	char0 	   OK
+=excluirverticecorrente 	   grafo10   		   VerticeOrigemPossuiFilho
+=obternumerovertices 		   grafo10 			 4 OK
+=excluirverticeorigemcorrente  grafo10 			 0 VerticeOrigemPossuiFilho
+
+== Grafo 10: Testar excluir vertice em aresta sem vértices
+=irparavertice				   grafo10			 1 OK
+=excluirverticecorrente 	   grafo10 	  		   OK
+=irparavertice				   grafo10			 2 OK
+=excluirverticecorrente 	   grafo10 		       OK
+=irparavertice				   grafo10	    	 3 OK
+=excluirverticecorrente 	   grafo10 	  		   OK
+=obternumerovertices 		   grafo10 			 1 OK
+=excluirverticecorrente 	   grafo10  	 		   OK
+=obternumerovertices 		   grafo10 			 0 GrafoVazio
+=inserirvertice 			   grafo10 	char0 	 1 VerticeOrigemAdicionado
+=inserirvertice 			   grafo10 	char1 	 2 OK
+=inserirvertice 			   grafo10 	char2 	 3 OK
+=obternumerovertices 		   grafo10 			 3 OK
+
+== Grafo 10: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+=destruirgrafo 				   grafo10 			   OK
+=criargrafo 				   grafo10 			   OK
+=inserirverticeorigem 		   grafo10 	char1 	   OK
+=inserirverticeorigem 		   grafo10 	char2 	   OK
+=irparavertice 				   grafo10 		 	 1 OK
+=inserirvertice 			   grafo10 	char0 	 1 OK
+=inserirvertice 			   grafo10 	char1 	 2 OK
+=excluirverticeorigemcorrente  grafo10 			 0 OK
+=percorregrafo 				   grafo10 			 1 OK
+=percorregrafo 				   grafo10 			-1 OK
+=esvaziargrafo				   grafo10			   OK
+
+== Grafo 10: Testar inserir vértice com identidade 0
+=inserirverticeorigem 		   grafo10 	char1 	   OK
+=inserirvertice	       grafo10   char2	0  ArestaInvalida
+=esvaziargrafo	       grafo10	           OK
+
+== Grafo10: Percorrer Grafo teste completo
+=inserirverticeorigem   grafo10	 char1    OK
+=inserirciclo		grafo10		  OK
+=percorregrafo		grafo10	   0	  OK
+=inserirvertice	        grafo10   char3	1 OK
+=percorregrafo		grafo10	   1	  OK
+=obtervalorgrafo        grafo10   char3	   OK
+=percorregrafo		grafo10	   -1	  OK
+=obtervalorgrafo        grafo10   char1	   OK
+=inserirvertice	        grafo10   char5	2 OK
+=percorregrafo		grafo10	   2	  OK
+=obtervalorgrafo        grafo10   char5	   OK
+=percorregrafo		grafo10	   -2	  OK
+=obtervalorgrafo        grafo10   char1	   OK
+=percorregrafo		grafo10	   1	  OK
+=obtervalorgrafo        grafo10   char3	   OK
+=percorregrafo		grafo10	   -1	  OK
+=obtervalorgrafo        grafo10   char1	   OK
+=esvaziargrafo	        grafo10	           OK
+
+== Grafo10: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio
+=inserirvertice	        grafo10   char1	0  ArestaInvalida
+=inserirverticeorigem   grafo10 	 char2     OK
+=inserirvertice	        grafo10   char1	2  OK
+=obtervalorgrafo	grafo10	 char2	   OK
+=inserirciclo	        grafo10        	   OK
+=inserirciclo	        grafo10        	   OK
+=recuperar
+=inserirciclo	        grafo10        	   ArestaJaExiste
+=percorregrafo		grafo10		0  OK
+=obtervalorgrafo	grafo10	 char2	   OK
+=inserirciclo	        grafo10        	   ArestaJaExiste
+=percorregrafo		grafo10		0  OK
+=obtervalorgrafo	grafo10	 char2     OK
+=inserirverticeorigem   grafo10 	 char2     OK
+=inserirvertice	        grafo10   char3	3  OK
+=irparavertice          grafo10  	3  OK
+=inserirciclo	        grafo10        	   OK
+=percorregrafo		grafo10		0  OK
+=obternumerovertices	grafo10	        4  OK
+=obtervalorgrafo	grafo10	 char3     OK
+=esvaziargrafo	        grafo10	           OK
+=inserirciclo	        grafo10        	   GrafoVazio
+
+== Grafo10: Testar associar vertices identidade da aresta 0
+=associarvertices	        grafo10   1 0  ArestaInvalida
+
+==Grafo10: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio
+=inserirverticeorigem	grafo10   char1       OK
+=inserirvertice	        grafo10   char2	1    OK
+=inserirvertice	        grafo10   char3	2    OK
+=inserirvertice	        grafo10   char4	3    OK
+=irparavertice		grafo10	        3    OK
+=inserirvertice	        grafo10   char5	4    OK
+=irparaverticeorigem	grafo10	        0    OK
+=associarvertices	grafo10          4 8  OK
+=irparavertice		grafo10	        1    OK
+=associarvertices	grafo10          2 6  OK
+=associarvertices	grafo10          4 5  OK
+=irparavertice		grafo10	        2    OK
+=associarvertices	grafo10          1 -6 ArestaJaExiste
+=associarvertices	grafo10          3 7  OK
+=irparavertice		grafo10	        4    OK
+=associarvertices	grafo10          0 -8 ArestaJaExiste
+=associarvertices	grafo10          4 9  OK
+=associarvertices	grafo10          4 9  ArestaJaExiste
+=irparaverticeorigem	grafo10	        0    OK
+=percorregrafo		grafo10	        1    OK
+=obtervalorgrafo        grafo10   char2	     OK
+=percorregrafo		grafo10	        6    OK
+=obtervalorgrafo        grafo10   char3	     OK
+=percorregrafo		grafo10	        8    OK
+=recuperar
+=percorregrafo		grafo10	        -6   OK
+=obtervalorgrafo        grafo10   char2	     OK
+=esvaziargrafo	        grafo10		     OK
+=associarvertices	grafo10          1 0  GrafoVazio
+=recuperar
+=associarvertices	grafo10          1 1  GrafoVazio
+
+== Destruir os 10 grafos
+=destruirgrafo  grafo1		OK
+=destruirgrafo  grafo2		OK
+=destruirgrafo  grafo3		OK
+=destruirgrafo  grafo4		OK
+=destruirgrafo  grafo5		OK
+=destruirgrafo  grafo6		OK
+=destruirgrafo  grafo7		OK
+=destruirgrafo  grafo8		OK
+=destruirgrafo  grafo9		OK
+=destruirgrafo  grafo10		OK
+
+//
+//Fim
+//

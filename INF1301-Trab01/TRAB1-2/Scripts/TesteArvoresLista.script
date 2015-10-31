@@ -1,0 +1,172 @@
+// Script:    TesteArvoreSimb.script
+// Autor:     Lucas Hardman, Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell
+// Data:      03/set/2014
+// Propósito: Testar a criação de múltiplas árvores que armazenam listas de caracteres.
+//     
+//
+
+== Inicializar Valores
+=declararparm  OK           int 0
+=declararparm  NaoCriouRaiz int 1 
+=declararparm  ErroEstru    int 2
+=declararparm  NaoFolha     int 3
+=declararparm  NaoArvore    int 4
+=declararparm  ArvVazia     int 5
+=declararparm  NoEhRaiz     int 6
+=declararparm  NaoFilho     int 7
+=declararparm  ErrMemoria   int 8
+=declararparm  ArvJaExiste  int 9
+
+=declararparm  NaoNoRaiz    int 11
+=declararparm  NoNaoIns     int 12
+
+=declararparm  charErro     char  '!'
+=declararparm  charA        char  'a'
+=declararparm  charB        char  'b'
+=declararparm  charC        char  'c'
+
+=declararparm  arvore0	    int 0
+=declararparm  arvore1	    int 1
+=declararparm  arvore2	    int 2
+=declararparm  arvore3	    int 3
+=declararparm  arvore4	    int 4
+=declararparm  arvore5	    int 5
+=declararparm  arvore6	    int 6
+=declararparm  arvore7	    int 7
+=declararparm  arvore8	    int 8
+=declararparm  arvore9	    int 9
+=declararparm  arvore10   int 10
+
+=declararparm  lista0	    int 0
+=declararparm  lista1	    int 1
+=declararparm  lista2	    int 2
+=declararparm  lista3	    int 3
+=declararparm  lista4	    int 4
+=declararparm  lista5	    int 5
+=declararparm  lista6	    int 6
+=declararparm  lista7	    int 7
+=declararparm  lista8	    int 8
+=declararparm  lista9	    int 9
+=declararparm  lisInexist   int 10
+
+== Reset de árvores para realizar teste
+=resettestearvore
+
+== Reset de listas para realizar teste
+=resettestelista
+
+== Testar obter valor de árvore inexistente
+=obtervalarvore arvore0 charA NaoArvore
+
+== Criar árvores
+=criararvore   arvore0	    OK
+=criararvore   arvore1	    OK
+=criararvore   arvore2	    OK
+=criararvore   arvore3	    OK
+=criararvore   arvore4	    OK
+=criararvore   arvore5	    OK
+=criararvore   arvore6	    OK
+=criararvore   arvore7	    OK
+=criararvore   arvore8	    OK
+
+== Testar obter valor de árvore vazia
+=obtervalarvore arvore0 charA ArvVazia
+
+== Tentar criar árvores já existentes
+=criararvore   arvore0	    ArvJaExiste
+=criararvore   arvore5	    ArvJaExiste
+=criararvore   arvore2	    ArvJaExiste
+=criararvore   arvore7	    ArvJaExiste
+
+== Criar a lista
+=criarlista      lista0           OK
+=criarlista      lista1           OK
+=criarlista      lista2           OK
+
+== Inserir elemento (antes)
+=insaps     lista0  charA   OK 
+
+== Criar nó raiz
+=criarraiz     arvore0	lista0    OK
+
+== Testar obter valor de árvore
+=obtervalarvore arvore0 charA OK
+
+== Tentar criar nó raiz que já exista
+=criarraiz     arvore0	lista0   NaoCriouRaiz
+
+== Tentar criar nó raiz em árvore inexistente
+=criarraiz     arvore9	lista0   NaoArvore
+
+== Inserir nó à direita
+=insdir		arvore0      lista1     OK
+
+== Testar inserir nó à direita de árvore inexistente
+=insdir		arvore9      lista1     NaoArvore
+
+== Testar inserir nó à direita de árvore vazia
+=insdir		arvore1      lista1     ArvVazia
+
+== Inserir nó à esquerda
+=insesq		arvore0      lista1     OK
+
+== Testar inserir nó à esquerda de árvore inexistente
+=insesq		arvore9      lista1     NaoArvore
+
+== Testar inserir nó à esquerda de árvore vazia
+=insesq		arvore8      lista1     ArvVazia
+
+== Obter número de nós
+=obternumeronos arvore0		OK
+
+== Testar obter número de nós em árvore inexistente
+=obternumeronos arvore9		NaoArvore
+
+== Ir pai
+=irpai	arvore0 OK
+
+== Testar ir pai em árvore inexistente
+=irpai	arvore9 NaoArvore
+
+== Testar ir pai em árvore vazia
+=irpai	arvore1 ArvVazia
+
+== Testar ir pai mas já é raiz
+=irpai	arvore0 OK
+=irpai	arvore0 NoEhRaiz
+
+== Testar adicionar filho à esquerda ou direita mas não é folha
+=criarraiz     arvore3	lista0    OK
+=insdir		arvore3      lista1     OK
+=irpai	arvore3 OK
+=insesq		arvore3      lista1     OK
+=irpai	arvore3 OK
+=insdir		arvore3      lista1     NaoFolha
+
+== Testar ir nó direito em árvore inexistente
+=irdir arvore9 NaoArvore
+
+== Testar ir nó esquerdo em árvore inexistente
+=iresq arvore9 NaoArvore
+
+== Testar ir nó direito em árvore vazia
+=irdir arvore1 ArvVazia
+
+== Testar ir nó esquerdo em árvore vazia
+=iresq arvore1 ArvVazia
+
+== Testar ir nó esquerdo em árvore vazia
+=iresq arvore0 NaoFilho
+
+== Testar ir nó direito em árvore vazia
+=insesq		arvore0      lista1     OK
+=irdir arvore0 NaoFilho
+
+==Testar destruir árvore inexistente
+=destruirarvore arvore9 NaoArvore
+
+==Destruir árvore 
+=destruirarvore   arvore0	    OK
+
+== Criar árvores
+=criararvore   arvore0	    OK

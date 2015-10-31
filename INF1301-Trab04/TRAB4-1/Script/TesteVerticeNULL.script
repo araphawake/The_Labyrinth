@@ -1,0 +1,96 @@
+// Script:    TesteVerticeNULL.script
+// Autor:     Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell e Lucas Hardman
+// Data:      22/nov/2014
+// Propósito: Testar deturpação VerticeNULL de um grafo
+//
+
+== Inicializar valores
+=declararparm   grafo1  int 0
+=declararparm   grafo2  int 1
+=declararparm   grafo3  int 2
+=declararparm   grafo4  int 3
+=declararparm   grafo5  int 4
+=declararparm   grafo6  int 5
+=declararparm   grafo7  int 6
+=declararparm   grafo8  int 7
+=declararparm   grafo9  int 8
+=declararparm   grafo10 int 9
+=declararparm	grafoInexistente int 10
+
+=declararparm   char0    char  'a'
+=declararparm   char1    char  'b'
+=declararparm   char2    char  'c'
+=declararparm   char3    char  'd'
+=declararparm	char4	 char  'e'
+=declararparm	char5	 char  'f'
+
+=declararparm	fileName string	"Contadores/registroContadoresVerticeNULL.txt"
+=declararparm	fileOut string	"logContagemVerticeNULL.count"
+
+=declararparm   OK          	   				int  0	
+=declararparm   GrafoVazio     	   				int  1
+=declararparm   NaoAchou      	   				int  2
+=declararparm   FaltouMemoria  	   				int  3
+=declararparm   GrafoInexistente   				int  4
+=declararparm   GrafoJaExiste      				int  5
+=declararparm   ErroEstrutura	  				int  6
+=declararparm	ArestaInexistente  				int  7
+=declararparm	VerticeOrigemAdicionado 		int  8
+=declararparm	ArestaJaExiste					int  9
+=declararparm	OrigemNaoExiste					int  10
+=declararparm	VerticeNaoTemFilhoUnico 		int  11
+=declararparm	VerticeOrigemPossuiFilho		int  12
+=declararparm	ArestaInvalida		            int  13
+
+=declararparm	InsereOrigemForaDeVertices		int  14
+=declararparm	GaranteGrafoSemListaVertices    int  15
+=declararparm	GaranteGrafoSemListaOrigem		int  16
+=declararparm	GaranteArestaDirecionada		int  17
+=declararparm	VerticeComArestasRepetidas		int  18
+=declararparm	GaranteVerticeSolto				int  19
+=declararparm	GaranteVerticeSemListaArestas	int  20
+=declararparm	GaranteVerticeCabecaVazio		int  21
+=declararparm	GaranteVerticeComDuploCiclo		int  22
+=declararparm	VerticesRepetidos				int  23
+=declararparm	VerticeNULL						int  24
+=declararparm	VerticeDiferente				int  25
+=declararparm	VerticeDuplicado				int  26
+=declararparm	VerticeCabecaErrado				int  27
+=declararparm	ErroDeturpacao					int  28
+=declararparm	ErroVerificacao					int  29
+
+=declararparm   pNULL      int  0
+=declararparm   pNaoNULL   int  1
+
+== Reset grafos
+=resettestegrafo
+
+== Inicializa controle de cobertura
+=inicializarcontadores	fileOut	 OK
+=lercontadores		fileName OK
+=iniciarcontagem
+
+
+== Deturpar e Verificar: Grafo com Vertice Origem Ausente da Lista de Vertices
+=limitarmemoriadisponivel	1
+=criargrafo		grafo3				0					FaltouMemoria
+=eliminarlimitesespaco
+=criargrafo		grafo3				0					OK
+=inserirverticeorigem	grafo3   char1  	     OK
+=inserirvertice	grafo3   char2		1    OK
+=inserirverticeorigem	grafo3   char4		     OK
+=inserirvertice		grafo3   char2		4    OK
+=inserirvertice         grafo3   char3		2    OK
+=associarvertices	grafo3          1 6  OK
+=associarvertices	grafo3          0 7  OK
+=inserirvertice         grafo3   char1		3    OK
+=deturpar		grafo3	 VerticeNULL	OK
+=verificar		grafo3	 1		OK
+
+== Termina cobertura
+=pararcontagem		
+=verificarcontagens OK
+=terminarcontadores OK
+
+
+

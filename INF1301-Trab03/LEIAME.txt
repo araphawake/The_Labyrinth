@@ -1,0 +1,94 @@
+
+**************************************************************	   Arquivo Leia-me do Grupo TRAB03JLR	******************************************************            
+
+*******
+Autores
+*******
+João Fernando McDowell			#1110322
+Lucas Hardman				#1113567
+Rafael Azevedo Moscoso Silva Cruz	#1221020
+
+
+**************
+Arquivo LEIAME
+**************
+Este documento fornece informações complementares para o TRAB03-JLR e sua instalação.
+O objetivo do TRAB03 é o desenvolvimento de uma aplicação de um jogo de Labirinto na qual será possível que o usuário construa o labirinto e o jogue, assim como poderá jogar 18 labirintos prontos que já estão disponíveis com a aplicação na pasta SINGLEPLAYER (arquivos .txt que devem estar presentes e válidos). Caso essa pasta esteja em faltam contactar equipe de desenvolvimento. Na aplicação é possível também salvar o progresso em um labirinto quando desejar, excepto durante o modo Campanha/singleplayer. O módulo labirinto foi implementado utilizando um grafo genérico bidirecionado implementado com listas duplamente encadeadas genéricas. Os módulos de lista e grafo já haviam sido finalizados nos trabalhos 1 e 2. respectivamente. 
+
+Os arquivos que terminam em .txt na pasta TRAB3-2 são arquivos com dados necessários aos testes do módulo LABIRINTO, TRAB3-2. Mantê-los sempre na pasta em que estão, por favor.
+
+
+********
+SUMÁRIO
+********
+
+1 - INSTALAÇÃO
+2 - SOBRE O PROGRAMA
+3 - TESTES
+4 - AJUDA
+
+
+*****************
+1 - INSTALAÇÃO  
+*****************
+
+	
+	Salvar o diretório extraído pelo arquivo TRAB03.ZIP na pasta desejada.
+	
+	Conteúdo do arquivo TRAB03.ZIP:
+
+		 Pastas			| Descrição
+		------------------------------------------------------------------------------------------------------------------------------------------------------
+		Documentos		| Pasta onde se encontram arquivos explicativos do programa, arquitetura da aplicação, modelo físico estrutural, exemplo 									| físico, assertivas estruturais, documentação de requisitos e a argumentação de corretude. 													| todos os arquivos desse diretório estão no formato pdf.		
+		Fonts			| Pasta onde se encontram os módulos de definição e implementação do programa. Pasta interna às pastas TRAB3-1 e TRAB3-2.
+		Relatórios		| Pasta onde se encontram os relatórios dos integrantes do grupo.
+		TRAB3-1			| Pasta onde se encontram o executável do jogo do labirinto em si, os saves do jogo na pasta SAVES e os arquivos do modo campanha SINGLEPLAYER.
+		TRAB3-2			| Pasta onde se encontram o executável construto, o arquivo .bat para testes, as fontes e os scripts relativos ao módulo Labirinto.
+		Scripts			| Pasta onde se encontram os scripts de teste para os módulos componentes do programa. Pasta interna às pastas TRAB3-1 e TRAB3-2.
+
+
+       Observação:  Para melhor e mais confortável usabilidade da aplicação, o usuário pode alterar o tamanho do prompt de 
+		    comando (local onde a aplicação propriamente dita será executada): 
+
+			- Basta clicar com o botão direito do mouse na tela preta.
+			- Selecionar a opção "Padrões".
+			- Clicar em "Layout" e aumentar o tamanho da largura e altura para o tamanho que desejar.
+
+**********************
+2 - SOBRE O PROGRAMA
+**********************
+
+
+	Este programa tem como objetivo implementar uma aplicação de labirinto, onde é possível construir um labirinto, jogá-lo e salvá-lo, assim como carregar um labirinto ou jogar
+	labirintos que estão disponíveis no modo Campanha/Singleplayer (conjuntos de labirintos já prontos para usuário que queira ser desafiado).
+
+
+*******************
+3 - TESTES
+*******************
+
+Para realizar o teste do Labirinto:
+
+Acessar a pasta "TRAB3-2" e clicar duas vezes no arquivo TesteLabirinto.bat. Dessa forma, um arquivo chamado 
+"logsaida.txt" será gerado com os resultados dos testes. Abra o arquivo logsaida.txt para analisar os resultados dos testes.
+
+O arquivo TesteLabirinto.bat possui o seguinte conteúdo: TRAB3-1.exe/sScript/TesteLabirinto.script >logsaida.txt
+
+Para realizar o teste da aplicação:
+
+Acessar a pasta "TRAB3-1" e clicar duas vezes no arquivo executável TRAB3-1.exe. Dessa forma, uma janela abrirá com fundo preto
+iniciando a aplicação com um conjunto de opções para o usuário desfrutar do jogo de labirinto.
+
+
+
+**********************
+4 - AJUDA
+**********************
+
+
+Se tiver qualquer problema com este programa, entre em contato com o grupo pelos e-mails abaixo:
+
+	- jfmcdowel2@hotmail.com
+	- lucas.hardman@me.com
+	- araphawake@gmail.com
+                                                                                                                                                                                                                                                                                                                                                                                                                 

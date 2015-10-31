@@ -1,0 +1,91 @@
+
+**************************************************************	   Arquivo Leia-me do Grupo TRAB01JLR	******************************************************            
+
+*******
+Autores
+*******
+João Fernando McDowell	#1110322
+Lucas Hardman		#1113567
+Rafael Azevedo		#1221020
+
+
+**************
+Arquivo LEIAME
+**************
+Este documento fornece informações complementares para o INF1301-Trab01-JLR e sua instalação.
+
+O objetivo de desenvolvimento deste programa é a familiarização tanto com a utilização do arcabouço de teste automatizado, quanto com o desenvolvimento modularizado de programas na linguagem C, através da criação de dois scripts: teste de lista e teste de árvore de listas de caracteres.
+
+
+********
+SUMÁRIO
+********
+
+1 - INSTALAÇÃO
+2 - SOBRE O PROGRAMA
+3 - TESTES
+4 - AJUDA
+
+
+*****************
+1 - INSTALAÇÃO  
+*****************
+
+	
+	Salvar o diretório extraído pelo arquivo INF1301-Trab01-JLR.ZIP na pasta desejada.
+	
+	Conteúdo do arquivo INF1301-Trab01-JLR.ZIP:
+
+	Pasta			| Descrição
+	----------------------------------------------------------------------------------------------------
+	Relatórios		| Pasta onde se encontram os arquivos os relatorios dos integrantes do grupo.
+
+	Cada pasta TRAB1-1 e TRAB1-2 possui os seguintes conteúdos: 
+
+		 Pastas			| Descrição
+		----------------------------------------------------------------------------------------------------------------------
+		Fontes			| Pasta onde se encontram os módulos de definição e implementação do programa.
+		Scripts			| Pasta onde se encontram os scripts de teste para os módulos componentes do programa.
+
+**********************
+2 - SOBRE O PROGRAMA
+**********************
+
+
+	Este programa tem como objetivo operar até 10 árvores simultaneamente, sendo que em cada nó de uma árvore existe um ponteiro
+	para uma lista duplamente encadeada de caracteres.
+
+
+*******************
+3 - TESTES
+*******************
+
+Para realizar o teste das Listas:
+
+Clique duas vezes no arquivo TesteListaGenerica.bat. Dessa forma, um arquivo chamado 
+"logSaida.txt" será gerado com os resultados dos testes. 
+
+O arquivo TesteListaGenerica.bat possui o seguinte conteúdo: TRAB1-1.exe/sTesteListaGenerica.script >logSaida.txt
+
+Para realizar o teste das Árvores de listas:
+
+Basta acessar a pasta "Executavel" e clicar duas vezes no arquivo ArvoreListas.bat. Dessa forma, um arquivo chamado 
+"logSaida.txt" será gerado com os resultados dos testes. 
+
+O arquivo ArvoreListas.bat possui o seguinte conteúdo: TRAB1-2.exe/sTesteArvoresLista.script >logSaida.txt
+
+Script -> Arquivo de instruções a ser interpretado pelo módulo de teste.
+Log ->    Arquivo que conterá os resultados dos testes. Será criado, porém se já existir um arquivo log com o mesmo nome, ele será sobrescrito.
+
+
+**********************
+4 - AJUDA
+**********************
+
+
+Se tiver qualquer problema com este programa, entre em contato com o grupo pelos e-mails abaixo:
+
+	- jfmcdowel2@hotmail.com
+	- lucas.hardman@me.com
+	- araphawake@gmail.com
+                                                                                                                                                                                                                                                                                                                                                                                                                 

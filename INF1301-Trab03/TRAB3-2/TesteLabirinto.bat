@@ -1,0 +1,1 @@
+TRAB3-2.EXE /sScript/TesteLabirinto.script >logSaida.txt

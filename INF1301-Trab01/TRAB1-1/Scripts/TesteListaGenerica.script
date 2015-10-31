@@ -1,0 +1,1183 @@
+// Script:    TesteListaGenerica.script
+// Autor:     Lucas Hardman, Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell
+// Data:      01/ago/2014
+// Propósito: Testar o módulo lista genérica duplamente encadeada para 10 listas simultâneas
+//
+
+== Inicializar valores
+=declararparm   lista1  int 0
+=declararparm   lista2  int 1
+=declararparm   lista3  int 2
+=declararparm   lista4  int 3
+=declararparm   lista5  int 4
+=declararparm   lista6  int 5
+=declararparm   lista7  int 6
+=declararparm   lista8  int 7
+=declararparm   lista9  int 8
+=declararparm   lista10 int 9
+=declararparm	lista0  int 10
+
+=declararparm   char0    char  'a'
+=declararparm   char1    char  'b'
+=declararparm   char2    char  'c'
+=declararparm   char3    char  'd'
+=declararparm	char4	 char  'e'
+=declararparm	char5	 char  'f'
+
+=declararparm   OK          	   int  0	
+=declararparm   ListaVazia     	   int  1
+=declararparm   FimLista     	   int  2
+=declararparm   InicioLista    	   int  3
+=declararparm   NaoAchou      	   int  4
+=declararparm   FaltouMemoria  	   int  5
+=declararparm   ListaInexistente   int  6
+=declararparm   ListaJaExiste      int  7
+=declararparm   ElemCorrOrigem     int  8
+=declararparm	ElemCorrFim	       int  9
+
+=declararparm   pNULL      int  0
+=declararparm   pNaoNULL   int  1
+
+== Lista 1: Esvaziar lista inexistente
+=esvaziarlista   lista1           ListaInexistente
+
+== Lista 1: Criar a lista
+=criarlista      lista1           OK
+
+== Lista 1: Inserir elemento (antes)
+=insant     lista1  char1   OK 
+
+== Lista 1: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista1           ElemCorrOrigem
+
+== Lista 1: Esvaziar a lista
+=esvaziarlista   lista1           OK
+
+== Lista 1: Esvaziar a lista vazia
+=esvaziarlista   lista1           ListaVazia
+
+== Lista 1: Tentar criar a lista ja existente
+=criarlista      lista1           ListaJaExiste
+
+== Lista 1: Destruir lista
+=destruirlista   lista1           OK
+
+== Lista 1: Ir para o inicio de uma lista inexistente
+=irinilista	 lista1           ListaInexistente
+
+== Lista 1: Ir para o final de uma lista inexistente
+=irfimlista   	 lista1           ListaInexistente
+
+== Lista 1: Destruir lista inexistente
+=destruirlista   lista1           ListaInexistente
+
+== Lista 1: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista1 	  ListaInexistente
+
+== Lista 1: Criar lista ja criada e excluida
+=criarlista      lista1           OK
+
+== Lista 1: Avancar elemento em lista vazia
+=percorrelista	 lista1     2     ListaVazia
+
+== Lista 1: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista1 	  ListaVazia
+
+== Lista 1: Inserir elementos (apos)
+=insaps     lista1   char0   OK
+=insaps     lista1   char1   OK
+=insaps     lista1   char2   OK
+=insaps     lista1   char3   OK
+
+== Lista 1: Ir para o inicio da lista
+=irinilista	 lista1           OK
+
+== Lista 1: Avancar elemento em +2
+=percorrelista	 lista1     2     OK
+
+== Lista 1: Avancar elemento em -1
+=percorrelista	 lista1     -1    OK
+
+== Lista 1: Ir para o final da lista
+=irfimlista   	 lista1           OK
+
+== Lista 1: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista1           ElemCorrFim
+
+== Lista 1: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 1: Tentar avancar o elemento para depois do fim
+=percorrelista	lista1     100     FimLista
+
+== Lista 1: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista1     -100     InicioLista
+
+== Lista 1: Obter numero de elementos
+=obternumeroelementos    lista1	    OK
+
+== Lista 1: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 1: Obter elemento corrente
+=obtervalorlista		lista1	char0 OK
+
+== Lista 1: Obter elemento corrente errado
+=obtervalorlista		lista1	char2 OK
+=recuperar
+=obtervalorlista		lista1	char1 OK
+=recuperar
+=obtervalorlista		lista1	char0 OK
+
+== Lista 1: Procurar valor na lista
+=procuravalorlista      lista1  char3 OK
+
+== Lista 1: Procurar valor inexistente na lista
+=procuravalorlista	lista1  char4 NaoAchou
+
+== Lista 1: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 1: Excluir todos os elementos
+=excelemlista 		lista1		OK
+=excelemlista		lista1 		OK
+=excelemlista 		lista1		OK
+=excelemlista 		lista1		OK
+=excelemlista 		lista1		ListaVazia
+
+== Lista 1: Procurar valor em lista vazia
+=procuravalorlista	lista1  char4   ListaVazia
+
+== Lista 1: inserir um caracter
+=insaps lista1 char0 OK
+
+== Lista 2: Esvaziar lista inexistente
+=esvaziarlista   lista2           ListaInexistente
+
+== Lista 2: Criar a lista
+=criarlista      lista2           OK
+
+== Lista 2: Inserir elemento (antes)
+=insant     lista2  char1   OK 
+
+== Lista 2: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista2           ElemCorrOrigem
+
+== Lista 2: Esvaziar a lista
+=esvaziarlista   lista2           OK
+
+== Lista 2: Esvaziar a lista vazia
+=esvaziarlista   lista2           ListaVazia
+
+== Lista 2: Tentar criar a lista ja existente
+=criarlista      lista2           ListaJaExiste
+
+== Lista 2: Destruir lista
+=destruirlista   lista2           OK
+
+== Lista 2: Ir para o inicio de uma lista inexistente
+=irinilista	 lista2           ListaInexistente
+
+== Lista 2: Ir para o final de uma lista inexistente
+=irfimlista   	 lista2           ListaInexistente
+
+== Lista 2: Destruir lista inexistente
+=destruirlista   lista2           ListaInexistente
+
+== Lista 2: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista2 	  ListaInexistente
+
+== Lista 2: Criar lista ja criada e excluida
+=criarlista      lista2           OK
+
+== Lista 2: Avancar elemento em lista vazia
+=percorrelista	 lista2     2     ListaVazia
+
+== Lista 2: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista2 	  ListaVazia
+
+== Lista 2: Inserir elementos (apos)
+=insaps     lista2   char0   OK
+=insaps     lista2   char1   OK
+=insaps     lista2   char2   OK
+=insaps     lista2   char3   OK
+
+== Lista 2: Ir para o inicio da lista
+=irinilista	 lista2           OK
+
+== Lista 2: Avancar elemento em +2
+=percorrelista	 lista2     2     OK
+
+== Lista 2: Avancar elemento em -1
+=percorrelista	 lista2     -1    OK
+
+== Lista 2: Ir para o final da lista
+=irfimlista   	 lista2           OK
+
+== Lista 2: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista2           ElemCorrFim
+
+== Lista 2: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 2: Tentar avancar o elemento para depois do fim
+=percorrelista	lista2     100     FimLista
+
+== Lista 2: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista2     -100     InicioLista
+
+== Lista 2: Obter numero de elementos
+=obternumeroelementos    lista2	    OK
+
+== Lista 2: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 2: Obter elemento corrente
+=obtervalorlista		lista2	char0 OK
+
+== Lista 2: Obter elemento corrente errado
+=obtervalorlista		lista2	char2 OK
+=recuperar
+=obtervalorlista		lista2	char1 OK
+=recuperar
+=obtervalorlista		lista2	char0 OK
+
+== Lista 2: Procurar valor na lista
+=procuravalorlista      lista2  char3 OK
+
+== Lista 2: Procurar valor inexistente na lista
+=procuravalorlista	lista2  char4 NaoAchou
+
+== Lista 2: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 2: Excluir todos os elementos
+=excelemlista 		lista2		OK
+=excelemlista		lista2 		OK
+=excelemlista 		lista2		OK
+=excelemlista 		lista2		OK
+=excelemlista 		lista2		ListaVazia
+
+== Lista 2: Procurar valor em lista vazia
+=procuravalorlista	lista2  char4   ListaVazia
+
+== Lista 2: inserir um caracter
+=insaps lista2 char0 OK
+
+== Lista 3: Esvaziar lista inexistente
+=esvaziarlista   lista3           ListaInexistente
+
+== Lista 3: Criar a lista
+=criarlista      lista3           OK
+
+== Lista 3: Inserir elemento (antes)
+=insant     lista3  char1   OK 
+
+== Lista 3: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista3           ElemCorrOrigem
+
+== Lista 3: Esvaziar a lista
+=esvaziarlista   lista3           OK
+
+== Lista 3: Esvaziar a lista vazia
+=esvaziarlista   lista3           ListaVazia
+
+== Lista 3: Tentar criar a lista ja existente
+=criarlista      lista3           ListaJaExiste
+
+== Lista 3: Destruir lista
+=destruirlista   lista3           OK
+
+== Lista 3: Ir para o inicio de uma lista inexistente
+=irinilista	 lista3           ListaInexistente
+
+== Lista 3: Ir para o final de uma lista inexistente
+=irfimlista   	 lista3           ListaInexistente
+
+== Lista 3: Destruir lista inexistente
+=destruirlista   lista3           ListaInexistente
+
+== Lista 3: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista3 	  ListaInexistente
+
+== Lista 3: Criar lista ja criada e excluida
+=criarlista      lista3           OK
+
+== Lista 3: Avancar elemento em lista vazia
+=percorrelista	 lista3     2     ListaVazia
+
+== Lista 3: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista3 	  ListaVazia
+
+== Lista 3: Inserir elementos (apos)
+=insaps     lista3   char0   OK
+=insaps     lista3   char1   OK
+=insaps     lista3   char2   OK
+=insaps     lista3   char3   OK
+
+== Lista 3: Ir para o inicio da lista
+=irinilista	 lista3           OK
+
+== Lista 3: Avancar elemento em +2
+=percorrelista	 lista3     2     OK
+
+== Lista 3: Avancar elemento em -1
+=percorrelista	 lista3     -1    OK
+
+== Lista 3: Ir para o final da lista
+=irfimlista   	 lista3           OK
+
+== Lista 3: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista3           ElemCorrFim
+
+== Lista 3: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 3: Tentar avancar o elemento para depois do fim
+=percorrelista	lista3     100     FimLista
+
+== Lista 3: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista3     -100     InicioLista
+
+== Lista 3: Obter numero de elementos
+=obternumeroelementos    lista3	    OK
+
+== Lista 3: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 3: Obter elemento corrente
+=obtervalorlista		lista3	char0 OK
+
+== Lista 3: Obter elemento corrente errado
+=obtervalorlista		lista3	char2 OK
+=recuperar
+=obtervalorlista		lista3	char1 OK
+=recuperar
+=obtervalorlista		lista3	char0 OK
+
+== Lista 3: Procurar valor na lista
+=procuravalorlista      lista3  char3 OK
+
+== Lista 3: Procurar valor inexistente na lista
+=procuravalorlista	lista3  char4 NaoAchou
+
+== Lista 3: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 3: Excluir todos os elementos
+=excelemlista 		lista3		OK
+=excelemlista		lista3 		OK
+=excelemlista 		lista3		OK
+=excelemlista 		lista3		OK
+=excelemlista 		lista3		ListaVazia
+
+== Lista 3: Procurar valor em lista vazia
+=procuravalorlista	lista3  char4   ListaVazia
+
+== Lista 3: inserir um caracter
+=insaps lista3 char0 OK
+
+== Lista 4: Esvaziar lista inexistente
+=esvaziarlista   lista4           ListaInexistente
+
+== Lista 4: Criar a lista
+=criarlista      lista4           OK
+
+== Lista 4: Inserir elemento (antes)
+=insant     lista4  char1   OK 
+
+== Lista 4: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista4           ElemCorrOrigem
+
+== Lista 4: Esvaziar a lista
+=esvaziarlista   lista4           OK
+
+== Lista 4: Esvaziar a lista vazia
+=esvaziarlista   lista4           ListaVazia
+
+== Lista 4: Tentar criar a lista ja existente
+=criarlista      lista4           ListaJaExiste
+
+== Lista 4: Destruir lista
+=destruirlista   lista4           OK
+
+== Lista 4: Ir para o inicio de uma lista inexistente
+=irinilista	 lista4           ListaInexistente
+
+== Lista 4: Ir para o final de uma lista inexistente
+=irfimlista   	 lista4           ListaInexistente
+
+== Lista 4: Destruir lista inexistente
+=destruirlista   lista4           ListaInexistente
+
+== Lista 4: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista4 	  ListaInexistente
+
+== Lista 4: Criar lista ja criada e excluida
+=criarlista      lista4           OK
+
+== Lista 4: Avancar elemento em lista vazia
+=percorrelista	 lista4     2     ListaVazia
+
+== Lista 4: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista4 	  ListaVazia
+
+== Lista 4: Inserir elementos (apos)
+=insaps     lista4   char0   OK
+=insaps     lista4   char1   OK
+=insaps     lista4   char2   OK
+=insaps     lista4   char3   OK
+
+== Lista 4: Ir para o inicio da lista
+=irinilista	 lista4           OK
+
+== Lista 4: Avancar elemento em +2
+=percorrelista	 lista4     2     OK
+
+== Lista 4: Avancar elemento em -1
+=percorrelista	 lista4     -1    OK
+
+== Lista 4: Ir para o final da lista
+=irfimlista   	 lista4           OK
+
+== Lista 4: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista4           ElemCorrFim
+
+== Lista 4: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 4: Tentar avancar o elemento para depois do fim
+=percorrelista	lista4     100     FimLista
+
+== Lista 4: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista4     -100     InicioLista
+
+== Lista 4: Obter numero de elementos
+=obternumeroelementos    lista4	    OK
+
+== Lista 4: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 4: Obter elemento corrente
+=obtervalorlista		lista4	char0 OK
+
+== Lista 4: Obter elemento corrente errado
+=obtervalorlista		lista4	char2 OK
+=recuperar
+=obtervalorlista		lista4	char1 OK
+=recuperar
+=obtervalorlista		lista4	char0 OK
+
+== Lista 4: Procurar valor na lista
+=procuravalorlista      lista4  char3 OK
+
+== Lista 4: Procurar valor inexistente na lista
+=procuravalorlista	lista4  char4 NaoAchou
+
+== Lista 4: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 4: Excluir todos os elementos
+=excelemlista 		lista4		OK
+=excelemlista		lista4 		OK
+=excelemlista 		lista4		OK
+=excelemlista 		lista4		OK
+=excelemlista 		lista4		ListaVazia
+
+== Lista 4: Procurar valor em lista vazia
+=procuravalorlista	lista4  char4   ListaVazia
+
+== Lista 4: inserir um caracter
+=insaps lista4 char0 OK
+
+== Lista 5: Esvaziar lista inexistente
+=esvaziarlista   lista5           ListaInexistente
+
+== Lista 5: Criar a lista
+=criarlista      lista5           OK
+
+== Lista 5: Inserir elemento (antes)
+=insant     lista5  char1   OK 
+
+== Lista 5: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista5           ElemCorrOrigem
+
+== Lista 5: Esvaziar a lista
+=esvaziarlista   lista5           OK
+
+== Lista 5: Esvaziar a lista vazia
+=esvaziarlista   lista5           ListaVazia
+
+== Lista 5: Tentar criar a lista ja existente
+=criarlista      lista5           ListaJaExiste
+
+== Lista 5: Destruir lista
+=destruirlista   lista5           OK
+
+== Lista 5: Ir para o inicio de uma lista inexistente
+=irinilista	 lista5           ListaInexistente
+
+== Lista 5: Ir para o final de uma lista inexistente
+=irfimlista   	 lista5           ListaInexistente
+
+== Lista 5: Destruir lista inexistente
+=destruirlista   lista5           ListaInexistente
+
+== Lista 5: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista5 	  ListaInexistente
+
+== Lista 5: Criar lista ja criada e excluida
+=criarlista      lista5           OK
+
+== Lista 5: Avancar elemento em lista vazia
+=percorrelista	 lista5     2     ListaVazia
+
+== Lista 5: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista5 	  ListaVazia
+
+== Lista 5: Inserir elementos (apos)
+=insaps     lista5   char0   OK
+=insaps     lista5   char1   OK
+=insaps     lista5   char2   OK
+=insaps     lista5   char3   OK
+
+== Lista 5: Ir para o inicio da lista
+=irinilista	 lista5           OK
+
+== Lista 5: Avancar elemento em +2
+=percorrelista	 lista5     2     OK
+
+== Lista 5: Avancar elemento em -1
+=percorrelista	 lista5     -1    OK
+
+== Lista 5: Ir para o final da lista
+=irfimlista   	 lista5           OK
+
+== Lista 5: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista5           ElemCorrFim
+
+== Lista 5: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 5: Tentar avancar o elemento para depois do fim
+=percorrelista	lista5     100     FimLista
+
+== Lista 5: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista5     -100     InicioLista
+
+== Lista 5: Obter numero de elementos
+=obternumeroelementos    lista5	    OK
+
+== Lista 5: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 5: Obter elemento corrente
+=obtervalorlista		lista5	char0 OK
+
+== Lista 5: Obter elemento corrente errado
+=obtervalorlista		lista5	char2 OK
+=recuperar
+=obtervalorlista		lista5	char1 OK
+=recuperar
+=obtervalorlista		lista5	char0 OK
+
+== Lista 5: Procurar valor na lista
+=procuravalorlista      lista5  char3 OK
+
+== Lista 5: Procurar valor inexistente na lista
+=procuravalorlista	lista5  char4 NaoAchou
+
+== Lista 5: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 5: Excluir todos os elementos
+=excelemlista 		lista5		OK
+=excelemlista		lista5 		OK
+=excelemlista 		lista5		OK
+=excelemlista 		lista5		OK
+=excelemlista 		lista5		ListaVazia
+
+== Lista 5: Procurar valor em lista vazia
+=procuravalorlista	lista5  char4   ListaVazia
+
+== Lista 5: inserir um caracter
+=insaps lista5 char0 OK
+
+== Lista 6: Esvaziar lista inexistente
+=esvaziarlista   lista6           ListaInexistente
+
+== Lista 6: Criar a lista
+=criarlista      lista6           OK
+
+== Lista 6: Inserir elemento (antes)
+=insant     lista6  char1   OK 
+
+== Lista 6: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista6           ElemCorrOrigem
+
+== Lista 6: Esvaziar a lista
+=esvaziarlista   lista6           OK
+
+== Lista 6: Esvaziar a lista vazia
+=esvaziarlista   lista6           ListaVazia
+
+== Lista 6: Tentar criar a lista ja existente
+=criarlista      lista6           ListaJaExiste
+
+== Lista 6: Destruir lista
+=destruirlista   lista6           OK
+
+== Lista 6: Ir para o inicio de uma lista inexistente
+=irinilista	 lista6           ListaInexistente
+
+== Lista 6: Ir para o final de uma lista inexistente
+=irfimlista   	 lista6           ListaInexistente
+
+== Lista 6: Destruir lista inexistente
+=destruirlista   lista6           ListaInexistente
+
+== Lista 6: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista6 	  ListaInexistente
+
+== Lista 6: Criar lista ja criada e excluida
+=criarlista      lista6           OK
+
+== Lista 6: Avancar elemento em lista vazia
+=percorrelista	 lista6     2     ListaVazia
+
+== Lista 6: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista6 	  ListaVazia
+
+== Lista 6: Inserir elementos (apos)
+=insaps     lista6   char0   OK
+=insaps     lista6   char1   OK
+=insaps     lista6   char2   OK
+=insaps     lista6   char3   OK
+
+== Lista 6: Ir para o inicio da lista
+=irinilista	 lista6           OK
+
+== Lista 6: Avancar elemento em +2
+=percorrelista	 lista6     2     OK
+
+== Lista 6: Avancar elemento em -1
+=percorrelista	 lista6     -1    OK
+
+== Lista 6: Ir para o final da lista
+=irfimlista   	 lista6           OK
+
+== Lista 6: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista6           ElemCorrFim
+
+== Lista 6: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 6: Tentar avancar o elemento para depois do fim
+=percorrelista	lista6     100     FimLista
+
+== Lista 6: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista6     -100     InicioLista
+
+== Lista 6: Obter numero de elementos
+=obternumeroelementos    lista6	    OK
+
+== Lista 6: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 6: Obter elemento corrente
+=obtervalorlista		lista6	char0 OK
+
+== Lista 6: Obter elemento corrente errado
+=obtervalorlista		lista6	char2 OK
+=recuperar
+=obtervalorlista		lista6	char1 OK
+=recuperar
+=obtervalorlista		lista6	char0 OK
+
+== Lista 6: Procurar valor na lista
+=procuravalorlista      lista6  char3 OK
+
+== Lista 6: Procurar valor inexistente na lista
+=procuravalorlista	lista6  char4 NaoAchou
+
+== Lista 6: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 6: Excluir todos os elementos
+=excelemlista 		lista6		OK
+=excelemlista		lista6 		OK
+=excelemlista 		lista6		OK
+=excelemlista 		lista6		OK
+=excelemlista 		lista6		ListaVazia
+
+== Lista 6: Procurar valor em lista vazia
+=procuravalorlista	lista6  char4   ListaVazia
+
+== Lista 6: inserir um caracter
+=insaps lista6 char0 OK
+
+== Lista 7: Esvaziar lista inexistente
+=esvaziarlista   lista7           ListaInexistente
+
+== Lista 7: Criar a lista
+=criarlista      lista7           OK
+
+== Lista 7: Inserir elemento (antes)
+=insant     lista7  char1   OK 
+
+== Lista 7: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista7           ElemCorrOrigem
+
+== Lista 7: Esvaziar a lista
+=esvaziarlista   lista7           OK
+
+== Lista 7: Esvaziar a lista vazia
+=esvaziarlista   lista7           ListaVazia
+
+== Lista 7: Tentar criar a lista ja existente
+=criarlista      lista7           ListaJaExiste
+
+== Lista 7: Destruir lista
+=destruirlista   lista7           OK
+
+== Lista 7: Ir para o inicio de uma lista inexistente
+=irinilista	 lista7           ListaInexistente
+
+== Lista 7: Ir para o final de uma lista inexistente
+=irfimlista   	 lista7           ListaInexistente
+
+== Lista 7: Destruir lista inexistente
+=destruirlista   lista7           ListaInexistente
+
+== Lista 7: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista7 	  ListaInexistente
+
+== Lista 7: Criar lista ja criada e excluida
+=criarlista      lista7           OK
+
+== Lista 7: Avancar elemento em lista vazia
+=percorrelista	 lista7     2     ListaVazia
+
+== Lista 7: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista7 	  ListaVazia
+
+== Lista 7: Inserir elementos (apos)
+=insaps     lista7   char0   OK
+=insaps     lista7   char1   OK
+=insaps     lista7   char2   OK
+=insaps     lista7   char3   OK
+
+== Lista 7: Ir para o inicio da lista
+=irinilista	 lista7           OK
+
+== Lista 7: Avancar elemento em +2
+=percorrelista	 lista7     2     OK
+
+== Lista 7: Avancar elemento em -1
+=percorrelista	 lista7     -1    OK
+
+== Lista 7: Ir para o final da lista
+=irfimlista   	 lista7           OK
+
+== Lista 7: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista7           ElemCorrFim
+
+== Lista 7: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 7: Tentar avancar o elemento para depois do fim
+=percorrelista	lista7     100     FimLista
+
+== Lista 7: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista7     -100     InicioLista
+
+== Lista 7: Obter numero de elementos
+=obternumeroelementos    lista7	    OK
+
+== Lista 7: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 7: Obter elemento corrente
+=obtervalorlista		lista7	char0 OK
+
+== Lista 7: Obter elemento corrente errado
+=obtervalorlista		lista7	char2 OK
+=recuperar
+=obtervalorlista		lista7	char1 OK
+=recuperar
+=obtervalorlista		lista7	char0 OK
+
+== Lista 7: Procurar valor na lista
+=procuravalorlista      lista7  char3 OK
+
+== Lista 7: Procurar valor inexistente na lista
+=procuravalorlista	lista7  char4 NaoAchou
+
+== Lista 7: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 7: Excluir todos os elementos
+=excelemlista 		lista7		OK
+=excelemlista		lista7 		OK
+=excelemlista 		lista7		OK
+=excelemlista 		lista7		OK
+=excelemlista 		lista7		ListaVazia
+
+== Lista 7: Procurar valor em lista vazia
+=procuravalorlista	lista7  char4   ListaVazia
+
+== Lista 7: inserir um caracter
+=insaps lista7 char0 OK
+
+== Lista 8: Esvaziar lista inexistente
+=esvaziarlista   lista8           ListaInexistente
+
+== Lista 8: Criar a lista
+=criarlista      lista8           OK
+
+== Lista 8: Inserir elemento (antes)
+=insant     lista8  char1   OK 
+
+== Lista 8: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista8           ElemCorrOrigem
+
+== Lista 8: Esvaziar a lista
+=esvaziarlista   lista8           OK
+
+== Lista 8: Esvaziar a lista vazia
+=esvaziarlista   lista8           ListaVazia
+
+== Lista 8: Tentar criar a lista ja existente
+=criarlista      lista8           ListaJaExiste
+
+== Lista 8: Destruir lista
+=destruirlista   lista8           OK
+
+== Lista 8: Ir para o inicio de uma lista inexistente
+=irinilista	 lista8           ListaInexistente
+
+== Lista 8: Ir para o final de uma lista inexistente
+=irfimlista   	 lista8           ListaInexistente
+
+== Lista 8: Destruir lista inexistente
+=destruirlista   lista8           ListaInexistente
+
+== Lista 8: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista8 	  ListaInexistente
+
+== Lista 8: Criar lista ja criada e excluida
+=criarlista      lista8           OK
+
+== Lista 8: Avancar elemento em lista vazia
+=percorrelista	 lista8     2     ListaVazia
+
+== Lista 8: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista8 	  ListaVazia
+
+== Lista 8: Inserir elementos (apos)
+=insaps     lista8   char0   OK
+=insaps     lista8   char1   OK
+=insaps     lista8   char2   OK
+=insaps     lista8   char3   OK
+
+== Lista 8: Ir para o inicio da lista
+=irinilista	 lista8           OK
+
+== Lista 8: Avancar elemento em +2
+=percorrelista	 lista8     2     OK
+
+== Lista 8: Avancar elemento em -1
+=percorrelista	 lista8     -1    OK
+
+== Lista 8: Ir para o final da lista
+=irfimlista   	 lista8           OK
+
+== Lista 8: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista8           ElemCorrFim
+
+== Lista 8: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 8: Tentar avancar o elemento para depois do fim
+=percorrelista	lista8     100     FimLista
+
+== Lista 8: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista8     -100     InicioLista
+
+== Lista 8: Obter numero de elementos
+=obternumeroelementos    lista8	    OK
+
+== Lista 8: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 8: Obter elemento corrente
+=obtervalorlista		lista8	char0 OK
+
+== Lista 8: Obter elemento corrente errado
+=obtervalorlista		lista8	char2 OK
+=recuperar
+=obtervalorlista		lista8	char1 OK
+=recuperar
+=obtervalorlista		lista8	char0 OK
+
+== Lista 8: Procurar valor na lista
+=procuravalorlista      lista8  char3 OK
+
+== Lista 8: Procurar valor inexistente na lista
+=procuravalorlista	lista8  char4 NaoAchou
+
+== Lista 8: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 8: Excluir todos os elementos
+=excelemlista 		lista8		OK
+=excelemlista		lista8 		OK
+=excelemlista 		lista8		OK
+=excelemlista 		lista8		OK
+=excelemlista 		lista8		ListaVazia
+
+== Lista 8: Procurar valor em lista vazia
+=procuravalorlista	lista8  char4   ListaVazia
+
+== Lista 8: inserir um caracter
+=insaps lista8 char0 OK
+
+== Lista 9: Esvaziar lista inexistente
+=esvaziarlista   lista9           ListaInexistente
+
+== Lista 9: Criar a lista
+=criarlista      lista9           OK
+
+== Lista 9: Inserir elemento (antes)
+=insant     lista9  char1   OK 
+
+== Lista 9: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista9           ElemCorrOrigem
+
+== Lista 9: Esvaziar a lista
+=esvaziarlista   lista9           OK
+
+== Lista 9: Esvaziar a lista vazia
+=esvaziarlista   lista9           ListaVazia
+
+== Lista 9: Tentar criar a lista ja existente
+=criarlista      lista9           ListaJaExiste
+
+== Lista 9: Destruir lista
+=destruirlista   lista9           OK
+
+== Lista 9: Ir para o inicio de uma lista inexistente
+=irinilista	 lista9           ListaInexistente
+
+== Lista 9: Ir para o final de uma lista inexistente
+=irfimlista   	 lista9           ListaInexistente
+
+== Lista 9: Destruir lista inexistente
+=destruirlista   lista9           ListaInexistente
+
+== Lista 9: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista9 	  ListaInexistente
+
+== Lista 9: Criar lista ja criada e excluida
+=criarlista      lista9           OK
+
+== Lista 9: Avancar elemento em lista vazia
+=percorrelista	 lista9     2     ListaVazia
+
+== Lista 9: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista9 	  ListaVazia
+
+== Lista 9: Inserir elementos (apos)
+=insaps     lista9   char0   OK
+=insaps     lista9   char1   OK
+=insaps     lista9   char2   OK
+=insaps     lista9   char3   OK
+
+== Lista 9: Ir para o inicio da lista
+=irinilista	 lista9           OK
+
+== Lista 9: Avancar elemento em +2
+=percorrelista	 lista9     2     OK
+
+== Lista 9: Avancar elemento em -1
+=percorrelista	 lista9     -1    OK
+
+== Lista 9: Ir para o final da lista
+=irfimlista   	 lista9           OK
+
+== Lista 9: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista9           ElemCorrFim
+
+== Lista 9: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 9: Tentar avancar o elemento para depois do fim
+=percorrelista	lista9     100     FimLista
+
+== Lista 9: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista9     -100     InicioLista
+
+== Lista 9: Obter numero de elementos
+=obternumeroelementos    lista9	    OK
+
+== Lista 9: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 9: Obter elemento corrente
+=obtervalorlista		lista9	char0 OK
+
+== Lista 9: Obter elemento corrente errado
+=obtervalorlista		lista9	char2 OK
+=recuperar
+=obtervalorlista		lista9	char1 OK
+=recuperar
+=obtervalorlista		lista9	char0 OK
+
+== Lista 9: Procurar valor na lista
+=procuravalorlista      lista9  char3 OK
+
+== Lista 9: Procurar valor inexistente na lista
+=procuravalorlista	lista9  char4 NaoAchou
+
+== Lista 9: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 9: Excluir todos os elementos
+=excelemlista 		lista9		OK
+=excelemlista		lista9 		OK
+=excelemlista 		lista9		OK
+=excelemlista 		lista9		OK
+=excelemlista 		lista9		ListaVazia
+
+== Lista 9: Procurar valor em lista vazia
+=procuravalorlista	lista9  char4   ListaVazia
+
+== Lista 9: inserir um caracter
+=insaps lista9 char0 OK
+
+== Lista 10: Esvaziar lista inexistente
+=esvaziarlista   lista10           ListaInexistente
+
+== Lista 10: Criar a lista
+=criarlista      lista10           OK
+
+== Lista 10: Inserir elemento (antes)
+=insant     lista10  char1   OK 
+
+== Lista 10: Ir para o inicio da lista que ja esta no inicio
+=irinilista	 lista10           ElemCorrOrigem
+
+== Lista 10: Esvaziar a lista
+=esvaziarlista   lista10           OK
+
+== Lista 10: Esvaziar a lista vazia
+=esvaziarlista   lista10           ListaVazia
+
+== Lista 10: Tentar criar a lista ja existente
+=criarlista      lista10           ListaJaExiste
+
+== Lista 10: Destruir lista
+=destruirlista   lista10           OK
+
+== Lista 10: Ir para o inicio de uma lista inexistente
+=irinilista	 lista10           ListaInexistente
+
+== Lista 10: Ir para o final de uma lista inexistente
+=irfimlista   	 lista10           ListaInexistente
+
+== Lista 10: Destruir lista inexistente
+=destruirlista   lista10           ListaInexistente
+
+== Lista 10: Tentar excluir elemento corrente em lista inexistente
+=excelemlista	 lista10 	  ListaInexistente
+
+== Lista 10: Criar lista ja criada e excluida
+=criarlista      lista10           OK
+
+== Lista 10: Avancar elemento em lista vazia
+=percorrelista	 lista10     2     ListaVazia
+
+== Lista 10: Tentar excluir elemento corrente em lista vazia
+=excelemlista 	 lista10 	  ListaVazia
+
+== Lista 10: Inserir elementos (apos)
+=insaps     lista10   char0   OK
+=insaps     lista10   char1   OK
+=insaps     lista10   char2   OK
+=insaps     lista10   char3   OK
+
+== Lista 10: Ir para o inicio da lista
+=irinilista	 lista10           OK
+
+== Lista 10: Avancar elemento em +2
+=percorrelista	 lista10     2     OK
+
+== Lista 10: Avancar elemento em -1
+=percorrelista	 lista10     -1    OK
+
+== Lista 10: Ir para o final da lista
+=irfimlista   	 lista10           OK
+
+== Lista 10: Ir para o final de uma lista que ja esta no fim
+=irfimlista   	 lista10           ElemCorrFim
+
+== Lista 10: Avancar elemento em lista inexistente
+=percorrelista	lista0     2     ListaInexistente
+
+== Lista 10: Tentar avancar o elemento para depois do fim
+=percorrelista	lista10     100     FimLista
+
+== Lista 10: Tentar avancar o elemento para antes do inicio
+=percorrelista	lista10     -100     InicioLista
+
+== Lista 10: Obter numero de elementos
+=obternumeroelementos    lista10	    OK
+
+== Lista 10: Obter numero de elementos de lista inexistente
+=obternumeroelementos    lista0    ListaInexistente
+
+== Lista 10: Obter elemento corrente
+=obtervalorlista		lista10	char0 OK
+
+== Lista 10: Obter elemento corrente errado
+=obtervalorlista		lista10	char2 OK
+=recuperar
+=obtervalorlista		lista10	char1 OK
+=recuperar
+=obtervalorlista		lista10	char0 OK
+
+== Lista 10: Procurar valor na lista
+=procuravalorlista      lista10  char3 OK
+
+== Lista 10: Procurar valor inexistente na lista
+=procuravalorlista	lista10  char4 NaoAchou
+
+== Lista 10: Procurar valor em lista inexistente
+=procuravalorlista	lista0 char4 ListaInexistente
+
+== Lista 10: Excluir todos os elementos
+=excelemlista 		lista10		OK
+=excelemlista		lista10 		OK
+=excelemlista 		lista10		OK
+=excelemlista 		lista10		OK
+=excelemlista 		lista10		ListaVazia
+
+== Lista 10: Procurar valor em lista vazia
+=procuravalorlista	lista10  char4   ListaVazia
+
+== Lista 10: inserir um caracter
+=insaps lista10 char0 OK
+
+== Destruir as 10 listas
+=destruirlista lista1 OK
+=destruirlista lista2 OK
+=destruirlista lista3 OK
+=destruirlista lista4 OK
+=destruirlista lista5 OK
+=destruirlista lista6 OK
+=destruirlista lista7 OK
+=destruirlista lista8 OK
+=destruirlista lista9 OK
+=destruirlista lista10 OK
+
+//fim

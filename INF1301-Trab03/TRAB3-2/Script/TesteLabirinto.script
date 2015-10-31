@@ -1,0 +1,379 @@
+// Script:		TesteLabirinto.script
+// Autor:		Lucas Hardman, Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell
+// Data:		02/nov/2014
+// Propósito: testar todas as funções do módulo LABIRINTO
+
+== Inicializar valores
+=declararparm   labirinto1  	     	int  0
+=declararparm   labirinto2  	     	int  1
+=declararparm   labirinto3  	     	int  2
+=declararparm   labirinto4  	     	int  3
+=declararparm   labirinto5  	     	int  4
+=declararparm   labirinto6  	     	int  5
+=declararparm   labirinto7  	     	int  6
+=declararparm   labirinto8  	     	int  7
+=declararparm   labirinto9  	     	int  8
+=declararparm   labirinto10 	     	int  9
+=declararparm	labirintoInexistente 	int  10
+=declararparm	labirintoInvalido    	int  11
+
+=declararparm	lista	 			 	int  11
+
+=declararparm   UP	 	 			 	int	 1
+=declararparm   DOWN     			 	int -1
+=declararparm   RIGHT    			 	int	 2
+=declararparm   LEFT     			 	int -2
+
+=declararparm   OK          	   		int  0 
+=declararparm   FaltouMemoria  	   		int  1 
+=declararparm   LabirintoNaoExiste   	int  2 
+=declararparm	LabirintoJaExiste		int  3 
+=declararparm   ErroEstrutura	  		int  4 
+=declararparm   SaveCorrompido			int  5 
+=declararparm   LabirintoInvalido		int  6 
+=declararparm   SaidaEncontrada			int  7 
+=declararparm   LimiteEncontrado		int  8 
+=declararparm   EntradaJaExiste			int  9 
+=declararparm   SaidaJaExiste			int  10 
+=declararparm   SolucaoNaoCalculada		int  11 
+=declararparm   ErroAbrirArquivo		int  12 
+=declararparm	ExclusaoInvalida		int  13 
+=declararparm   SaveInvalido			int  14 
+=declararparm	LabirintoSemSolucao		int  15 
+=declararparm	EntradaNaoExiste		int  16 
+=declararparm	SaidaNaoExiste			int  17 
+
+=declararparm   pNULL      int  0
+=declararparm   pNaoNULL   int  1
+
+== Reset labirintos
+=resetlabirinto
+
+== LabirintoInexistente: Carregar Labirinto
+=criarlabirinto 		labirinto1 		   					OK
+=construirlabirinto 	labirinto1  			DOWN	  	OK
+=construirlabirinto 	labirinto1  			LEFT		OK
+=terminarlabirinto		labirinto1 	  	   					OK
+=construirlabirinto 	labirinto1  			RIGHT	   	OK
+=construirlabirinto 	labirinto1  			RIGHT		OK
+=iniciarlabirinto		labirinto1 	  	   					OK
+=validarlabirinto		labirinto1	  	   					OK
+=salvarlabirinto		labirinto1   	     	"maze1.txt" OK
+=carregarlabirinto		labirintoInexistente 	"maze1.txt" LabirintoNaoExiste
+=destruirlabirinto		labirinto1		   					OK
+
+== LabirintoInexistente: Construir Labirinto
+=construirlabirinto 	labirintoInexistente  	DOWN	   LabirintoNaoExiste
+=construirlabirinto 	labirintoInexistente  	UP	   	   LabirintoNaoExiste
+=construirlabirinto 	labirintoInexistente  	LEFT	   LabirintoNaoExiste
+=construirlabirinto 	labirintoInexistente  	RIGHT	   LabirintoNaoExiste
+
+== LabirintoInexistente: Desenhar Labirinto
+=desenharlabirinto 		labirintoInexistente 	0 		0  LabirintoNaoExiste
+
+== LabirintoInexistente: Destruir Labirinto
+=destruirlabirinto		labirintoInexistente    		   LabirintoNaoExiste
+
+== LabirintoInexistente: Excluir Elemento Corrente
+=excluircorrente		labirintoInexistente			   LabirintoNaoExiste
+
+== LabirintoInexistente: Iniciar Labirinto
+=iniciarlabirinto		labirintoInexistente			   LabirintoNaoExiste
+
+== LabirintoInexistente: Obter afastamentos horizontal e vertical
+=obterafastamento	    labirinto4		        0		14 LabirintoNaoExiste
+
+== LabirintoInexistente: Terminar Labirinto
+=terminarlabirinto		labirintoInexistente			   LabirintoNaoExiste
+
+== LabirintoInexistente: Obter Entrada
+=obterentrada			labirintoInexistente	0		   LabirintoNaoExiste
+
+== LabirintoInexistente: Obter Saída
+=obtersaida				labirintoInexistente	0		   LabirintoNaoExiste
+
+== LabirintoInexistente: Obter Posição Corrente e Obter Valor Corrente
+=obterposicaocorrente	labirintoInexistente	0 		   LabirintoNaoExiste
+=obtervalorcorrente		labirintoInexistente   'x'		   LabirintoNaoExiste
+=obterentrada			labirintoInexistente	0		   LabirintoNaoExiste
+=obtersaida				labirintoInexistente	0		   LabirintoNaoExiste
+
+== LabirintoInexistente: Obter Solução
+=obtersolucao			labirintoInexistente	lista	   LabirintoNaoExiste
+
+== LabirintoInexistente: Ir Entrada Labirinto
+=irentradalabirinto		labirintoInexistente			   LabirintoNaoExiste
+
+== LabirintoInexistente: Percorrer Labirinto
+=percorrerlabirinto		labirintoInexistente 	DOWN	   LabirintoNaoExiste
+=percorrerlabirinto		labirintoInexistente 	UP	       LabirintoNaoExiste
+=percorrerlabirinto		labirintoInexistente 	LEFT	   LabirintoNaoExiste
+=percorrerlabirinto		labirintoInexistente 	RIGHT	   LabirintoNaoExiste
+
+== LabirintoInexistente: Salvar Labirinto
+=salvarlabirinto		labirintoInexistente 	"SaveInexistente.txt" 	LabirintoNaoExiste
+
+== LabirintoInexistente: Validar Labirinto
+=validarlabirinto		labirintoInexistente			   LabirintoNaoExiste
+
+== Labirinto Invalido: Validar Labirinto
+=criarlabirinto 		labirintoInvalido 		   		   OK
+=construirlabirinto     labirintoInvalido       DOWN       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=construirlabirinto     labirintoInvalido     	LEFT       OK
+=construirlabirinto     labirintoInvalido     	LEFT       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=validarlabirinto		labirintoInvalido	  	   		   LabirintoInvalido
+=destruirlabirinto 		labirintoInvalido		   		   OK
+
+== Labirinto Invalido: Salvar Labirinto
+=criarlabirinto 		labirintoInvalido 		    		 OK
+=construirlabirinto     labirintoInvalido       DOWN         OK
+=construirlabirinto     labirintoInvalido     	DOWN         OK
+=construirlabirinto     labirintoInvalido     	DOWN         OK
+=construirlabirinto     labirintoInvalido     	LEFT         OK
+=construirlabirinto     labirintoInvalido     	LEFT         OK
+=construirlabirinto     labirintoInvalido     	DOWN         OK
+=salvarlabirinto		labirintoInvalido 	  "SaveInvalido.txt" 	  LabirintoInvalido
+=destruirlabirinto 		labirintoInvalido		  	   		 OK
+
+== Labirinto Invalido: Percorrer Labirinto
+=criarlabirinto 		labirintoInvalido 		   		   OK
+=construirlabirinto     labirintoInvalido       DOWN       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=construirlabirinto     labirintoInvalido     	LEFT       OK
+=construirlabirinto     labirintoInvalido     	LEFT       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=percorrerlabirinto		labirintoInvalido		DOWN  	   LabirintoInvalido
+=percorrerlabirinto		labirintoInvalido		UP  	   LabirintoInvalido
+=percorrerlabirinto		labirintoInvalido		LEFT  	   LabirintoInvalido
+=percorrerlabirinto		labirintoInvalido		RIGHT  	   LabirintoInvalido
+=destruirlabirinto 		labirintoInvalido		 		   OK
+
+== Labirinto Invalido: Obter Saída e Obter Entrada
+=criarlabirinto 		labirintoInvalido 		   		   OK
+=construirlabirinto     labirintoInvalido       DOWN       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=construirlabirinto     labirintoInvalido     	LEFT       OK
+=construirlabirinto     labirintoInvalido     	LEFT       OK
+=construirlabirinto     labirintoInvalido     	DOWN       OK
+=obterentrada			labirintoInvalido		0  	   	   EntradaNaoExiste
+=obtersaida				labirintoInvalido		0  	   	   SaidaNaoExiste
+=destruirlabirinto 		labirintoInvalido		   		   OK
+
+== Labirinto Invalido: Ir Entrada Labirinto
+=criarlabirinto 		labirintoInvalido 		   		   OK
+=irentradalabirinto		labirintoInvalido		   		   LabirintoInvalido
+=destruirlabirinto 		labirintoInvalido		   		   OK
+
+== Labirinto Invalido: Salvar
+=criarlabirinto 	labirintoInvalido      				   OK
+=salvarlabirinto	labirintoInvalido	"labirintoInvalido.txt"		LabirintoInvalido
+=destruirlabirinto 	labirintoInvalido					   OK
+
+== Erro ao Carregar Labirinto
+=criarlabirinto		labirintoInvalido					   OK
+=carregarlabirinto	labirintoInvalido	"labirintoinvalido4.txt"    SaveInvalido
+=destruirlabirinto	labirintoInvalido					   OK
+
+== Save Corrompido 1: Carregar Labirinto
+=criarlabirinto		labirintoInvalido					   OK
+=carregarlabirinto	labirintoInvalido	"labirintoinvalido5.docx"   SaveCorrompido
+=destruirlabirinto	labirintoInvalido					   OK
+
+== Save Corrompido 2: Carregar Labirinto
+=criarlabirinto 	labirintoInvalido					   OK
+=carregarlabirinto	labirintoInvalido	"labirintoInvalido1.txt"    SaveCorrompido
+=destruirlabirinto  labirintoInvalido       		   	   OK
+
+== Erro ao abrir arquivo: Carregar Labirinto
+=criarlabirinto 	labirintoInvalido					   OK
+=carregarlabirinto	labirintoInvalido	"labirintoInexistente.txt"  ErroAbrirArquivo
+=destruirlabirinto  labirintoInvalido       			   OK
+
+== Save Corrompido 3: Carregar Labirinto
+=criarlabirinto 	labirintoInvalido					   OK
+=carregarlabirinto	labirintoInvalido	"labirintoInvalido3.txt"	SaveCorrompido	
+=destruirlabirinto  labirintoInvalido		       		   OK
+
+== Criar labirintos
+=criarlabirinto 	labirinto1 							   OK
+=criarlabirinto 	labirinto2 							   OK
+=criarlabirinto		labirinto3 							   OK
+=criarlabirinto		labirinto4 							   OK
+
+== Labirinto 1: Testar Criar Labirinto Já Existente
+=criarlabirinto		labirinto1 							   LabirintoJaExiste
+
+== Labirinto 1: Construir e Percorrer
+=construirlabirinto labirinto1  		RIGHT  	   		   OK
+=construirlabirinto labirinto1  		RIGHT  	   		   OK
+=construirlabirinto labirinto1  		RIGHT  	   		   OK
+=construirlabirinto labirinto1  		UP	   			   OK
+=recuperar
+=desenharlabirinto 	labirinto1 			1		 0  	   OK
+=construirlabirinto labirinto1  		DOWN   	   		   OK
+=construirlabirinto labirinto1  		DOWN   	   		   OK
+=construirlabirinto labirinto1  		LEFT   	   		   OK
+=terminarlabirinto	labirinto1 	  						   OK
+=desenharlabirinto 	labirinto1 			1 		 0		   OK
+=construirlabirinto labirinto1  		RIGHT  	   		   OK
+=construirlabirinto labirinto1  		UP 	   			   OK
+=construirlabirinto labirinto1  		UP 	   			   OK
+=construirlabirinto labirinto1  		LEFT   	   		   OK
+=construirlabirinto labirinto1  		LEFT   	   		   OK
+=construirlabirinto labirinto1  		LEFT   	   		   OK
+=construirlabirinto labirinto1  		LEFT   	   		   OK
+=construirlabirinto labirinto1  		LEFT       		   OK
+=construirlabirinto labirinto1  		DOWN   	   		   OK
+=construirlabirinto labirinto1  		DOWN   	   		   OK
+=iniciarlabirinto	labirinto1 	  	   					   OK
+=construirlabirinto labirinto1 			UP 	   			   OK
+=validarlabirinto	labirinto1	  	   					   OK
+=desenharlabirinto	labirinto1 			1 		0		   OK
+=percorrerlabirinto	labirinto1			UP			 	   OK
+=desenharlabirinto	labirinto1 			1 		0  		   OK
+=percorrerlabirinto	labirinto1			UP			 	   OK
+=recuperar
+=desenharlabirinto	labirinto1 			1 		0	  	   OK
+=percorrerlabirinto	labirinto1			UP			 	   LimiteEncontrado
+=percorrerlabirinto	labirinto1			RIGHT		  	   OK
+=desenharlabirinto	labirinto1 			1 		0	 	   OK
+=percorrerlabirinto	labirinto1			RIGHT		  	   OK
+=desenharlabirinto	labirinto1 			1 		0	 	   OK
+=percorrerlabirinto	labirinto1			RIGHT		  	   OK
+=desenharlabirinto	labirinto1 			1 		0 	 	   OK
+=percorrerlabirinto	labirinto1			RIGHT		  	   OK
+=desenharlabirinto	labirinto1 			1 		0	  	   OK
+=percorrerlabirinto	labirinto1			RIGHT		  	   OK
+=desenharlabirinto	labirinto1 			1 		0	  	   OK
+=percorrerlabirinto	labirinto1  		DOWN		   	   OK
+=desenharlabirinto	labirinto1 			1 		0 	 	   OK
+=percorrerlabirinto	labirinto1  		DOWN		   	   OK
+=desenharlabirinto	labirinto1 			1 		0 		   OK
+=percorrerlabirinto labirinto1  		LEFT		   	   SaidaEncontrada
+=desenharlabirinto	labirinto1 			1 		0	 	   OK
+
+== Labirinto 2: Construir
+=construirlabirinto  labirinto2     	RIGHT		       OK
+=construirlabirinto  labirinto2     	RIGHT     		   OK
+=construirlabirinto  labirinto2     	RIGHT      		   OK
+=excluircorrente	 labirinto2		 			 		   OK
+=excluircorrente	 labirinto2							   OK
+=recuperar
+=excluircorrente	 labirinto2		   	 				   ExclusaoInvalida
+=iniciarlabirinto    labirinto2 	  		  			   OK
+=iniciarlabirinto	 labirinto2 	  	   				   EntradaJaExiste
+=construirlabirinto  labirinto2     	DOWN       		   OK
+=construirlabirinto  labirinto2     	DOWN       		   OK
+=construirlabirinto  labirinto2     	DOWN       		   OK
+=desenharlabirinto	 labirinto2 		1 		0  		   OK
+=construirlabirinto  labirinto2     	UP  		       OK
+=construirlabirinto  labirinto2     	UP       	       OK
+=construirlabirinto  labirinto2     	UP         		   OK
+=construirlabirinto  labirinto2     	RIGHT			   OK
+=construirlabirinto  labirinto2     	RIGHT      		   OK
+=construirlabirinto  labirinto2     	RIGHT       	   OK
+=desenharlabirinto	 labirinto2 		1 		0		   OK
+=construirlabirinto  labirinto2     	DOWN     		   OK
+=construirlabirinto  labirinto2     	DOWN    		   OK
+=construirlabirinto  labirinto2     	DOWN     		   OK
+=construirlabirinto  labirinto2     	LEFT      		   OK
+=construirlabirinto  labirinto2     	LEFT     		   OK
+=construirlabirinto  labirinto2     	LEFT     		   OK
+=construirlabirinto  labirinto2     	LEFT     		   OK
+=construirlabirinto  labirinto2     	LEFT     		   OK
+=construirlabirinto  labirinto2     	DOWN     		   OK
+=construirlabirinto  labirinto2     	DOWN    		   OK
+=construirlabirinto  labirinto2     	DOWN    		   OK
+=desenharlabirinto	 labirinto2 		1 		0 	       OK
+=construirlabirinto  labirinto2    		UP		           OK
+=construirlabirinto  labirinto2     	UP       		   OK
+=construirlabirinto  labirinto2     	UP        		   OK
+=construirlabirinto  labirinto2     	LEFT       		   OK
+=construirlabirinto  labirinto2     	LEFT      		   OK
+=construirlabirinto  labirinto2     	UP         		   OK
+=terminarlabirinto	 labirinto2 	  	   				   OK
+=terminarlabirinto	 labirinto2 	  	  				  SaidaJaExiste
+=construirlabirinto  labirinto2     	DOWN       		  OK
+=validarlabirinto	 labirinto2	  	   					  OK
+=desenharlabirinto	 labirinto2 		1 		0         OK
+
+== Salvar Labirintos
+=salvarlabirinto	 labirinto1			"maze1.txt"   	  OK
+=salvarlabirinto	 labirinto2			"maze2.txt"		  OK
+
+== Labirinto 2: Carregar e Percorrer
+=carregarlabirinto	labirinto2			"maze2.txt"	      OK
+=percorrerlabirinto	labirinto2			LEFT 	   	   	  OK
+=percorrerlabirinto	labirinto2			RIGHT  	   		  OK
+=percorrerlabirinto	labirinto2			RIGHT  	   		  OK
+=percorrerlabirinto	labirinto2			RIGHT  	   		  OK
+=percorrerlabirinto	labirinto2			RIGHT  	   		  OK
+=percorrerlabirinto	labirinto2			UP  	   		  OK
+=percorrerlabirinto	labirinto2			UP  	   		  OK
+=percorrerlabirinto	labirinto2			UP  	   		  OK
+=percorrerlabirinto	labirinto2			UP	   			  LimiteEncontrado
+=percorrerlabirinto	labirinto2			DOWN  	   		  OK
+=percorrerlabirinto	labirinto2			DOWN	   	   	  OK
+=percorrerlabirinto	labirinto2			DOWN  	   		  OK
+=percorrerlabirinto	labirinto2			LEFT  	   		  OK
+=percorrerlabirinto	labirinto2			LEFT  	   		  OK
+=percorrerlabirinto	labirinto2			LEFT  	   		  OK
+=percorrerlabirinto	labirinto2			LEFT  	   		  OK
+=percorrerlabirinto	labirinto2			UP  	   		  SaidaEncontrada
+=obterentrada		labirinto2			4				  OK
+=obtersaida			labirinto2			188			  	  OK
+
+== Labirinto 3: Ir Entrada Labirinto, Obter Posicao Corrente e Obter Valor Corrente
+=construirlabirinto   labirinto3      	DOWN	       	  OK
+=iniciarlabirinto	  labirinto3			 	  	      OK
+=construirlabirinto   labirinto3     	DOWN       		  OK
+=construirlabirinto   labirinto3     	DOWN       		  OK
+=construirlabirinto   labirinto3     	LEFT       		  OK
+=construirlabirinto   labirinto3     	LEFT      		  OK
+=obterposicaocorrente labirinto3		270	   			  OK
+=construirlabirinto   labirinto3     	DOWN       		  OK
+=irentradalabirinto	  labirinto3		   				  OK
+=construirlabirinto   labirinto3     	DOWN       		  OK
+=construirlabirinto   labirinto3     	DOWN       		  OK
+=construirlabirinto   labirinto3     	LEFT       		  OK
+=obtervalorcorrente	  labirinto3		'P'	   			  OK
+=construirlabirinto   labirinto3     	LEFT       		  OK
+=construirlabirinto   labirinto3     	DOWN       		  OK
+=terminarlabirinto	  labirinto3 	  	   				  OK
+=validarlabirinto	  labirinto3		   				  OK
+=irentradalabirinto	  labirinto3		   				  OK
+=desenharlabirinto	  labirinto3 		1 		0  	      OK
+=destruirlabirinto	  labirinto3		   				  OK
+
+== Labirinto 1: Carregar labirinto que já está na saída
+=carregarlabirinto	  labirinto1		"maze1.txt"		  OK
+=recuperar
+=carregarlabirinto	  labirinto1		"maze1.txt"		  SaveInvalido
+
+==Labirinto 4: Obter solução não calculada
+=carregarlabirinto	  labirinto4		"doommaze.txt"	  OK
+=desenharlabirinto	  labirinto4 		1 		0  	      OK
+=obtersolucao		  labirinto4		lista			  SolucaoNaoCalculada
+
+==Labirinto 4: Solucionar e Obter solução
+=carregarlabirinto	  labirinto4		"LOUCO5.txt"	  OK
+=desenharlabirinto	  labirinto4 		1 		0  	      OK
+=solucionarlabirinto  labirinto4	    0		   		  OK
+=obterafastamento	  labirinto4		0		14		  OK
+=desenharlabirinto	  labirinto4 		1 		1  	      OK
+=obtervalorcorrente	  labirinto4      	'P'		  		  OK
+=obterentrada		  labirinto4	    0	      		  OK
+=obtersaida			  labirinto4	    1148      		  OK
+=obtersolucao		  labirinto4	    lista			  OK
+=destruirlabirinto	  labirinto4					      OK
+
+== Destruir Labirintos
+=destruirlabirinto 	  labirinto1 						  OK
+=destruirlabirinto 	  labirinto2 						  OK
+
+//FIM

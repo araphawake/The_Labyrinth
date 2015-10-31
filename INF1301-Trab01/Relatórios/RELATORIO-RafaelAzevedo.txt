@@ -1,0 +1,88 @@
+﻿/*************************************************************************************************************************************************************************/
+*
+*  Relatório-RafaelAzevedo: Trabalho 1
+*
+*  Arquivo: RELATORIO-RafaelAzevedo.txt              
+*
+*
+*	  Data        Horas Trabalhadas   Tipo Tarefa   	Descrição da Tarefa Realizada
+*	15/ago/2014   	    2		  estudar		Download do arcabouço e início do estudo do conteúdo do arcabouço.
+*
+*	18/ago/2014	    3		  estudar		Estudo da configuração do arcabouço e resolução do erro "tudo.err not found".
+*
+*	19/ago/2014 	    1		  estudar		Execução de vsvars32.bat e CompilaTudo.bat; geração do ArcaboucoTeste.lib.
+*								Estudo do arcabouço.
+*
+*	20/ago/2014	    3		  estudar		Estudo de Multithread MT e Multithread Debug MT ( independência do .exe de .dll ).
+*								Estudo do arcabouço.
+*
+*	22/ago/2014	    4		  estudar		Criação de diretório dropbox e de documentos da equipe de trabalho. 
+*								Build e geração de .exe do projeto do TESTARV.c (em simples). 
+*								Organização de agenda de metas da equipe de trabalho.
+*
+*	23/ago/2014	    3		  estudar		Continuação do estudo do arcabouço.
+*
+*	24/ago/2014    	    5		  estudar		Estudo do arcabouço foi terminado.
+*								TesteArvore.script foi alterado para testar entendimento acerca do
+*								funcionamento do arcabouço e do log de saída de execução do teste.
+*								Partilhamento de instruções para configuração do arcabouço e integração 
+*								com o visual studio com o grupo em reunião online.
+*
+*	25/ago/2014	    1		  estudar		Teste do LISTEST.C (verificar esse nome), estudo do script do módulo LISTA.C.
+*								Oferta de sugestão de data para reunião presencial visando divisão de tarefas/módulos.
+*
+*	26/ago/2014	    4		  estudar		Planejamento e modelagem da solução do trabalho 1 (em grupo).
+*
+*
+*	26/ago/2014	    2	  revisar código do módulo	Início do desenvolvimento dos módulos de implementação e de definição ARVORE.C e ARVORE.H.					*
+*	27/ago/2014	    4	      codificar módulo		Codificação e edição dos módulos ARVORE.C e ARVORE.H.
+*
+*	28/ago/2014	    4     revisar código do módulo	Manutenção de todas as funções dos módulos ARVORE.C e ARVORE.H
+*				  revisar código do módulo	Manutenção de todas as funções dos módulos LISTA.C e LISTA.H
+*				    codificar o módulo		Funções CriarNoRaiz e InicializarLista criadas e implementadas.
+*				  revisar código do módulo	Alteração dos parâmetros das funções para receber listas e árvores por referência.
+*
+*	29/ago/2014	    5	  revisar código do módulo	Início da implementação do módulo TESTARV.C para criar 10 árvores simultâneas.
+*				  redigir script de teste	Escrita de script para teste de árvores que armazenam listas de caracteres.
+*				  revisar código do módulo	Manutenção dos módulos ARVORE.C, ARVORE.H, LISTA.C e LISTA.H.
+*								Alteração das funções CriaArvore e CriaLista.
+*
+*	30/ago/2014	   4	     codificar módulo		Implementação da função InicializarLista.
+*				  redigir script de teste	Escrita de script para teste de árvores que armazenam listas de caracteres.
+*				  revisar código do módulo	Manutenção dos módulos LISTA.C, LISTA.H. Alteração de todas as funções.
+*				     codificar módulo		Modificação das funções LIS_DestruirLista, LIS_EsvaziarLista, LIS_LiberarElemento e manutenção de codigo.
+*				     codificar módulo		Alteração das funções dos módulos LISTA.C e LISTA.H para retornarem condições de retorno.
+*
+*	31/ago/2014	   8	     codificar módulo		Alteração do módulo TESTARV.C para testar funções dos módulos LISTA.C/LISTA.H, ARVORE.C/ARVORE.H.
+*				  revisar código do módulo	Alteração da função LIS_CriarLista e implementação da função LIS_ObterNumeroElementos.
+*				  revisar código do módulo	Exclusão da função LIS_InicializarLista.
+*				     codificar módulo		Criação de novos comandos de teste em TESTARV.C.
+*				  redigir script de teste	Escrita de script para teste de árvores que armazenam listas de caracteres.
+*				  revisar código do módulo	Manutenção de erros de código nas funções em função do resultado do script.
+*	  diagnosticar e corrigir os problemas encontrados
+*		realizar os testes/revisar script de teste	Investigação de bugs da nova implementação.
+*						
+*
+*	01/set/2014	   9	  revisar código de módulo 	Alteração dos módulos ARVORE.C e ARVORE.H.
+*				  revisar código de módulo	Alteração dos módulos LISTA.C e LISTA.H.
+*				  revisar código de módulo	Alteração dos módulos TESTLIS.C e TESTARV.C.
+*				  redigir script de teste	Escrita parcial de script de teste TesteArvoreListas.script e TesteListaGenérica.script.
+*				     realizar os testes		Investigação de erros/bugs do programa. Dificuldade encontrada com função LIS_ObterValorCorrente.
+*	  diagnosticar e corrigir os problemas encontrados
+*				  					
+*	02/set/2014	   7	     realizar os testes		Investigação de erros/bugs do programa. Alteração de todos os módulos do programa.
+*	  diagnosticar e corrigir os problemas encontrados
+*				  revisar código do módulo	Encerramento da implementação de todas as funções dos módulos LISTA.C e LISTA.H.*
+*				  revisar código do módulo	Encerramento da implementação de todas as funções dos módulos ARVORE.C e ARVORE.H.*
+*				  	 projetar		Edição do LEIAME.TXT e do LEIAM.PDF.
+*				  revisar script de teste	Edição do script TesteArvoreListas.script.
+*				    realizar os testes		*Funções LIS_ObterValorCorrente, LIS_ProcurarValor e ARV_ObterValor com erro.
+*
+*	03/set/2014	  7	  revisar codigo de módulo	Revisão dos módulos ARVORE.C, ARVORE.H, TESTARV.C e TESTLIS.C
+*				  revisar script de teste	Revisão dos scripts TesteArvoreListas.script e TesteListaGenerica.script.
+*				  realizar os teste		Execução dos testes para Lista Genérica e Árvore de listas.
+*	  diagnosticar e corrigir os problemas encontrados	Corrigir problemas com a função LIS_ObterValorCorrente e ARV_ObterValorCorrente.
+*				  realizar testes		Verificação de que tudo os módulos estão funcionando como esperado.
+*				  				
+*				  									
+/*************************************************************************************************************************************************************************/

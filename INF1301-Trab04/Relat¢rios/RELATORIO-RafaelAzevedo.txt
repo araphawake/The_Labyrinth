@@ -1,0 +1,34 @@
+﻿/*************************************************************************************************************************************************************************/
+*
+*  Relatório-RafaelAzevedo: Trabalho 4
+*
+*  Arquivo: RELATORIO-RafaelAzevedo.txt              
+*
+*
+*	  Data        Horas Trabalhadas   	Tipo Tarefa   			Descrição da Tarefa Realizada
+*	15/nov/2014   	    5		  	estudar				Estudo do módulo CONTA
+*						estudar				Estudo do módulo INTRPCNT
+*
+*	16/nov/2014	    5			estudar				Estudo do módulo CESPDIN
+*						estudar				Estudo do módulo INTRPCED
+*						codificar módulo		Inclusão de alguns contadores no módulo GRAFO ( utilização da função CNT_CONTAR ).
+*						
+*	22/nov/2014	    5			codificar módulo		Inclusão de contadores no módulo GRAFO
+*						revisar projeto			Criação da lista de contadores
+*						redigir script de teste		Inclusão dos comandos de iniciar contagem, parar contagem, terminar contagem.
+*						codificar módulo		Início da implementação da função GRF_DETURPAR
+*
+*	23/nov/2014 	    6	  		codificar módulo		Implementação da função GRF_VERIFICAR e GRF_DETURPAR
+*						revisar código do módulo	Revisar código do módulo GRAFO
+*						codificar módulo		Codificar o módulo de teste do TESTEGRAFO incluindo comandos do modo DEBUG
+*
+*	29/nov/2014	    5	  		codificar módulo		Codificar o módulo de teste do TESTEGRAFO
+*						revisar código			Alterar funções GRF_VERIFICAR e GRF_DETURPAR
+*						revisar projeto			Edição e revisão com atualização de toda a documentação
+*
+*	30/nov/2014	    5			revisar projeto			Edição e revisão com atualização de toda a documentação
+*						redigir script de teste		Redigir script de teste do módulo GRAFO no modo DEBUG e script VerticeNULL
+*						revisar projeto			Criação de documentação do uso da GRF_DETURPA e GRF_VERIFICAR explicando 
+*										retornos e erros esperados.
+*				  									
+/*************************************************************************************************************************************************************************/

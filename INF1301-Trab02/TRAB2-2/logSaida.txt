@@ -1,0 +1,507 @@
+
+
+LES - Laboratório de Engenharia de Software DI/PUC-Rio
+      Arcabouço de teste de módulos C  (c) 2006
+
+---------------------------------------------
+      Construto sob teste: TRAB2-2.exe
+
+      Arquivo de teste:    Scripts/TesteGrafoGenerico.script
+
+
+!!!    0  Linha:     1  // Script:    TesteGrafo.script 
+!!!    0  Linha:     2  // Autor:     Lucas Hardman, Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell 
+!!!    0  Linha:     3  // Data:      01/ago/2014 
+!!!    0  Linha:     4  // Propósito: Testar todas as funções do módulo grafo 
+!!!    0  Linha:     5  // 
+    7  == Inicializar valores
+   45  == Reset grafos
+   48  == GrafoInexistente: Testar inserir vértice origem
+   51  == GrafoInexistente: Testar inserir vértice
+   54  == GrafoInexistente: Testar ir para vértice origem
+   57  == GrafoInexistente: Testar ir para vértice
+   60  == GrafoInexistente: Testar ir para vértice com valor dado
+   63  == GrafoInexistente: Testar obter o número de vérticesresposta: 0 0
+   66  == GrafoInexistente: Testar alterar conteúdo do vértice corrente
+   69  == GrafoInexistente: Testar obter valor corrente
+   72  == GrafoInexistente: Testar excluir vértice origem
+   75  == GrafoInexistente: Testar excluir vértice corrente
+   78  == GrafoInexistente: Testar esvaziar grafo inexistente
+   81  == GrafoInexistente: Testar destruir grafo inexistente
+   84  == Grafo Inexistente: Testar inserir ciclo
+   87  == Grafo Inexistente: Testar associar vertice
+   90  == Grafo 1: Criar Grafo
+   93  == Grafo 1: Testar criar grafo já existente
+   96  == Grafo 1: Testar esvaziar grafo vazio
+   99  == Grafo 1: Testar obter valor corrente de grafo vazio
+  102  == Grafo 1: Testar alterar conteúdo do vértice corrente de grafo vazio
+  105  == Grafo 1: Testar ir para vértice em grafo vazio
+  108  == Grafo 1: Testar ir para vértice com valor em grafo vazio
+  111  == Grafo 1: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:   112  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:   113  Falha esperada foi recuperada. resposta: 0 0
+  116  == Grafo 1: Tentar excluir vértice origem em grafo vazio
+  119  == Grafo 1: Testar excluir vértice em grafo vazio
+  122  == Grafo 1: Testar inserir vértice em grafo sem origem
+  125  == Grafo 1: Inserir vértice origem
+  128  == Grafo 1: Inserir segundo vértice origem
+  131  == Grafo 1: Inserir terceiro vértice origem
+  134  == Grafo 1: Inserir 4 vértices em graforesposta: 8 8
+  141  == Grafo 1: Testar inserir vértice em aresta já existente
+  144  == Grafo 1: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:   145  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:   146  Falha esperada foi recuperada. resposta: 8 8
+  149  == Grafo 1: Esvaziar graforesposta: 0 0
+  153  == Grafo 1: Ir para vértice e obter valor corrente Caracter obtido: c 
+  161  == Grafo 1: Testar ir para vértice inexistente
+  166  == Grafo 1: Testar ir para vértice origem inexistente
+  173  == Grafo 1: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+  182  == Grafo 1: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+  193  == Grafo 1: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+  207  == Grafo 1: Testar ir para vértice inexistente com valor dado
+  213  == Grafo 1: Percorrer Grafo Caracter obtido: d 
+  220  == Grafo 1: Excluir vértice origem
+  226  == Grafo 1: Testar excluir vértice origem com dois filhos
+  237  == Grafo 1: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+  249  == Grafo 1: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+  262  == Grafo 1: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+  277  == Grafo 1: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+  290  == Grafo 1: Testar inserir vértice com identidade 0
+  295  == Grafo 1: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+  315  == Grafo 1: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:   321  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:   322  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+  339  == Grafo 1: Testar associar vertices identidade da aresta 0
+  342  ==Grafo 1: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:   366  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:   367  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:   371  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:   372  Falha esperada foi recuperada. 
+  375  == Grafo 2: Criar Grafo
+  378  == Grafo 2: Testar criar grafo já existente
+  381  == Grafo 2: Testar esvaziar grafo vazio
+  384  == Grafo 2: Testar obter valor corrente de grafo vazio
+  387  == Grafo 2: Testar alterar conteúdo do vértice corrente de grafo vazio
+  390  == Grafo 2: Testar ir para vértice em grafo vazio
+  393  == Grafo 2: Testar ir para vértice com valor em grafo vazio
+  396  == Grafo 2: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:   397  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:   398  Falha esperada foi recuperada. resposta: 0 0
+  401  == Grafo 2: Tentar excluir vértice origem em grafo vazio
+  404  == Grafo 2: Testar excluir vértice em grafo vazio
+  407  == Grafo 2: Testar inserir vértice em grafo sem origem
+  410  == Grafo 2: Inserir vértice origem
+  413  == Grafo 2: Inserir segundo vértice origem
+  416  == Grafo 2: Inserir terceiro vértice origem
+  419  == Grafo 2: Inserir 4 vértices em graforesposta: 8 8
+  426  == Grafo 2: Testar inserir vértice em aresta já existente
+  429  == Grafo 2: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:   430  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:   431  Falha esperada foi recuperada. resposta: 8 8
+  434  == Grafo 2: Esvaziar graforesposta: 0 0
+  438  == Grafo 2: Ir para vértice e obter valor corrente Caracter obtido: c 
+  446  == Grafo 2: Testar ir para vértice inexistente
+  451  == Grafo 2: Testar ir para vértice origem inexistente
+  458  == Grafo 2: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+  467  == Grafo 2: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+  478  == Grafo 2: Testar ir para vértice inexistente com valor dado
+  484  == Grafo 2: Percorrer Grafo Caracter obtido: d 
+  491  == Grafo 2: Excluir vértice origem
+  497  == Grafo 2: Testar excluir vértice origem com dois filhos
+  508  == Grafo 2: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+  520  == Grafo 2: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+  533  == Grafo 2: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+  548  == Grafo 2: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+  561  == Grafo 2: Testar inserir vértice com identidade 0
+  566  == Grafo 2: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+  586  == Grafo 2: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:   592  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:   593  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+  610  == Grafo 2: Testar associar vertices identidade da aresta 0
+  613  ==Grafo 2: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:   637  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:   638  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:   642  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:   643  Falha esperada foi recuperada. 
+  646  == Grafo 3: Criar Grafo
+  649  == Grafo 3: Testar criar grafo já existente
+  652  == Grafo 3: Testar esvaziar grafo vazio
+  655  == Grafo 3: Testar obter valor corrente de grafo vazio
+  658  == Grafo 3: Testar alterar conteúdo do vértice corrente de grafo vazio
+  661  == Grafo 3: Testar ir para vértice em grafo vazio
+  664  == Grafo 3: Testar ir para vértice com valor em grafo vazio
+  667  == Grafo 3: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:   668  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:   669  Falha esperada foi recuperada. resposta: 0 0
+  672  == Grafo 3: Tentar excluir vértice origem em grafo vazio
+  675  == Grafo 3: Testar excluir vértice em grafo vazio
+  678  == Grafo 3: Testar inserir vértice em grafo sem origem
+  681  == Grafo 3: Inserir vértice origem
+  684  == Grafo 3: Inserir segundo vértice origem
+  687  == Grafo 3: Inserir terceiro vértice origem
+  690  == Grafo 3: Inserir 4 vértices em graforesposta: 8 8
+  697  == Grafo 3: Testar inserir vértice em aresta já existente
+  700  == Grafo 3: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:   701  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:   702  Falha esperada foi recuperada. resposta: 8 8
+  705  == Grafo 3: Esvaziar graforesposta: 0 0
+  709  == Grafo 3: Ir para vértice e obter valor corrente Caracter obtido: c 
+  717  == Grafo 3: Testar ir para vértice inexistente
+  722  == Grafo 3: Testar ir para vértice origem inexistente
+  729  == Grafo 3: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+  738  == Grafo 3: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+  749  == Grafo 3: Testar ir para vértice inexistente com valor dado
+  755  == Grafo 3: Percorrer Grafo Caracter obtido: d 
+  762  == Grafo 3: Excluir vértice origem
+  768  == Grafo 3: Testar excluir vértice origem com dois filhos
+  779  == Grafo 3: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+  791  == Grafo 3: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+  804  == Grafo 3: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+  819  == Grafo 3: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+  832  == Grafo 3: Testar inserir vértice com identidade 0
+  838  == Grafo 3: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+  858  == Grafo 3: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:   864  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:   865  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+  882  == Grafo 3: Testar associar vertices identidade da aresta 0
+  885  ==Grafo 3: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:   909  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:   910  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:   914  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:   915  Falha esperada foi recuperada. 
+  918  == Grafo 4: Criar Grafo
+  921  == Grafo 4: Testar criar grafo já existente
+  924  == Grafo 4: Testar esvaziar grafo vazio
+  927  == Grafo 4: Testar obter valor corrente de grafo vazio
+  930  == Grafo 4: Testar alterar conteúdo do vértice corrente de grafo vazio
+  933  == Grafo 4: Testar ir para vértice em grafo vazio
+  936  == Grafo 4: Testar ir para vértice com valor em grafo vazio
+  939  == Grafo 4: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:   940  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:   941  Falha esperada foi recuperada. resposta: 0 0
+  944  == Grafo 4: Tentar excluir vértice origem em grafo vazio
+  947  == Grafo 4: Testar excluir vértice em grafo vazio
+  950  == Grafo 4: Testar inserir vértice em grafo sem origem
+  953  == Grafo 4: Inserir vértice origem
+  956  == Grafo 4: Inserir segundo vértice origem
+  959  == Grafo 4: Inserir terceiro vértice origem
+  962  == Grafo 4: Inserir 4 vértices em graforesposta: 8 8
+  969  == Grafo 4: Testar inserir vértice em aresta já existente
+  972  == Grafo 4: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:   973  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:   974  Falha esperada foi recuperada. resposta: 8 8
+  977  == Grafo 4: Esvaziar graforesposta: 0 0
+  981  == Grafo 4: Ir para vértice e obter valor corrente Caracter obtido: c 
+  989  == Grafo 4: Testar ir para vértice inexistente
+  994  == Grafo 4: Testar ir para vértice origem inexistente
+ 1001  == Grafo 4: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+ 1010  == Grafo 4: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+ 1021  == Grafo 4: Testar ir para vértice inexistente com valor dado
+ 1027  == Grafo 4: Percorrer Grafo Caracter obtido: d 
+ 1034  == Grafo 4: Excluir vértice origem
+ 1040  == Grafo 4: Testar excluir vértice origem com dois filhos
+ 1051  == Grafo 4: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+ 1063  == Grafo 4: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+ 1076  == Grafo 4: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+ 1091  == Grafo 4: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+ 1104  == Grafo 4: Testar inserir vértice com identidade 0
+ 1110  == Grafo 4: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+ 1130  == Grafo 4: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:  1136  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:  1137  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+ 1154  == Grafo 4: Testar associar vertices identidade da aresta 0
+ 1157  ==Grafo 4: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:  1181  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:  1182  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:  1186  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:  1187  Falha esperada foi recuperada. 
+ 1190  == Grafo 5: Criar Grafo
+ 1193  == Grafo 5: Testar criar grafo já existente
+ 1196  == Grafo 5: Testar esvaziar grafo vazio
+ 1199  == Grafo 5: Testar obter valor corrente de grafo vazio
+ 1202  == Grafo 5: Testar alterar conteúdo do vértice corrente de grafo vazio
+ 1205  == Grafo 5: Testar ir para vértice em grafo vazio
+ 1208  == Grafo 5: Testar ir para vértice com valor em grafo vazio
+ 1211  == Grafo 5: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:  1212  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:  1213  Falha esperada foi recuperada. resposta: 0 0
+ 1216  == Grafo 5: Tentar excluir vértice origem em grafo vazio
+ 1219  == Grafo 5: Testar excluir vértice em grafo vazio
+ 1222  == Grafo 5: Testar inserir vértice em grafo sem origem
+ 1225  == Grafo 5: Inserir vértice origem
+ 1228  == Grafo 5: Inserir segundo vértice origem
+ 1231  == Grafo 5: Inserir terceiro vértice origem
+ 1234  == Grafo 5: Inserir 4 vértices em graforesposta: 8 8
+ 1241  == Grafo 5: Testar inserir vértice em aresta já existente
+ 1244  == Grafo 5: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:  1245  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:  1246  Falha esperada foi recuperada. resposta: 8 8
+ 1249  == Grafo 5: Esvaziar graforesposta: 0 0
+ 1253  == Grafo 5: Ir para vértice e obter valor corrente Caracter obtido: c 
+ 1261  == Grafo 5: Testar ir para vértice inexistente
+ 1266  == Grafo 5: Testar ir para vértice origem inexistente
+ 1273  == Grafo 5: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+ 1282  == Grafo 5: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+ 1293  == Grafo 5: Testar ir para vértice inexistente com valor dado
+ 1299  == Grafo 5: Percorrer Grafo Caracter obtido: d 
+ 1306  == Grafo 5: Excluir vértice origem
+ 1312  == Grafo 5: Testar excluir vértice origem com dois filhos
+ 1323  == Grafo 5: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+ 1335  == Grafo 5: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+ 1348  == Grafo 5: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+ 1363  == Grafo 5: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+ 1376  == Grafo 5: Testar inserir vértice com identidade 0
+ 1382  == Grafo 5: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+ 1402  == Grafo 5: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:  1408  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:  1409  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+ 1426  == Grafo 5: Testar associar vertices identidade da aresta 0
+ 1429  ==Grafo 5: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:  1453  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:  1454  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:  1458  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:  1459  Falha esperada foi recuperada. 
+ 1462  == Grafo 6: Criar Grafo
+ 1465  == Grafo 6: Testar criar grafo já existente
+ 1468  == Grafo 6: Testar esvaziar grafo vazio
+ 1471  == Grafo 6: Testar obter valor corrente de grafo vazio
+ 1474  == Grafo 6: Testar alterar conteúdo do vértice corrente de grafo vazio
+ 1477  == Grafo 6: Testar ir para vértice em grafo vazio
+ 1480  == Grafo 6: Testar ir para vértice com valor em grafo vazio
+ 1483  == Grafo 6: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:  1484  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:  1485  Falha esperada foi recuperada. resposta: 0 0
+ 1488  == Grafo 6: Tentar excluir vértice origem em grafo vazio
+ 1491  == Grafo 6: Testar excluir vértice em grafo vazio
+ 1494  == Grafo 6: Testar inserir vértice em grafo sem origem
+ 1497  == Grafo 6: Inserir vértice origem
+ 1500  == Grafo 6: Inserir segundo vértice origem
+ 1503  == Grafo 6: Inserir terceiro vértice origem
+ 1506  == Grafo 6: Inserir 4 vértices em graforesposta: 8 8
+ 1513  == Grafo 6: Testar inserir vértice em aresta já existente
+ 1516  == Grafo 6: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:  1517  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:  1518  Falha esperada foi recuperada. resposta: 8 8
+ 1521  == Grafo 6: Esvaziar graforesposta: 0 0
+ 1525  == Grafo 6: Ir para vértice e obter valor corrente Caracter obtido: c 
+ 1533  == Grafo 6: Testar ir para vértice inexistente
+ 1538  == Grafo 6: Testar ir para vértice origem inexistente
+ 1545  == Grafo 6: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+ 1554  == Grafo 6: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+ 1565  == Grafo 6: Testar ir para vértice inexistente com valor dado
+ 1571  == Grafo 6: Percorrer Grafo Caracter obtido: d 
+ 1578  == Grafo 6: Excluir vértice origem
+ 1584  == Grafo 6: Testar excluir vértice origem com dois filhos
+ 1595  == Grafo 6: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+ 1607  == Grafo 6: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+ 1620  == Grafo 6: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+ 1635  == Grafo 6: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+ 1648  == Grafo 6: Testar inserir vértice com identidade 0
+ 1654  == Grafo 6: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+ 1674  == Grafo 6: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:  1680  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:  1681  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+ 1698  == Grafo 6: Testar associar vertices identidade da aresta 0
+ 1701  ==Grafo 6: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:  1725  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:  1726  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:  1730  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:  1731  Falha esperada foi recuperada. 
+ 1734  == Grafo 7: Criar Grafo
+ 1737  == Grafo 7: Testar criar grafo já existente
+ 1740  == Grafo 7: Testar esvaziar grafo vazio
+ 1743  == Grafo 7: Testar obter valor corrente de grafo vazio
+ 1746  == Grafo 7: Testar alterar conteúdo do vértice corrente de grafo vazio
+ 1749  == Grafo 7: Testar ir para vértice em grafo vazio
+ 1752  == Grafo 7: Testar ir para vértice com valor em grafo vazio
+ 1755  == Grafo 7: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:  1756  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:  1757  Falha esperada foi recuperada. resposta: 0 0
+ 1760  == Grafo 7: Tentar excluir vértice origem em grafo vazio
+ 1763  == Grafo 7: Testar excluir vértice em grafo vazio
+ 1766  == Grafo 7: Testar inserir vértice em grafo sem origem
+ 1769  == Grafo 7: Inserir vértice origem
+ 1772  == Grafo 7: Inserir segundo vértice origem
+ 1775  == Grafo 7: Inserir terceiro vértice origem
+ 1778  == Grafo 7: Inserir 4 vértices em graforesposta: 8 8
+ 1785  == Grafo 7: Testar inserir vértice em aresta já existente
+ 1788  == Grafo 7: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:  1789  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:  1790  Falha esperada foi recuperada. resposta: 8 8
+ 1793  == Grafo 7: Esvaziar graforesposta: 0 0
+ 1797  == Grafo 7: Ir para vértice e obter valor corrente Caracter obtido: c 
+ 1805  == Grafo 7: Testar ir para vértice inexistente
+ 1810  == Grafo 7: Testar ir para vértice origem inexistente
+ 1817  == Grafo 7: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+ 1826  == Grafo 7: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+ 1837  == Grafo 7: Testar ir para vértice inexistente com valor dado
+ 1843  == Grafo 7: Percorrer Grafo Caracter obtido: d 
+ 1850  == Grafo 7: Excluir vértice origem
+ 1856  == Grafo 7: Testar excluir vértice origem com dois filhos
+ 1867  == Grafo 7: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+ 1879  == Grafo 7: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+ 1892  == Grafo 7: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+ 1907  == Grafo 7: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+ 1920  == Grafo 7: Testar inserir vértice com identidade 0
+ 1926  == Grafo 7: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+ 1946  == Grafo 7: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:  1952  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:  1953  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+ 1970  == Grafo 7: Testar associar vertices identidade da aresta 0
+ 1973  ==Grafo 7: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:  1997  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:  1998  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:  2002  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:  2003  Falha esperada foi recuperada. 
+ 2006  == Grafo 8: Criar Grafo
+ 2009  == Grafo 8: Testar criar grafo já existente
+ 2012  == Grafo 8: Testar esvaziar grafo vazio
+ 2015  == Grafo 8: Testar obter valor corrente de grafo vazio
+ 2018  == Grafo 8: Testar alterar conteúdo do vértice corrente de grafo vazio
+ 2021  == Grafo 8: Testar ir para vértice em grafo vazio
+ 2024  == Grafo 8: Testar ir para vértice com valor em grafo vazio
+ 2027  == Grafo 8: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:  2028  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:  2029  Falha esperada foi recuperada. resposta: 0 0
+ 2032  == Grafo 8: Tentar excluir vértice origem em grafo vazio
+ 2035  == Grafo 8: Testar excluir vértice em grafo vazio
+ 2038  == Grafo 8: Testar inserir vértice em grafo sem origem
+ 2041  == Grafo 8: Inserir vértice origem
+ 2044  == Grafo 8: Inserir segundo vértice origem
+ 2047  == Grafo 8: Inserir terceiro vértice origem
+ 2050  == Grafo 8: Inserir 4 vértices em graforesposta: 8 8
+ 2057  == Grafo 8: Testar inserir vértice em aresta já existente
+ 2060  == Grafo 8: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:  2061  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:  2062  Falha esperada foi recuperada. resposta: 8 8
+ 2065  == Grafo 8: Esvaziar graforesposta: 0 0
+ 2069  == Grafo 8: Ir para vértice e obter valor corrente Caracter obtido: c 
+ 2077  == Grafo 8: Testar ir para vértice inexistente
+ 2082  == Grafo 8: Testar ir para vértice origem inexistente
+ 2089  == Grafo 8: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+ 2098  == Grafo 8: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+ 2109  == Grafo 8: Testar ir para vértice inexistente com valor dado
+ 2115  == Grafo 8: Percorrer Grafo Caracter obtido: d 
+ 2122  == Grafo 8: Excluir vértice origem
+ 2128  == Grafo 8: Testar excluir vértice origem com dois filhos
+ 2139  == Grafo 8: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+ 2151  == Grafo 8: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+ 2164  == Grafo 8: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+ 2179  == Grafo 8: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+ 2192  == Grafo 8: Testar inserir vértice com identidade 0
+ 2198  == Grafo 8: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+ 2218  == Grafo 8: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:  2224  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:  2225  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+ 2242  == Grafo 8: Testar associar vertices identidade da aresta 0
+ 2245  ==Grafo 8: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:  2269  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:  2270  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:  2274  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:  2275  Falha esperada foi recuperada. 
+ 2278  == Grafo 9: Criar Grafo
+ 2281  == Grafo 9: Testar criar grafo já existente
+ 2284  == Grafo 9: Testar esvaziar grafo vazio
+ 2287  == Grafo 9: Testar obter valor corrente de grafo vazio
+ 2290  == Grafo 9: Testar alterar conteúdo do vértice corrente de grafo vazio
+ 2293  == Grafo 9: Testar ir para vértice em grafo vazio
+ 2296  == Grafo 9: Testar ir para vértice com valor em grafo vazio
+ 2299  == Grafo 9: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:  2300  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:  2301  Falha esperada foi recuperada. resposta: 0 0
+ 2304  == Grafo 9: Tentar excluir vértice origem em grafo vazio
+ 2307  == Grafo 9: Testar excluir vértice em grafo vazio
+ 2310  == Grafo 9: Testar inserir vértice em grafo sem origem
+ 2313  == Grafo 9: Inserir vértice origem
+ 2316  == Grafo 9: Inserir segundo vértice origem
+ 2319  == Grafo 9: Inserir terceiro vértice origem
+ 2322  == Grafo 9: Inserir 4 vértices em graforesposta: 8 8
+ 2329  == Grafo 9: Testar inserir vértice em aresta já existente
+ 2332  == Grafo 9: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:  2333  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:  2334  Falha esperada foi recuperada. resposta: 8 8
+ 2337  == Grafo 9: Esvaziar graforesposta: 0 0
+ 2341  == Grafo 9: Ir para vértice e obter valor corrente Caracter obtido: c 
+ 2349  == Grafo 9: Testar ir para vértice inexistente
+ 2354  == Grafo 9: Testar ir para vértice origem inexistente
+ 2361  == Grafo 9: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+ 2370  == Grafo 9: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+ 2381  == Grafo 9: Testar ir para vértice inexistente com valor dado
+ 2387  == Grafo 9: Percorrer Grafo Caracter obtido: d 
+ 2394  == Grafo 9: Excluir vértice origem
+ 2400  == Grafo 9: Testar excluir vértice origem com dois filhos
+ 2411  == Grafo 9: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+ 2423  == Grafo 9: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+ 2436  == Grafo 9: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+ 2451  == Grafo 9: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+ 2464  == Grafo 9: Testar inserir vértice com identidade 0
+ 2470  == Grafo 9: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+ 2490  == Grafo 9: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:  2496  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:  2497  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+ 2514  == Grafo 9: Testar associar vertices identidade da aresta 0
+ 2517  ==Grafo 9: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:  2541  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:  2542  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:  2546  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:  2547  Falha esperada foi recuperada. 
+ 2550  == Grafo 10: Criar Grafo
+ 2553  == Grafo 10: Testar criar grafo já existente
+ 2556  == Grafo 10: Testar esvaziar grafo vazio
+ 2559  == Grafo 10: Testar obter valor corrente de grafo vazio
+ 2562  == Grafo 10: Testar alterar conteúdo do vértice corrente de grafo vazio
+ 2565  == Grafo 10: Testar ir para vértice em grafo vazio
+ 2568  == Grafo 10: Testar ir para vértice com valor em grafo vazio
+ 2571  == Grafo 10: Testar obter o número de vértices de grafo vazioresposta: 0 1
+>>>    1  Linha:  2572  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 0  É: 1
+<<<    0  Linha:  2573  Falha esperada foi recuperada. resposta: 0 0
+ 2576  == Grafo 10: Tentar excluir vértice origem em grafo vazio
+ 2579  == Grafo 10: Testar excluir vértice em grafo vazio
+ 2582  == Grafo 10: Testar inserir vértice em grafo sem origem
+ 2585  == Grafo 10: Inserir vértice origem
+ 2588  == Grafo 10: Inserir segundo vértice origem
+ 2591  == Grafo 10: Inserir terceiro vértice origem
+ 2594  == Grafo 10: Inserir 4 vértices em graforesposta: 8 8
+ 2601  == Grafo 10: Testar inserir vértice em aresta já existente
+ 2604  == Grafo 10: Obter o número de vérticesresposta: 8 5
+>>>    1  Linha:  2605  ERRO: Quantidade de vértices não é igual à quantidade esperada. Deveria ser: 8  É: 5
+<<<    0  Linha:  2606  Falha esperada foi recuperada. resposta: 8 8
+ 2609  == Grafo 10: Esvaziar graforesposta: 0 0
+ 2613  == Grafo 10: Ir para vértice e obter valor corrente Caracter obtido: c 
+ 2621  == Grafo 10: Testar ir para vértice inexistente
+ 2626  == Grafo 10: Testar ir para vértice origem inexistente
+ 2633  == Grafo 10: Testar ir para vértice origem inexistente Caracter obtido: b  Caracter obtido: c 
+ 2642  == Grafo 10: Ir para vértice com valor dado Caracter obtido: b  Caracter obtido: d 
+ 2653  == Grafo 10: Testar ir para vértice inexistente com valor dado
+ 2659  == Grafo 10: Percorrer Grafo Caracter obtido: d 
+ 2666  == Grafo 10: Excluir vértice origem
+ 2672  == Grafo 10: Testar excluir vértice origem com dois filhos
+ 2683  == Grafo 10: Excluir vértice corrente e testar excluir vértice corrente que tem filho
+ 2695  == Grafo 10: Testar excluir vértice corrente e excluir vértice origemresposta: 0 0resposta: 3 3 Caracter obtido: a resposta: 4 4
+ 2708  == Grafo 10: Testar excluir vertice em aresta sem vérticesresposta: 1 1resposta: 0 0resposta: 3 3
+ 2723  == Grafo 10: Destruir grafo cheio, criar novo grafo, inserir origem, inserir um vértice, excluir vértice origem corrente, percorrer
+ 2736  == Grafo 10: Testar inserir vértice com identidade 0
+ 2741  == Grafo10: Percorrer Grafo teste completo Caracter obtido: d  Caracter obtido: b  Caracter obtido: f  Caracter obtido: b  Caracter obtido: d  Caracter obtido: b 
+ 2761  == Grafo10: Inserir 2 ciclos, testar inseir mais de uma aresta em um ciclo e testar inserir ciclo em grafo vazio Caracter obtido: c 
+>>>    1  Linha:  2767  Retorno errado ao inserir vértice no grafo. Deveria ser: 0  É: 9
+<<<    0  Linha:  2768  Falha esperada foi recuperada.  Caracter obtido: c  Caracter obtido: c resposta: 4 4 Caracter obtido: d 
+ 2785  == Grafo10: Testar associar vertices identidade da aresta 0
+ 2788  ==Grafo10: Associar vertice, testar associar vertice com aresta ja existente e em grafo vazio Caracter obtido: c  Caracter obtido: d 
+>>>    1  Linha:  2812  Retorno errado para percorrer o grafo na aresta requisitada. Deveria ser: 0  É: 7
+<<<    0  Linha:  2813  Falha esperada foi recuperada.  Caracter obtido: c 
+>>>    1  Linha:  2817  Retorno errado ao inserir vértice no grafo. Deveria ser: 1  É: 13
+<<<    0  Linha:  2818  Falha esperada foi recuperada. 
+ 2821  == Destruir os 10 grafos
+!!!    0  Linha:  2833  // 
+!!!    0  Linha:  2834  //Fim 
+!!!    0  Linha:  2835  // 
+
+!!! Número de linhas lidas:        2835
+!!! Número de casos de teste:       378
+!!! Número comandos corretos:      1950
+!!! Número de falhas encontradas:     0
+
+!!! Não foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0

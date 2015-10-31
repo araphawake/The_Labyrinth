@@ -1,0 +1,89 @@
+
+**************************************************************	   Arquivo Leia-me do Grupo TRAB02JLR	******************************************************            
+
+*******
+Autores
+*******
+João Fernando McDowell	#1110322
+Lucas Hardman		#1113567
+Rafael Azevedo		#1221020
+
+
+**************
+Arquivo LEIAME
+**************
+Este documento fornece informações complementares para o TRAB02-JLR e sua instalação.
+O objetivo do TRAB02 é o desenvolvimento de um módulo GRAFO. Este consiste em um grafo genérico bidirecionado de listas duplamente encadeadas. Dessa forma, a construção da estrutura grafo depende do módulo LISTA (genérica), que foi finalizado no TRAB01. 
+O TRAB02 é baseado numa aplicação de Labirinto, mas que só deverá ser desenvolvida por completo no TRAB03.
+
+
+********
+SUMÁRIO
+********
+
+1 - INSTALAÇÃO
+2 - SOBRE O PROGRAMA
+3 - TESTES
+4 - AJUDA
+
+
+*****************
+1 - INSTALAÇÃO  
+*****************
+
+	
+	Salvar o diretório extraído pelo arquivo TRAB02.ZIP na pasta desejada.
+	
+	Conteúdo do arquivo TRAB02.ZIP:
+
+		 Pastas			| Descrição
+		------------------------------------------------------------------------------------------------------------------------------------------------------
+		Documentos		| Pasta onde se encontram arquivos explicativos do programa, arquitetura da aplicação, modelo físico estrutural, assertivas e 									| exemplo físico, assertivas estruturais e documentação de requisitos. Com excessão do LEIAME, todos os arquivos desse						| diretório estão no formato pdf.
+		Fontes			| Pasta onde se encontram os módulos de definição e implementação do programa.
+		Relatorios		| Pasta onde se encontram os arquivos os relatorios dos integrantes do grupo.
+		TRAB2-1			| Pasta onde se encontram o executável construto, o arquivo .bat para testes, as fontes e os scripts relativos à Lista genérica.
+		TRAB2-2			| Pasta onde se encontram o executável construto, o arquivo .bat para testes, as fontes e os scripts relativos ao Grafo genérico bidirecionado.
+		Scripts			| Pasta onde se encontram os scripts de teste para os módulos componentes do programa.
+
+**********************
+2 - SOBRE O PROGRAMA
+**********************
+
+
+	Este programa tem como objetivo operar um grafo genérico bidirecionado implementado com listas duplamente encadeadas.
+
+
+*******************
+3 - TESTES
+*******************
+
+Para realizar o teste das Listas:
+
+Basta acessar a pasta "TRAB2-1" e clicar duas vezes no arquivo TesteListaGenerica.bat. Dessa forma, um arquivo chamado 
+"logsaida.txt" será gerado com os resultados dos testes. Abra o arquivo logsaida.txt para analisar os resultados dos testes.
+
+O arquivo TesteListaGenerica.bat possui o seguinte conteúdo: TRAB2-1.exe/sScripts/TesteListaGenerica.script >logsaida.txt
+
+
+Para realizar o teste do Grafo de de listas:
+
+Basta acessar a pasta "TRAB2-2" e clicar duas vezes no arquivo TesteGrafoGenerico.bat. Dessa forma, um arquivo chamado 
+"logsaida.txt" será gerado com os resultados dos testes. Abra o arquivo logsaida.txt para analisar os resultados dos testes.
+
+O arquivo TesteGrafoGenerico.script possui o seguinte conteúdo: TRAB2-2.exe/sScripts/TesteGrafoGenerico.script /logsaida.txt
+
+Script -> Arquivo de instruções a ser interpretado pelo módulo de teste.
+Log ->    Arquivo que conterá os resultados dos testes. Será criado, porém se já existir um arquivo log com o mesmo nome, ele será sobrescrito.
+
+
+**********************
+4 - AJUDA
+**********************
+
+
+Se tiver qualquer problema com este programa, entre em contato com o grupo pelos e-mails abaixo:
+
+	- jfmcdowel2@hotmail.com
+	- lucas.hardman@me.com
+	- araphawake@gmail.com
+                                                                                                                                                                                                                                                                                                                                                                                                                 

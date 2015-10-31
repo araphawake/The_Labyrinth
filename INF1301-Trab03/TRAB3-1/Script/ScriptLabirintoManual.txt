@@ -1,0 +1,207 @@
+// Script:    ScriptLabirintoManual.script
+// Autor:     Lucas Hardman, Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell
+// Data:      04/out/2014
+// Propósito: Testar aplicação do labirinto (jogo)
+
+=> Entre no jogo (execute o executável TRAB3-1.exe)
+
+== Consultar regras e siglas, voltar ao menu inicial, consultar equipe e voltar ao menu inicial
+= Pressione 'r' // Abre menu com informações de regras e siglas
+= Pressione qualquer tecla // Volta para menu principal
+= Pressione '3' // Abre menu com informações sobre a equipe de desenvolvimento
+= Pressione qualquer tecla // Volta para o menu principal
+
+== Labirinto 1: Iniciar novo jogo
+= Pressione '1' //Inicia novo jogo
+
+== Labirinto 1: Criar labirinto simples
+= Pressione 's' // Cria caminho para baixo
+= Pressione 'd' // Cria caminho para a direita
+= Pressione 'd' // Cria caminho para a direita
+= Pressione 'w' // Cria caminho para cima
+= Pressione 'i' // Determina posição corrente como o inicio
+= Pressione 's' // Cria caminho para baixo
+= Pressione 'd' // Cria caminho para a direita
+= Pressione 'd' // Cria caminho para a direita
+= Pressione 'e' // Exclui posição corrente
+= Pressione 'e' // Nada acontece
+= Pressione 's' // Cria posição para baixo
+= Pressione 's' // Cria posição para baixo
+= Pressione 't' // Determina posição corrente como o fim
+= Pressione 'a' // Cria caminho para a esquerda
+= Pressione 'a' // Cria caminho para a esquerda
+= Pressione '0' // Termina a criação do labirinto
+= Pressione qualquer tecla // A posição corrente vai para o inicio do labirinto
+e o usuário já pode começar a tentar resolver o labirinto.
+
+== Labirinto 1: Resolver o labirinto
+= Pressione 's' // Anda para baixo
+= Pressione 'd' // Anda para a direita
+= Pressione 's' // Anda para baixo
+= Pressione 's' // Anda para baixo e o labirinto chega ao fim
+= Pressione qualquer tecla // Aviso de jogo terminado
+= Pressione qualquer tecla // Volta ao menu inicial
+
+== Labirinto 2: Iniciar novo jogo e voltar para o menu principal
+= Pressione '1' // Inicia novo jogo
+= Pressione 'm' // Escolha se realmente quer sair do jogo
+= Pressione 'n' // Volta para o jogo
+= Pressione 'm' // Escolha se realmente quer sair do jogo
+= Pressione 'y' // Aviso de que esta voltando ao menu inicial
+= Pressione qualquer tecla // Vola para o menu inicial
+
+== Labirinto 3: Carregar labirinto iniciando na entrada
+= Pressione '2' // Entra na tela de carregamento de arquivos
+= Digite 'saves/doommaze.txt' e pressione 'Enter' // Escolhe o arquivo de save 
+= Pressione 'n' // Escolhe começar o labirinto pela entrada e aparece uma mensagem
+informanco o sucesso da abertura do arquivo
+= Pressione qualquer tecla // O labirinto aparece e pode ser iniciado
+
+== Labirinto 3: Testar menu pause dentro do jogo
+= Pressione 'p' // Inicia menu de pause
+= Pressione '1' // Volta para o jogo
+= Pressione 'p' // Inicia menu de pause
+= Pressione '2' // Inicia menu de salvar
+= Digite 'testedescript' e pressione 'Enter' // Aparece mendagem avisando para escrever a extensão
+= Digite 'saves/testedescript.txt' e pressione 'Enter' // Aparece mensagem avisando que o labirinto foi salvo
+= Pressione qualquer tecla // Volta para o jogo
+= Pressione 'p' // Inicia menu de pause
+= Pressione 'r' // Consulta regras e siglas
+= Pressione qualquer tecla // Volta para o menu pause
+= Pressione '3' // Inicia menu de salvar
+= Digite 'saves/testedescript.txt' e pressione 'Enter' // Aparece mensagem avisando que o labirinto foi salvo
+= Pressione 'Enter' // Aparece uma tela avisando que o jogo foi salvo
+= Pressione qualquer tecla // Aviso de que o jogo esta voltando para o menu inicial
+= Pressione qualquer tecla // O jogo volta para o menu inicial
+= Pressione '2' // Entra na tela de carregamento de arquivos
+= Digite 'saves/doommaze.txt' e pressione 'Enter' // Escolhe o arquivo de save 
+= Pressione 'n' // Escolhe começar o labirinto pela entrada e aparece uma mensagem
+informanco o sucesso da abertura do arquivo
+= Pressione qualquer tecla // O labirinto aparece e pode ser iniciado
+= Pressione 'p' // Inicia menu de pause
+= Pressione 'm' // Aparece uma tela perguntando se realmente quer sair
+= Pressione 'y' // Aparece aviso de que esta voltando ao menu inicial
+= Pressione qualquer tecla // Volta para o menu inicial
+= Pressione '2' // Entra na tela de carregamento de arquivos
+= Digite 'saves/doommaze.txt' e pressione 'Enter' // Escolhe o arquivo de save 
+= Pressione 'n' // Escolhe começar o labirinto pela entrada e aparece uma mensagem
+informanco o sucesso da abertura do arquivo
+= Pressione qualquer tecla // O labirinto aparece e pode ser iniciado
+= Pressione 'p' // Inicia menu de pause
+= Pressione '5' // Aparece uma tela perguntando se realmente deseja sair
+= Pressione 'y' // Aparece uma tela avisando que o jogo foi terminado
+= Pressione qualquer tecla // Aparece uma tela avisando que o programa esta encerrando
+= Pressione qualquer tecla // Jogo fecha
+
+== Labirinto 4: Carregar jogo salvo fora do inicio
+=> Entre no jogo
+= Pressione '2' // Entra na tela de carregamento de arquivos
+= Digite 'saves/doommaze.txt' e pressione 'Enter' // Aparece opção de carregar o jogo de onde parou ou do inicio
+= Pressione 'n' // Opção de carregar do inicio foi escolhida e o jogo avisa que foi carregado
+= Pressione qualquer tecla // O jogo começa
+= Pressione 's' // Anda para baixo
+= Pressione 'd' // Anda para a direita
+= Pressione 'd' // Anda para a direita
+= Pressione 'd' // Anda para a direita
+= Pressione 'p' // Inicia menu pause
+= Pressione '3' // Jogo pede para dar um nome ao arquivo
+= Digite 'saves/doommazescript.txt' e pressione 'Enter' // Aviso de que o jogo foi salvo
+= Pressione qualquer tecla // Aviso de que o jogo esta voltando ao menu inicial
+= Pressione qualquer tecla // Jogo volta para o menu inicial
+= Pressione '2' // Entra na tela de carregamento de arquivos
+= Digite 'saves/doommazescript.txt' e pressione 'Enter' // Aparece opção de carregar o jogo de onde parou ou do inicio
+= Pressione 'c' // Opção de carregar da ultima posição salva foi escolhida e o jogo avisa que foi carregado
+= Pressione qualquer tecla // O jogo começa de onde foi terminado antes de salvar
+
+== Labirinto 4: Testar o resolvedor e sair do programa
+= Pressione 'p' // Inicia menu pause
+= Pressione '4' // Volta para o jogo e a resposta do jogo está em verde. O usuario deverá seguir o caminho
+em verde para chegar ao fim do labirinto.
+= Pressione 'p' // Inicia menu pause
+= Pressione '5' // Pergunta se realmente quer sair
+= Pressione 'y' // Aviso de jogo terminado
+= Pressione qualquer tecla // Aviso de programa encerrando
+
+== Testar "Modo Campanha"
+=> Entre no jogo
+= Pressione '0' // Aparece tela indicando a primeira fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a segunda fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a terceira fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a quarta fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a quinta fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a sexta fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a setima fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a oitava fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a nona fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima primeira fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima segunda fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima terceira fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima quarta fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima quinta fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima sexta fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima setima fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela indicando a décima oitava fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Resolva o labirinto // Aparece mensagem de que o labirinto foi resolvido
+= Pressione qualquer tecla // Aparece tela fim do modo campanha e informando
+sobre uma tecla secreta "3" que permite pular fases no modo campanha.
+= Pressione qualquer tecla // Volta para o menu incial
+
+== Testar menu pause do "Modo Campanha"
+= Pressione '0' // Aparece tela indicando a primeira fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Pressione 'p' // Inicia menu de pause
+= Pressione '1' // Volta para o labirinto
+= Pressione 'p' // Inicia menu de pause
+= Pressione 'r' // Inicia menu contendo informações de regras e siglas
+= Pressione qualquer tecla // Volta para o menu de pause
+= Pressione 'p' // Inicia menu de pause
+= Pressione '4' // Volta para o labirinto com a resposta
+= Pressione 'p' // Inicia menu de pause
+= Pressione '3' // Aparece tela indicando a segunda fase
+= Pressione qualquer tecla // Inicia o resolvedor de um labirinto
+= Pressione 'p' // Inicia menu de pause
+= Pressione '5' // Uma tela aparece pedindo para confirmar se realmente
+deseja sair do jogo
+= Pressione 'y' // Aviso de jogo terminado aparece
+= Pressione qualquer tecla // Aviso de regresso ao menu principal aparece
+= Pressione qualquer tecla // Volta ao menu inicial
+= Pressione 4 // Aviso de que o jogo foi terminado aparece
+= Pressione qualquer tecla // Jogo fecha
+
+//FIM

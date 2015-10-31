@@ -1,0 +1,49 @@
+﻿Relatório-João Fernando: TRABALHO 01
+
+Arquivo:RELATORIO-JoaoFernando.txt              
+
+
+Data		Horas Trabalhadas	Tipo Tarefa		Descrição da Tarefa Realizada
+18/ago/2014	2h			estudar			download do arcabouço e início do estudo do conteúdo do arcabouço
+
+23/ago/2014	3h			estudar			configuração do arcabouço e resolução do erro na execução do batch.
+
+23/ago/2014	1h			estudar			execução de vsvars32.bat e CompilaTudo.bat; geração do 	ArcaboucoTeste.lib.
+
+23/ago/2014	3h			estudar			estudo de Multithread MT e Multithread Debug MT 
+
+24/ago/2014	4h			estudar			reunião online com o grupo para discutir erros, entendimentos,
+								dúvidas em relação ao arcabouço e aos arquivos .c e .h; estudo do 													arcabouço foi terminado;	
+
+26/ago/2014	4h			estudar			reunião presencial com o grupo para definir divisão de tarefas 														juntamente com um estudo e entendimento do trabalho como um todo
+
+27/ago/2014	4h			especificar 		adaptção e modificação do módulo LISTA.C para tratar uma lista de 	
+					as funções		caracteres	
+
+28/ago/2014	2h						reparação de erros e entedimento para manter o módulo LISTA genérico
+
+28/08/2014	4h			especificar
+					as funções		alteração de funções de acesso dos módulos LISTA e ARVORE
+
+29/08/2014	4h			revisar projetos	término das alterações nas funções de acesso e internas do módulo LISTA
+								E revisão dos códigos
+
+30/08/2014	4h			diagnosticar e
+					corrigir problemas	reunião online com o grupo para realização de testes e consequentemente resolução de erros
+	
+					encontrados					
+31/08/2014	4h			redigir script		desenvolvimento do script de testes do modulo LISTA
+
+31/08/2014	3h			diagnosticar e 		tentativa de resolver novos erros que surgiram
+					corrigir problemas		
+					de teste									
+
+02/09/2014	4h			revisar código do	revisão do LISTA.C e LISTA.H (incoerências e novos erros foram encontrados).
+					módulo			Foram solucionados. Atualização da documentação
+
+03/09/2014      5h			revisar código do	revisão do TESTARV.C, ARVORE.H, ARVORE.C. Erros encontrados, e solucionados. Atualização
+					módulo			da documentação
+					
+04/09/2014	6h			diagnosticar e		novos erros foram encontrados. Tentativa de solucioná-los
+					corrigir problemas
+					de teste									

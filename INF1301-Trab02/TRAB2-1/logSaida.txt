@@ -1,0 +1,509 @@
+
+
+LES - Laboratório de Engenharia de Software DI/PUC-Rio
+      Arcabouço de teste de módulos C  (c) 2006
+
+---------------------------------------------
+      Construto sob teste: TRAB1-1.exe
+
+      Arquivo de teste:    Scripts/TesteListaGenerica.script
+
+
+!!!    0  Linha:     1  // Script:    TesteListaGenerica.script 
+!!!    0  Linha:     2  // Autor:     Lucas Hardman, Rafael Azevedo Moscoso Silva Cruz, João Fernando Mac Dowell 
+!!!    0  Linha:     3  // Data:      01/ago/2014 
+!!!    0  Linha:     4  // Propósito: Testar o módulo lista genérica duplamente encadeada para 10 listas simultâneas 
+!!!    0  Linha:     5  // 
+    7  == Inicializar valores
+   41  == Lista 1: Esvaziar lista inexistente
+   44  == Lista 1: Criar a lista
+   47  == Lista 1: Inserir elemento (antes)
+   50  == Lista 1: Ir para o inicio da lista que ja esta no inicio
+   53  == Lista 1: Esvaziar a lista
+   56  == Lista 1: Esvaziar a lista vazia
+   59  == Lista 1: Tentar criar a lista ja existente
+   62  == Lista 1: Destruir lista
+   65  == Lista 1: Ir para o inicio de uma lista inexistente
+   68  == Lista 1: Ir para o final de uma lista inexistente
+   71  == Lista 1: Destruir lista inexistente
+   74  == Lista 1: Tentar excluir elemento corrente em lista inexistente
+   77  == Lista 1: Criar lista ja criada e excluida
+   80  == Lista 1: Avancar elemento em lista vazia
+   83  == Lista 1: Tentar excluir elemento corrente em lista vazia
+   86  == Lista 1: Inserir elementos (apos)
+   92  == Lista 1: Ir para o inicio da lista
+   95  == Lista 1: Avancar elemento em +2
+   98  == Lista 1: Avancar elemento em -1
+  101  == Lista 1: Ir para o final da lista
+  104  == Lista 1: Ir para o final de uma lista que ja esta no fim
+  107  == Lista 1: Avancar elemento em lista inexistente
+  110  == Lista 1: Tentar avancar o elemento para depois do fim
+  113  == Lista 1: Tentar avancar o elemento para antes do inicio
+  116  == Lista 1: Obter numero de elementos
+Numero de elementos na lista: 4
+
+  119  == Lista 1: Obter numero de elementos de lista inexistente
+  122  == Lista 1: Obter elemento corrente
+Caracter obtido: a 
+
+  125  == Lista 1: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:   126  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:   127  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:   128  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:   129  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+  132  == Lista 1: Procurar valor na lista
+  135  == Lista 1: Procurar valor inexistente na lista
+  138  == Lista 1: Procurar valor em lista inexistente
+  141  == Lista 1: Excluir todos os elementos
+  148  == Lista 1: Procurar valor em lista vazia
+  151  == Lista 1: inserir um caracter
+  154  == Lista 2: Esvaziar lista inexistente
+  157  == Lista 2: Criar a lista
+  160  == Lista 2: Inserir elemento (antes)
+  163  == Lista 2: Ir para o inicio da lista que ja esta no inicio
+  166  == Lista 2: Esvaziar a lista
+  169  == Lista 2: Esvaziar a lista vazia
+  172  == Lista 2: Tentar criar a lista ja existente
+  175  == Lista 2: Destruir lista
+  178  == Lista 2: Ir para o inicio de uma lista inexistente
+  181  == Lista 2: Ir para o final de uma lista inexistente
+  184  == Lista 2: Destruir lista inexistente
+  187  == Lista 2: Tentar excluir elemento corrente em lista inexistente
+  190  == Lista 2: Criar lista ja criada e excluida
+  193  == Lista 2: Avancar elemento em lista vazia
+  196  == Lista 2: Tentar excluir elemento corrente em lista vazia
+  199  == Lista 2: Inserir elementos (apos)
+  205  == Lista 2: Ir para o inicio da lista
+  208  == Lista 2: Avancar elemento em +2
+  211  == Lista 2: Avancar elemento em -1
+  214  == Lista 2: Ir para o final da lista
+  217  == Lista 2: Ir para o final de uma lista que ja esta no fim
+  220  == Lista 2: Avancar elemento em lista inexistente
+  223  == Lista 2: Tentar avancar o elemento para depois do fim
+  226  == Lista 2: Tentar avancar o elemento para antes do inicio
+  229  == Lista 2: Obter numero de elementos
+Numero de elementos na lista: 4
+
+  232  == Lista 2: Obter numero de elementos de lista inexistente
+  235  == Lista 2: Obter elemento corrente
+Caracter obtido: a 
+
+  238  == Lista 2: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:   239  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:   240  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:   241  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:   242  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+  245  == Lista 2: Procurar valor na lista
+  248  == Lista 2: Procurar valor inexistente na lista
+  251  == Lista 2: Procurar valor em lista inexistente
+  254  == Lista 2: Excluir todos os elementos
+  261  == Lista 2: Procurar valor em lista vazia
+  264  == Lista 2: inserir um caracter
+  267  == Lista 3: Esvaziar lista inexistente
+  270  == Lista 3: Criar a lista
+  273  == Lista 3: Inserir elemento (antes)
+  276  == Lista 3: Ir para o inicio da lista que ja esta no inicio
+  279  == Lista 3: Esvaziar a lista
+  282  == Lista 3: Esvaziar a lista vazia
+  285  == Lista 3: Tentar criar a lista ja existente
+  288  == Lista 3: Destruir lista
+  291  == Lista 3: Ir para o inicio de uma lista inexistente
+  294  == Lista 3: Ir para o final de uma lista inexistente
+  297  == Lista 3: Destruir lista inexistente
+  300  == Lista 3: Tentar excluir elemento corrente em lista inexistente
+  303  == Lista 3: Criar lista ja criada e excluida
+  306  == Lista 3: Avancar elemento em lista vazia
+  309  == Lista 3: Tentar excluir elemento corrente em lista vazia
+  312  == Lista 3: Inserir elementos (apos)
+  318  == Lista 3: Ir para o inicio da lista
+  321  == Lista 3: Avancar elemento em +2
+  324  == Lista 3: Avancar elemento em -1
+  327  == Lista 3: Ir para o final da lista
+  330  == Lista 3: Ir para o final de uma lista que ja esta no fim
+  333  == Lista 3: Avancar elemento em lista inexistente
+  336  == Lista 3: Tentar avancar o elemento para depois do fim
+  339  == Lista 3: Tentar avancar o elemento para antes do inicio
+  342  == Lista 3: Obter numero de elementos
+Numero de elementos na lista: 4
+
+  345  == Lista 3: Obter numero de elementos de lista inexistente
+  348  == Lista 3: Obter elemento corrente
+Caracter obtido: a 
+
+  351  == Lista 3: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:   352  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:   353  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:   354  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:   355  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+  358  == Lista 3: Procurar valor na lista
+  361  == Lista 3: Procurar valor inexistente na lista
+  364  == Lista 3: Procurar valor em lista inexistente
+  367  == Lista 3: Excluir todos os elementos
+  374  == Lista 3: Procurar valor em lista vazia
+  377  == Lista 3: inserir um caracter
+  380  == Lista 4: Esvaziar lista inexistente
+  383  == Lista 4: Criar a lista
+  386  == Lista 4: Inserir elemento (antes)
+  389  == Lista 4: Ir para o inicio da lista que ja esta no inicio
+  392  == Lista 4: Esvaziar a lista
+  395  == Lista 4: Esvaziar a lista vazia
+  398  == Lista 4: Tentar criar a lista ja existente
+  401  == Lista 4: Destruir lista
+  404  == Lista 4: Ir para o inicio de uma lista inexistente
+  407  == Lista 4: Ir para o final de uma lista inexistente
+  410  == Lista 4: Destruir lista inexistente
+  413  == Lista 4: Tentar excluir elemento corrente em lista inexistente
+  416  == Lista 4: Criar lista ja criada e excluida
+  419  == Lista 4: Avancar elemento em lista vazia
+  422  == Lista 4: Tentar excluir elemento corrente em lista vazia
+  425  == Lista 4: Inserir elementos (apos)
+  431  == Lista 4: Ir para o inicio da lista
+  434  == Lista 4: Avancar elemento em +2
+  437  == Lista 4: Avancar elemento em -1
+  440  == Lista 4: Ir para o final da lista
+  443  == Lista 4: Ir para o final de uma lista que ja esta no fim
+  446  == Lista 4: Avancar elemento em lista inexistente
+  449  == Lista 4: Tentar avancar o elemento para depois do fim
+  452  == Lista 4: Tentar avancar o elemento para antes do inicio
+  455  == Lista 4: Obter numero de elementos
+Numero de elementos na lista: 4
+
+  458  == Lista 4: Obter numero de elementos de lista inexistente
+  461  == Lista 4: Obter elemento corrente
+Caracter obtido: a 
+
+  464  == Lista 4: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:   465  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:   466  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:   467  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:   468  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+  471  == Lista 4: Procurar valor na lista
+  474  == Lista 4: Procurar valor inexistente na lista
+  477  == Lista 4: Procurar valor em lista inexistente
+  480  == Lista 4: Excluir todos os elementos
+  487  == Lista 4: Procurar valor em lista vazia
+  490  == Lista 4: inserir um caracter
+  493  == Lista 5: Esvaziar lista inexistente
+  496  == Lista 5: Criar a lista
+  499  == Lista 5: Inserir elemento (antes)
+  502  == Lista 5: Ir para o inicio da lista que ja esta no inicio
+  505  == Lista 5: Esvaziar a lista
+  508  == Lista 5: Esvaziar a lista vazia
+  511  == Lista 5: Tentar criar a lista ja existente
+  514  == Lista 5: Destruir lista
+  517  == Lista 5: Ir para o inicio de uma lista inexistente
+  520  == Lista 5: Ir para o final de uma lista inexistente
+  523  == Lista 5: Destruir lista inexistente
+  526  == Lista 5: Tentar excluir elemento corrente em lista inexistente
+  529  == Lista 5: Criar lista ja criada e excluida
+  532  == Lista 5: Avancar elemento em lista vazia
+  535  == Lista 5: Tentar excluir elemento corrente em lista vazia
+  538  == Lista 5: Inserir elementos (apos)
+  544  == Lista 5: Ir para o inicio da lista
+  547  == Lista 5: Avancar elemento em +2
+  550  == Lista 5: Avancar elemento em -1
+  553  == Lista 5: Ir para o final da lista
+  556  == Lista 5: Ir para o final de uma lista que ja esta no fim
+  559  == Lista 5: Avancar elemento em lista inexistente
+  562  == Lista 5: Tentar avancar o elemento para depois do fim
+  565  == Lista 5: Tentar avancar o elemento para antes do inicio
+  568  == Lista 5: Obter numero de elementos
+Numero de elementos na lista: 4
+
+  571  == Lista 5: Obter numero de elementos de lista inexistente
+  574  == Lista 5: Obter elemento corrente
+Caracter obtido: a 
+
+  577  == Lista 5: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:   578  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:   579  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:   580  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:   581  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+  584  == Lista 5: Procurar valor na lista
+  587  == Lista 5: Procurar valor inexistente na lista
+  590  == Lista 5: Procurar valor em lista inexistente
+  593  == Lista 5: Excluir todos os elementos
+  600  == Lista 5: Procurar valor em lista vazia
+  603  == Lista 5: inserir um caracter
+  606  == Lista 6: Esvaziar lista inexistente
+  609  == Lista 6: Criar a lista
+  612  == Lista 6: Inserir elemento (antes)
+  615  == Lista 6: Ir para o inicio da lista que ja esta no inicio
+  618  == Lista 6: Esvaziar a lista
+  621  == Lista 6: Esvaziar a lista vazia
+  624  == Lista 6: Tentar criar a lista ja existente
+  627  == Lista 6: Destruir lista
+  630  == Lista 6: Ir para o inicio de uma lista inexistente
+  633  == Lista 6: Ir para o final de uma lista inexistente
+  636  == Lista 6: Destruir lista inexistente
+  639  == Lista 6: Tentar excluir elemento corrente em lista inexistente
+  642  == Lista 6: Criar lista ja criada e excluida
+  645  == Lista 6: Avancar elemento em lista vazia
+  648  == Lista 6: Tentar excluir elemento corrente em lista vazia
+  651  == Lista 6: Inserir elementos (apos)
+  657  == Lista 6: Ir para o inicio da lista
+  660  == Lista 6: Avancar elemento em +2
+  663  == Lista 6: Avancar elemento em -1
+  666  == Lista 6: Ir para o final da lista
+  669  == Lista 6: Ir para o final de uma lista que ja esta no fim
+  672  == Lista 6: Avancar elemento em lista inexistente
+  675  == Lista 6: Tentar avancar o elemento para depois do fim
+  678  == Lista 6: Tentar avancar o elemento para antes do inicio
+  681  == Lista 6: Obter numero de elementos
+Numero de elementos na lista: 4
+
+  684  == Lista 6: Obter numero de elementos de lista inexistente
+  687  == Lista 6: Obter elemento corrente
+Caracter obtido: a 
+
+  690  == Lista 6: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:   691  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:   692  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:   693  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:   694  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+  697  == Lista 6: Procurar valor na lista
+  700  == Lista 6: Procurar valor inexistente na lista
+  703  == Lista 6: Procurar valor em lista inexistente
+  706  == Lista 6: Excluir todos os elementos
+  713  == Lista 6: Procurar valor em lista vazia
+  716  == Lista 6: inserir um caracter
+  719  == Lista 7: Esvaziar lista inexistente
+  722  == Lista 7: Criar a lista
+  725  == Lista 7: Inserir elemento (antes)
+  728  == Lista 7: Ir para o inicio da lista que ja esta no inicio
+  731  == Lista 7: Esvaziar a lista
+  734  == Lista 7: Esvaziar a lista vazia
+  737  == Lista 7: Tentar criar a lista ja existente
+  740  == Lista 7: Destruir lista
+  743  == Lista 7: Ir para o inicio de uma lista inexistente
+  746  == Lista 7: Ir para o final de uma lista inexistente
+  749  == Lista 7: Destruir lista inexistente
+  752  == Lista 7: Tentar excluir elemento corrente em lista inexistente
+  755  == Lista 7: Criar lista ja criada e excluida
+  758  == Lista 7: Avancar elemento em lista vazia
+  761  == Lista 7: Tentar excluir elemento corrente em lista vazia
+  764  == Lista 7: Inserir elementos (apos)
+  770  == Lista 7: Ir para o inicio da lista
+  773  == Lista 7: Avancar elemento em +2
+  776  == Lista 7: Avancar elemento em -1
+  779  == Lista 7: Ir para o final da lista
+  782  == Lista 7: Ir para o final de uma lista que ja esta no fim
+  785  == Lista 7: Avancar elemento em lista inexistente
+  788  == Lista 7: Tentar avancar o elemento para depois do fim
+  791  == Lista 7: Tentar avancar o elemento para antes do inicio
+  794  == Lista 7: Obter numero de elementos
+Numero de elementos na lista: 4
+
+  797  == Lista 7: Obter numero de elementos de lista inexistente
+  800  == Lista 7: Obter elemento corrente
+Caracter obtido: a 
+
+  803  == Lista 7: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:   804  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:   805  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:   806  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:   807  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+  810  == Lista 7: Procurar valor na lista
+  813  == Lista 7: Procurar valor inexistente na lista
+  816  == Lista 7: Procurar valor em lista inexistente
+  819  == Lista 7: Excluir todos os elementos
+  826  == Lista 7: Procurar valor em lista vazia
+  829  == Lista 7: inserir um caracter
+  832  == Lista 8: Esvaziar lista inexistente
+  835  == Lista 8: Criar a lista
+  838  == Lista 8: Inserir elemento (antes)
+  841  == Lista 8: Ir para o inicio da lista que ja esta no inicio
+  844  == Lista 8: Esvaziar a lista
+  847  == Lista 8: Esvaziar a lista vazia
+  850  == Lista 8: Tentar criar a lista ja existente
+  853  == Lista 8: Destruir lista
+  856  == Lista 8: Ir para o inicio de uma lista inexistente
+  859  == Lista 8: Ir para o final de uma lista inexistente
+  862  == Lista 8: Destruir lista inexistente
+  865  == Lista 8: Tentar excluir elemento corrente em lista inexistente
+  868  == Lista 8: Criar lista ja criada e excluida
+  871  == Lista 8: Avancar elemento em lista vazia
+  874  == Lista 8: Tentar excluir elemento corrente em lista vazia
+  877  == Lista 8: Inserir elementos (apos)
+  883  == Lista 8: Ir para o inicio da lista
+  886  == Lista 8: Avancar elemento em +2
+  889  == Lista 8: Avancar elemento em -1
+  892  == Lista 8: Ir para o final da lista
+  895  == Lista 8: Ir para o final de uma lista que ja esta no fim
+  898  == Lista 8: Avancar elemento em lista inexistente
+  901  == Lista 8: Tentar avancar o elemento para depois do fim
+  904  == Lista 8: Tentar avancar o elemento para antes do inicio
+  907  == Lista 8: Obter numero de elementos
+Numero de elementos na lista: 4
+
+  910  == Lista 8: Obter numero de elementos de lista inexistente
+  913  == Lista 8: Obter elemento corrente
+Caracter obtido: a 
+
+  916  == Lista 8: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:   917  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:   918  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:   919  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:   920  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+  923  == Lista 8: Procurar valor na lista
+  926  == Lista 8: Procurar valor inexistente na lista
+  929  == Lista 8: Procurar valor em lista inexistente
+  932  == Lista 8: Excluir todos os elementos
+  939  == Lista 8: Procurar valor em lista vazia
+  942  == Lista 8: inserir um caracter
+  945  == Lista 9: Esvaziar lista inexistente
+  948  == Lista 9: Criar a lista
+  951  == Lista 9: Inserir elemento (antes)
+  954  == Lista 9: Ir para o inicio da lista que ja esta no inicio
+  957  == Lista 9: Esvaziar a lista
+  960  == Lista 9: Esvaziar a lista vazia
+  963  == Lista 9: Tentar criar a lista ja existente
+  966  == Lista 9: Destruir lista
+  969  == Lista 9: Ir para o inicio de uma lista inexistente
+  972  == Lista 9: Ir para o final de uma lista inexistente
+  975  == Lista 9: Destruir lista inexistente
+  978  == Lista 9: Tentar excluir elemento corrente em lista inexistente
+  981  == Lista 9: Criar lista ja criada e excluida
+  984  == Lista 9: Avancar elemento em lista vazia
+  987  == Lista 9: Tentar excluir elemento corrente em lista vazia
+  990  == Lista 9: Inserir elementos (apos)
+  996  == Lista 9: Ir para o inicio da lista
+  999  == Lista 9: Avancar elemento em +2
+ 1002  == Lista 9: Avancar elemento em -1
+ 1005  == Lista 9: Ir para o final da lista
+ 1008  == Lista 9: Ir para o final de uma lista que ja esta no fim
+ 1011  == Lista 9: Avancar elemento em lista inexistente
+ 1014  == Lista 9: Tentar avancar o elemento para depois do fim
+ 1017  == Lista 9: Tentar avancar o elemento para antes do inicio
+ 1020  == Lista 9: Obter numero de elementos
+Numero de elementos na lista: 4
+
+ 1023  == Lista 9: Obter numero de elementos de lista inexistente
+ 1026  == Lista 9: Obter elemento corrente
+Caracter obtido: a 
+
+ 1029  == Lista 9: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:  1030  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:  1031  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:  1032  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:  1033  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+ 1036  == Lista 9: Procurar valor na lista
+ 1039  == Lista 9: Procurar valor inexistente na lista
+ 1042  == Lista 9: Procurar valor em lista inexistente
+ 1045  == Lista 9: Excluir todos os elementos
+ 1052  == Lista 9: Procurar valor em lista vazia
+ 1055  == Lista 9: inserir um caracter
+ 1058  == Lista 10: Esvaziar lista inexistente
+ 1061  == Lista 10: Criar a lista
+ 1064  == Lista 10: Inserir elemento (antes)
+ 1067  == Lista 10: Ir para o inicio da lista que ja esta no inicio
+ 1070  == Lista 10: Esvaziar a lista
+ 1073  == Lista 10: Esvaziar a lista vazia
+ 1076  == Lista 10: Tentar criar a lista ja existente
+ 1079  == Lista 10: Destruir lista
+ 1082  == Lista 10: Ir para o inicio de uma lista inexistente
+ 1085  == Lista 10: Ir para o final de uma lista inexistente
+ 1088  == Lista 10: Destruir lista inexistente
+ 1091  == Lista 10: Tentar excluir elemento corrente em lista inexistente
+ 1094  == Lista 10: Criar lista ja criada e excluida
+ 1097  == Lista 10: Avancar elemento em lista vazia
+ 1100  == Lista 10: Tentar excluir elemento corrente em lista vazia
+ 1103  == Lista 10: Inserir elementos (apos)
+ 1109  == Lista 10: Ir para o inicio da lista
+ 1112  == Lista 10: Avancar elemento em +2
+ 1115  == Lista 10: Avancar elemento em -1
+ 1118  == Lista 10: Ir para o final da lista
+ 1121  == Lista 10: Ir para o final de uma lista que ja esta no fim
+ 1124  == Lista 10: Avancar elemento em lista inexistente
+ 1127  == Lista 10: Tentar avancar o elemento para depois do fim
+ 1130  == Lista 10: Tentar avancar o elemento para antes do inicio
+ 1133  == Lista 10: Obter numero de elementos
+Numero de elementos na lista: 4
+
+ 1136  == Lista 10: Obter numero de elementos de lista inexistente
+ 1139  == Lista 10: Obter elemento corrente
+Caracter obtido: a 
+
+ 1142  == Lista 10: Obter elemento corrente errado
+Caracter obtido: a 
+
+>>>    1  Linha:  1143  Caracteres diferentes Deveria ser: 'c'  É: 'a'
+<<<    0  Linha:  1144  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+>>>    1  Linha:  1145  Caracteres diferentes Deveria ser: 'b'  É: 'a'
+<<<    0  Linha:  1146  Falha esperada foi recuperada. 
+Caracter obtido: a 
+
+ 1149  == Lista 10: Procurar valor na lista
+ 1152  == Lista 10: Procurar valor inexistente na lista
+ 1155  == Lista 10: Procurar valor em lista inexistente
+ 1158  == Lista 10: Excluir todos os elementos
+ 1165  == Lista 10: Procurar valor em lista vazia
+ 1168  == Lista 10: inserir um caracter
+ 1171  == Destruir as 10 listas
+!!!    0  Linha:  1183  //fim 
+
+!!! Número de linhas lidas:        1183
+!!! Número de casos de teste:       342
+!!! Número comandos corretos:       449
+!!! Número de falhas encontradas:     0
+
+!!! Não foram encontrados problemas
+
+
+!!! Numero de espacos ainda alocados: 0

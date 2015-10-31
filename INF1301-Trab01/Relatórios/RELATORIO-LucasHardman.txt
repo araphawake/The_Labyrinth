@@ -1,0 +1,38 @@
+﻿/***************************************************************************************************************************************************************************
+*
+*  Relatório-LucasHardman: Trabalho 1
+*
+*  Arquivo:						RELATORIO-LucasHardman.txt              
+*
+*
+*	   Data      		  Horas Trabalhadas  		Tipo Tarefa   			Descrição da Tarefa Realizada
+*	23/ago/2014			4			  estudar				Instalacao do Arcabouco e do Visual Studio 2012.
+*													Erro na Integracao do arcabouço com o visual studio.
+*	24/ago/2014			5			  estudar				Desinstalacao do Visual Studio 2012 e instalacao da versao de 2010.
+*													Reinstalação do arcabouço.
+*													Resolucao do erro na Integracao do arcabouco com o visual studio.
+*													Reunião em grupo online.
+*													Inicio dos estudos sobre o trabalho.
+*	26/ago/2014			5			  Projetar				Reuniao em grupo presencial para entender o trabalho e
+*													projetar possiveis solucoes. Divisao de tarefas.
+*	27/ago/2014			3		      Codificar Modulo				Adaptar o arquivo lista.h de acordo com a nova versao do lista.c
+*													e atualizar sua documentacao.
+*	28/ago/2014			5		      Codificar Modulo			  	Consertar os erros do dia 27/08 regeneralizando o modulo lista.
+*													Consertar outros erros encontrados no módulo.
+*													Reunião em grupo pessoalmente.				
+*	30/ago/2014			4		      Codificar Modulo				Comecar a adaptar o testlis.c para testar o modulo teste.
+*													Acertar a documentacao do lista.h
+*	31/ago/2014			12		    Diagnosticar e Corrigir			Adaptar o testlis.c para testar a nova versão do módulo lista.
+*                                                           os problemas encontrados			
+*	01/set/2014			4		    Diagnosticar e Corrigir			Criação de um script de teste para o modulo lista.
+*                                                           os problemas encontrados			Manutencao do testlis.c para testar o modulo teste, 		
+*							    redigir script de teste			conforme mudancas no modulo lista.	
+*	02/set/2014			7		    Diagnosticar e Corrigir			Procurar soluções para problemas encontrados em funções
+*							    os problemas encontrados			do arquivo lista.c.
+*	03/set/2014			7		    redigir script de teste			Continuacao da criacao do script de teste do modulo lista e
+*												        criação do script de teste de arvores de listas.												
+*													
+*														
+*													
+*
+*****************************************************************************************************************************************************************************/
